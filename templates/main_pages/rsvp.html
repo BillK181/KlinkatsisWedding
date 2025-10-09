@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Klinkatsis Wedding{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/rsvp.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+
+
+  <!-- Flash messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <!-- RSVP Section -->
+  <section id="rsvp">
+    <form action="/rsvp" method="POST" class="rsvp-form">
+      <p class="rsvp-greeting">
+        Hello <strong>{{ name }}</strong>, you have RSVP’ed 
+        <span class="rsvp-status">{{ rsvp_status or "—" }}</span>!
+      </p>
+
+      <label for="rsvp">RSVP:</label>
+      <select name="rsvp" id="rsvp" required>
+        <option value="going" {% if rsvp_status == 'going' %}selected{% endif %}>Going</option>
+        <option value="not_going" {% if rsvp_status == 'not_going' %}selected{% endif %}>Not Going</option>
+      </select>
+
+      <input type="submit" value="{% if rsvp_status %}Change RSVP{% else %}RSVP{% endif %}">
+    </form>
+  </section>
+
+</main>
+{% endblock %}
+
+{% block after_footer %}
+<div class="btn-container">
+  <a href="/checkstatus" class="btn"></a>
+</div>
+{% endblock %}

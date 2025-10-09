@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Klinkatsis Wedding — Anaheim{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cities.css') }}">
+{% endblock %}
+
+{% block content %}
+  <main>
+    <img src="{{ url_for('static', filename='images/laguna.jpg') }}" alt="Laguna">
+  </main>
+{% endblock %}

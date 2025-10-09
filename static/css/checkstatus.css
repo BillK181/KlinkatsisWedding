@@ -1,0 +1,18 @@
+/* ====== RSVP Status Page ====== */
+
+.rsvp-title {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.rsvp-table {
+  margin: 2rem auto;       /* center horizontally */
+  border-collapse: collapse;
+  width: 80%;
+}
+
+.rsvp-table th,
+.rsvp-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}

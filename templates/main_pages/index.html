@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Klinkatsis Wedding{% endblock %}
+
+{% block content %}
+  <!-- ===================== Header with Countdown ===================== -->
+  <header id="hero">
+    <h1>Klinkatsis Wedding</h1>
+
+    <!-- Countdown Boxes -->
+    <div id="countdown-container">
+      <div class="countdown-box">
+        <div id="days" class="countdown-number">0</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-box">
+        <div id="hours" class="countdown-number">0</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-box">
+        <div id="minutes" class="countdown-number">0</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-box">
+        <div id="seconds" class="countdown-number">0</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== Main Content ===================== -->
+  <main>
+    <section id="shorttext">
+      <div class="space">
+        <h2>Welcome to San Clemente! We're so excited to celebrate with you—no surfing required, just love, laughter, and plenty of dancing.</h2>
+        <p>Love, Marisa & Bill</p>
+      </div>
+    </section>
+
+    <section id="twocol">
+      <div class="left">
+        <h2>The Details</h2>
+      </div>
+      <div class="right">
+        <h3>SATURDAY, August 29, 2026<br>
+        Ole Hanson Beach Club<br>
+        San Clemente, CA</h3>
+        <h3>105 Avenida Pico, <br>
+        San Clemente, CA 92672</h3>
+      </div>
+    </section>    
+
+    <section id="image-scroll">
+      <div class="scroll-container">
+       <a href="/laguna"><img src="{{ url_for('static', filename='images/laguna.jpg') }}" alt="Laguna Beach"></a>
+       <a href="/newport_beach"><img src="{{ url_for('static', filename='images/newport_beach.jpg') }}" alt="Newport Beach"></a>
+       <a href="/dana_point"><img src="{{ url_for('static', filename='images/dana_point.jpg') }}" alt="Dana Point"></a>
+       <a href="/san_clemente"><img src="{{ url_for('static', filename='images/san_clemente.jpg') }}" alt="San Clemente"></a>
+       <a href="/los_angeles"><img src="{{ url_for('static', filename='images/los_angeles.jpg') }}" alt="Los Angeles"></a>
+       <a href="/san_diego"><img src="{{ url_for('static', filename='images/san_diego.jpg') }}" alt="San Diego"></a>
+       <a href="/irvine"><img src="{{ url_for('static', filename='images/irvine.jpg') }}" alt="Irvine"></a>
+       <a href="/anaheim"><img src="{{ url_for('static', filename='images/anaheim.jpg') }}" alt="anaheim"></a>
+     </div>
+    </section>
+
+    <section class="splitcol">
+      <div class="left">
+        <img src="{{ url_for('static', filename='images/oletwo.jpg') }}" alt="The Ole Hanson Beach Club">
+      </div>
+      <div class="right">
+        <h2>The Venue</h2>
+        <p>
+          The Ole Hanson Beach Club, a designated historic landmark in San Clemente, California, was completed in 1928 as part of city founder Ole Hanson’s vision for a “Spanish Village by the Sea.” Designed in the Spanish Colonial Revival style, the club features arched walkways, ornate tile work, and sweeping ocean views, quickly becoming a hub for recreation and community life. Over the decades, it has evolved from a public swimming facility to a cherished venue for weddings and special events, and in 2016 it was officially renamed the Ole Hanson Beach Club to honor its historical significance. Today, it stands as a celebrated symbol of San Clemente’s rich architectural heritage and coastal charm.
+        </p>
+      </div>
+    </section>
+  </main>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Klinkatsis Wedding{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/mr_mrs.css') }}">
+{% endblock %}
+
+{% block content %}
+  <main class="our-story">
+
+    <!-- Image section on top -->
+    <div class="story-image">
+      <img src="{{ url_for('static', filename='images/marisabill.jpg') }}" alt="Bill and Marisa" class="top-image">
+    </div>
+
+    <!-- Text content -->
+    <div class="story-text">
+      <h3>
+        Bill and Marisa met their Sophomore year at Penn State, where Bill took them on their first official date at the historic State College Corner Room. Just two weeks later Bill told Marisa how much she meant to him and officially asked her to be his girlfriend, and they have been growing up together ever since!
+      </h3>
+
+      <h3>
+        After a few months of dating, they took their relationship overseas as they studied abroad in Rome and explored Europe together, creating cherished memories. After graduation, they both moved to Boston to work at Oracle, shared our first apartment, cheered on Bill’s favorite team (the Patriots), and figured out life in a new city. A few years later, we traded East Coast winters for California sunshine and made Newport Beach our home, where we’ve been ever since. Our SoCal life now consists of long walks on the beach, lunch breaks swimming at the pool, whale watching, and discovering everything Southern California has to offer.
+      </h3>
+
+      <h3>
+        On our 9-year anniversary, Bill popped the question at our absolute favorite spot alongside the ocean cliffs of Laguna Beach. Now, ten years later, we’re still exploring, laughing, and supporting each other—and we can’t wait to celebrate this next chapter with our friends and family.
+      </h3>
+    </div>
+
+  </main>
+{% endblock %}

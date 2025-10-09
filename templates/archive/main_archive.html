@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klinkatsis Wedding</title>
+
+  <!-- ===================== Stylesheets ===================== -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">       <!-- Main site CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='countdown.css') }}">    <!-- Countdown CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='chatbot.css') }}">     <!-- Chatbot CSS -->
+</head>
+<body>
+
+  <!-- ===================== Navigation ===================== -->
+  <nav>
+  <ul>
+    <li>
+      <a href="/">
+        <img src="Logo.jpg" alt="M&B Logo">
+      </a>
+    </li>
+    <li><a href="#mr_mrs">Mr & Mrs</a></li>
+    <li><a href="#rsvp">RSVP & Schedule</a></li>
+    <li><a href="#travel">Travel & Accommodations</a></li>
+    <li><a href="#registry">Registry</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+
+  <!-- ===================== Header with Countdown ===================== -->
+  <header id="hero">
+    <h1>Klinkatsis Wedding</h1>
+
+    <!-- Countdown Boxes -->
+    <div id="countdown-container">
+      <div class="countdown-box">
+        <div id="days" class="countdown-number">0</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-box">
+        <div id="hours" class="countdown-number">0</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-box">
+        <div id="minutes" class="countdown-number">0</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-box">
+        <div id="seconds" class="countdown-number">0</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== Main Content ===================== -->
+  <main>
+    <section id="shorttext">
+      <div class="space">
+        <h2>Welcome to San Clemente! We're so excited to celebrate with you—no surfing required, just love, laughter, and plenty of dancing.</h2>
+        <p>Love, Marisa & Bill</p>
+      </div>
+    </section>
+
+    <section id="twocol">
+      <div class="left">
+        <h2>The Details</h2>
+      </div>
+      <div class="right">
+        <h3>SATURDAY, August 29, 2026
+Ole Hanson Beach Club
+San Clemente, CA</h3>
+        <h3>105 Avenida Pico, 
+San Clemente, CA 92672</h3>
+      </div>
+    </section>    
+
+    <section id="image-scroll">
+      <div class="scroll-container">
+        <a href="/page1"><img src="image1.jpg" alt="Image 1"></a>
+        <a href="/page2"><img src="image2.jpg" alt="Image 2"></a>
+        <a href="/page3"><img src="image3.jpg" alt="Image 3"></a>
+        <a href="/page4"><img src="image4.jpg" alt="Image 4"></a>
+      </div>
+    </section>
+
+    <section class="splitcol">
+      <div class="left">
+        <img src="image1.jpg" alt="The Ole Hanson Beach Club">
+      </div>
+      <div class="right">
+        <h2>The Venue</h2>
+        <p>
+      The Ole Hanson Beach Club, a designated historic landmark in San Clemente, California, was completed in 1928 as part of city founder Ole Hanson’s vision for a “Spanish Village by the Sea.” Designed in the Spanish Colonial Revival style, the club features arched walkways, ornate tile work, and sweeping ocean views, quickly becoming a hub for recreation and community life. Over the decades, it has evolved from a public swimming facility to a cherished venue for weddings and special events, and in 2016 it was officially renamed the Ole Hanson Beach Club to honor its historical significance. Today, it stands as a celebrated symbol of San Clemente’s rich architectural heritage and coastal charm.
+        </p>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <!-- ===================== Chatbot Section ===================== -->
+   <script>
+  // This sets the global window.userName variable in the browser
+  window.userName = "{{ session.get('name', 'Guest') }}";
+   </script>
+  <div id="chatbot-bubble">💬</div>
+  <div id="chatbot-container">
+  <div id="chatbot-header">
+    Just Ask!
+    <button id="chatbot-close">✖</button>
+  </div>
+  <div id="chatbot-messages"></div>
+  <div id="chatbot-input">
+    <input type="text" id="chat-input" placeholder="Type your question..." />
+    <button id="chat-send">Send</button>
+  </div>
+  </div>
+
+  <!-- ===================== Logout Form ===================== -->
+  <div class="logout-form">
+    <form action="/logout" method="POST">
+      <input type="submit" value="Log Out">
+    </form>
+  </div>
+
+ <!-- ===================== Footer ===================== -->
+  <footer>
+    <img src="Logo.jpg" alt="M&B Logo">
+  </footer>
+
+  <!-- ===================== Chatbot JS ===================== -->
+  <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+
+
+  <!-- ===================== Countdown JS ===================== -->
+  <script src="{{ url_for('static', filename='countdown.js') }}"></script>
+</body>
+</html>
+
+ 

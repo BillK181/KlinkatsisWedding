@@ -1,0 +1,27 @@
+.our-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.story-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.top-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0; 
+  object-fit: cover;
+}
+
+.story-text h3 {
+  font-weight: normal;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}

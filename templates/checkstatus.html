@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}RSVP Statuses{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/checkstatus.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+  <h2 class="rsvp-title">RSVP Statuses</h2>
+
+  <table class="rsvp-table">
+    <thead>
+      <tr>
+        <th>Guest Name</th>
+        <th>RSVP Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for guest in guests %}
+      <tr>
+        <td>{{ guest.name }}</td>
+        <td>
+          {% if guest.rsvp_status %}
+            {{ guest.rsvp_status|capitalize }}
+          {% else %}
+            —
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</main>
+{% endblock %}

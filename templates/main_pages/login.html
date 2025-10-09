@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Klinkatsis Wedding</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+  <header id="hero">
+    <h1>Marisa & Bill</h1>
+
+    <!-- Countdown Boxes -->
+    <div id="countdown-container">
+      <div class="countdown-box">
+        <div id="days" class="countdown-number">0</div>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-box">
+        <div id="hours" class="countdown-number">0</div>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-box">
+        <div id="minutes" class="countdown-number">0</div>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-box">
+        <div id="seconds" class="countdown-number">0</div>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+
+    <form method="POST" action="/login">
+      <input name="name" type="text" placeholder="Your Name (As Written On Invitation)" required />
+      <button type="submit">Enter</button>
+    </form>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+  </header>
+
+  <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+</body>
+</html>

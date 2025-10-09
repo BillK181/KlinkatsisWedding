@@ -1,0 +1,85 @@
+/* ===================== HEADER BACKGROUND IMAGE ===================== */
+#hero {
+  background-image: url('/static/images/wedding-bg.jpg'); /* Must be in static/images */
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding-bottom: 50px;
+  background-color: #f1e7cd; /* fallback if image fails */
+}
+
+/* Dark overlay for readability */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+/* Bring heading and countdown above overlay */
+#hero h1 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 5px;
+  color: #f1e7cd;
+  line-height: 0.9;
+}
+
+#countdown-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Countdown container */
+#countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+/* Countdown box styling */
+.countdown-box {
+  background: rgba(241, 231, 205, 0.85);
+  border-radius: 12px;
+  padding: 10px 15px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Countdown numbers */
+.countdown-number {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Countdown labels */
+.countdown-label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #countdown-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #hero h1 {
+    font-size: 3rem;
+  }
+}

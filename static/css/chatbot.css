@@ -1,0 +1,89 @@
+/* Bubble button */
+#chatbot-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: whitesmoke;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chatbot-container {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 400px;
+  height: 200px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  display: none; /* 👈 hidden until bubble is clicked */
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+}
+
+
+#chatbot-header {
+  background: whitesmoke;
+;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid whitesmoke;
+}
+
+#chatbot-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+#chatbot-input {
+  display: flex;
+  border-top: 1px solid whitesmoke;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+#chatbot-input button {
+  padding: 8px;
+  background: whitesmoke;
+  color: #52501c;
+  border: none;
+  cursor: pointer;
+}
+
+#chatbot-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #333;
+}
+
+.message.user::before {
+  content: ""; /* removes any pseudo-content */
+}
+
+.message.bot::before {
+  content: ""; /* removes any pseudo-content */
+}

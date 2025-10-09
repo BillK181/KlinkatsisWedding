@@ -1,0 +1,125 @@
+
+/* ===================== FLASH MESSAGES ===================== */
+ul.flashes {
+  list-style: none;
+  padding: 0;
+  margin: 1em 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+ul.flashes li {
+  background: #e8f9ed;
+  border: 1px solid #bde0c1;
+  border-radius: 8px;
+  color: #22543d;
+  font-size: 1.1em;
+  padding: 12px 16px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+/* ===================== RSVP SECTION ===================== */
+#rsvp {
+  width: 100%;
+  display: flex;
+  justify-content: center;       /* center horizontally */
+  align-items: center;           /* center vertically */
+  margin: 0;                     /* remove extra margins */
+
+  background-image: url('../images/rsvpbackground.jpg');
+  background-size: cover;        /* make image cover entire section */
+  background-position: bottom;   /* center the image */
+  background-repeat: no-repeat;
+
+  min-height: 600px;             /* tall section for background */
+  padding: 50px 0;               /* spacing above/below form */
+  box-sizing: border-box;        /* include padding in height */
+}
+
+/* ===================== RSVP FORM ===================== */
+#rsvp form {
+  width: 25%;                     /* take up most of the screen */
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px #52501c;
+  background-color: #f1e7cd;
+}
+
+/* ===================== RSVP GREETING ===================== */
+#rsvp .rsvp-greeting {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+/* ===================== LABELS ===================== */
+#rsvp label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25em;
+  text-align: left;
+}
+
+/* ===================== SELECT DROPDOWN ===================== */
+#rsvp select {
+  width: 30%;
+  height: 30px;
+  padding: 10px;
+  font-size: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #52501c;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  background-color: #fdfaf6 !important;
+  color: #000 !important;
+  background-image: none;
+}
+
+/* Dropdown options */
+#rsvp select option {
+  background-color: #fdfaf6;
+  color: #000;
+}
+
+/* ===================== SUBMIT BUTTON ===================== */
+#rsvp input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  background-color: #52501c;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid #52501c;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#rsvp input[type="submit"]:hover {
+  background-color: #52501c;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* ===================== AFTER FOOTER BUTTON ===================== */
+.btn {
+  background-color: #52501c;
+  color: #fdfaf6;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.btn-container {
+  text-align: right;
+  margin: 2rem 0;
+}
