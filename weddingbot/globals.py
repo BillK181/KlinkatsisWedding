@@ -2,7 +2,7 @@
 import os
 
 def get_openai_key():
-    key = os.getenv("OPENAI_API_KEY")
+    print("Loaded key starts with:", os.getenv("OPENAI_API_KEY")[:10])
     if not key:
         raise RuntimeError("OPENAI_API_KEY is not set in environment")
     return key
