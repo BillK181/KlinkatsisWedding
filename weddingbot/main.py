@@ -20,23 +20,11 @@ def ask_gpt(messages: list) -> str:
     global client
     if client is None:
         client = create_client()  # lazy initialization
-
-    try:
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            messages=messages
-        )
-
-        # Validate the response before trying to read it
-        if not response or not hasattr(response, "choices") or not response.choices:
-            print("Weddingbot: Error — Invalid or empty response:", response)
-            return "Sorry, something went wrong with the response."
-
-        return response.choices[0].message.content.strip()
-
-    except Exception as e:
-        print("Weddingbot: Error calling OpenAI →", e)
-        return f"Error: {e}"
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=messages
+    )
+    return response.choices[0].message.content.strip()
 
 # === Main Program ===
 def main():
