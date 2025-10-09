@@ -1,5 +1,12 @@
+# globals.py
 import os
-key = os.getenv("OPENAI_API_KEY")
+
+def get_openai_key():
+    key = os.getenv("OPENAI_API_KEY")
+    if not key:
+        raise RuntimeError("OPENAI_API_KEY is not set in environment")
+    return key
+
 DRESS_CODE = "beachy cocktail attire"
 WEDDING_COLORS = "Green & Blue"
 GUEST_ARRIVAL_TIME = "4:00pm"
