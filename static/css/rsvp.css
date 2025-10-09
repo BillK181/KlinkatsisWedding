@@ -78,22 +78,11 @@ ul.flashes li {
 /* ===================== SELECT DROPDOWN ===================== */
 #rsvp select {
   width: 30%;
-  height: 30px;
-  padding: 10px;
+  padding: 6px 10px;       /* adjust as needed */
   font-size: 1em;
-  margin-bottom: 1em;
   border: 1px solid #52501c;
   border-radius: 8px;
-  box-sizing: border-box;
-  display: inline-block; 
-
-  background-color: #fdfaf6 !important;
-  color: #000 !important;
-  background-image: none;
-}
-
-/* Dropdown options */
-#rsvp select option {
+  box-sizing: border-box;  /* includes padding in height */
   background-color: #fdfaf6;
   color: #000;
 }
