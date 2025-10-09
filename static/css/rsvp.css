@@ -77,20 +77,16 @@ ul.flashes li {
 
 /* ===================== SELECT DROPDOWN ===================== */
 #rsvp select {
-  width: 30%;
-  height: 36px;          /* fixed height */
-  padding: 0 10px;       /* vertical padding ignored, horizontal works */
+  width: 80px;
+  height: 30px;          /* fixed height */
+  padding: 7px;       /* vertical padding ignored, horizontal works */
   font-size: 1em;
   border: 1px solid #52501c;
   border-radius: 8px;
-  box-sizing: border-box;
   background-color: #fdfaf6;
+  background-image: none;
   color: #000;
-
-  appearance: none;      /* removes native dropdown arrow styling */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: none; /* removes the built-in arrow if needed */
+  margin-bottom: 10px;
 }
 
 
