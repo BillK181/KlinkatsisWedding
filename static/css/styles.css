@@ -5,8 +5,8 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: 'Georgia', serif; /* Classic wedding font */
-  background-color: #f1e7cd;     /* Soft cream */
+  font-family: 'Georgia', serif; 
+  background-color: #f1e7cd;    
   color: #333;
   scroll-behavior: smooth;
 }
@@ -16,14 +16,14 @@ header {
   text-align: center;
   font-size: 5rem;
   padding: 0rem;
-  background-color: #f1e7cd; /* fallback if image fails */
+  background-color: #f1e7cd; 
 }
 
 /* ===================== NAVIGATION ===================== */
 /* Logo inside nav */
 nav ul li img {
-  height: 65px;        /* adjust to your preferred size */
-  width: auto;         /* maintain aspect ratio */
+  height: 65px;    
+  width: auto;  
   object-fit: contain;
   vertical-align: middle;
 }
@@ -49,7 +49,7 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;   /* vertically center items */
-  gap: 0;                /* spacing will be via padding */
+  gap: 0;                
   padding: 1rem 0;
   background-color: #f1e7cd;
   margin: 1px 0;

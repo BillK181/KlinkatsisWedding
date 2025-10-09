@@ -71,7 +71,7 @@ wedding-website/
 │       ├── san_clemente.jpg
 │       ├── san_diego.jpg
 │       ├── marisabill.jpg
-│       ├── Logo.jpg
+│       ├── logo.jpg
 │       └── wedding-bg.jpg
 │
 ├── templates/

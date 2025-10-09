@@ -23,47 +23,57 @@ ul.flashes li {
 #rsvp {
   width: 100%;
   display: flex;
-  justify-content: center;       /* center horizontally */
-  align-items: center;           /* center vertically */
-  margin: 0;                     /* remove extra margins */
+  justify-content: center;     
+  align-items: center;     
+  margin: 0;                     
 
   background-image: url('../images/rsvpbackground.jpg');
-  background-size: cover;        /* make image cover entire section */
-  background-position: bottom;   /* center the image */
+  background-size: cover;        
+  background-position: bottom;  
   background-repeat: no-repeat;
 
-  min-height: 600px;             /* tall section for background */
-  padding: 50px 0;               /* spacing above/below form */
-  box-sizing: border-box;        /* include padding in height */
+  min-height: 600px;            
+  padding: 50px 0;               
+  box-sizing: border-box;        
 }
 
 /* ===================== RSVP FORM ===================== */
-#rsvp form {
-  width: 25%;                     /* take up most of the screen */
-  max-width: 600px;
+#rsvp-form {
+  width: 90%;              
+  max-width: 600px;        
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 24px;
+  align-items: stretch;      /* make inputs full width */
+  gap: 12px;                
+  padding: 16px;             
   border-radius: 8px;
-  box-shadow: 0 2px 5px #52501c;
-  background-color: #f1e7cd;
+  margin: 20px auto;
+  box-sizing: border-box;
 }
+
 
 /* ===================== RSVP GREETING ===================== */
 #rsvp .rsvp-greeting {
   font-size: 1.2em;
   margin-bottom: 0.5em;
   text-align: left;
+  background-color: #f9e7d2;  
+  padding: 8px 12px;           
+  border-radius: 6px;          /* rounded corners */
 }
+
 
 /* ===================== LABELS ===================== */
 #rsvp label {
-  display: block;
+  display: inline-block;        /* shrink to fit content */
   font-weight: 600;
   margin-bottom: 0.25em;
   text-align: left;
+  background-color: #f9e7d2; 
+  padding: 4px 8px;            
+  border-radius: 6px;
 }
+
 
 /* ===================== SELECT DROPDOWN ===================== */
 #rsvp select {
@@ -75,6 +85,7 @@ ul.flashes li {
   border: 1px solid #52501c;
   border-radius: 8px;
   box-sizing: border-box;
+  display: inline-block; 
 
   background-color: #fdfaf6 !important;
   color: #000 !important;
