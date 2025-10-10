@@ -126,3 +126,16 @@ ul.flashes li {
   text-align: right;
   margin: 2rem 0;
 }
+
+/* ===================== RSVP Overide ===================== */
+
+
+#rsvp-form input,
+#rsvp-form textarea,
+#rsvp-form select,
+#rsvp-form button {
+  padding: 6px 10px;      /* give it some spacing */
+  font-size: 1em;         /* ensure readable text */
+  height: auto;           /* let it size to content */
+  box-sizing: border-box; /* include padding in height/width */
+}
