@@ -35,10 +35,12 @@ with app.app_context():
 
 # ----------------------- HELPERS -----------------------
 def get_current_guest():
-    """Returns the current logged-in guest and their name."""
+    """Returns the current logged-in guest and their name, or (None, None) if not logged in."""
     guest_id = session.get('guest_id')
     guest = Guest.query.get(guest_id) if guest_id else None
-    return guest, guest.name if guest else 'Guest'
+    if not guest:
+        return None, None  # Not logged in
+    return guest, guest.name
 
 
 # ----------------------- ROUTES WITHOUT PAGES -----------------------
