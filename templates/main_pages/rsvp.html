@@ -10,7 +10,6 @@
 {% block content %}
 <main>
 
-
   <!-- Flash messages -->
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
@@ -30,11 +29,13 @@
         <span class="rsvp-status">{{ rsvp_status or "—" }}</span>!
       </p>
 
-      <label for="rsvp">RSVP:</label>
-      <select name="rsvp" id="rsvp" required>
-        <option value="going" {% if rsvp_status == 'going' %}selected{% endif %}>Going</option>
-        <option value="not_going" {% if rsvp_status == 'not_going' %}selected{% endif %}>Not Going</option>
-      </select>
+      <label for="rsvp-select">RSVP:</label>
+      <div class="select-wrapper">
+        <select name="rsvp" id="rsvp-select" required>
+          <option value="going" {% if rsvp_status == 'going' %}selected{% endif %}>Going</option>
+          <option value="not_going" {% if rsvp_status == 'not_going' %}selected{% endif %}>Not Going</option>
+        </select>
+      </div>
 
       <input type="submit" value="{% if rsvp_status %}Change RSVP{% else %}RSVP{% endif %}">
     </form>
@@ -45,6 +46,6 @@
 
 {% block after_footer %}
 <div class="btn-container">
-  <a href="/checkstatus" class="btn"></a>
+  <a href="/checkstatus" class="btn">Check RSVP Status</a>
 </div>
 {% endblock %}

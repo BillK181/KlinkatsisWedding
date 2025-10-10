@@ -1,11 +1,10 @@
-
 /* ===================== FLASH MESSAGES ===================== */
 ul.flashes {
   list-style: none;
   padding: 0;
   margin: 1em 0;
   width: 100%;
-  max-width: 600px;
+  max-width: 600px;  /* constrain flash messages */
 }
 
 ul.flashes li {
@@ -23,34 +22,34 @@ ul.flashes li {
 #rsvp {
   width: 100%;
   display: flex;
-  justify-content: center;     
-  align-items: center;     
-  margin: 0;                     
-
-  background-image: url('../images/rsvpbackground.jpg');
-  background-size: cover;        
-  background-position: bottom;  
+  justify-content: center;  /* center the form horizontally */
+  align-items: center;      /* center vertically if min-height allows */
+  margin: 0;
+  
+  background-image: url('../images/rsvpbackground.jpg'); /* section background */
+  background-size: cover;
+  background-position: bottom;
   background-repeat: no-repeat;
 
-  min-height: 600px;            
-  padding: 50px 0;               
-  box-sizing: border-box;        
+  min-height: 600px;  /* minimum height for desktop view */
+  padding: 50px 0;
+  box-sizing: border-box;
 }
 
 /* ===================== RSVP FORM ===================== */
 #rsvp-form {
-  width: 90%;              
-  max-width: 600px;        
+  width: 90%;
+  max-width: 600px;     /* constrain form width */
   display: flex;
   flex-direction: column;
-  align-items: stretch;      /* make inputs full width */
-  gap: 12px;                
-  padding: 16px;             
+  align-items: flex-start;  /* allow elements to size naturally */
+  gap: 12px;                /* spacing between elements */
+  padding: 16px;
   border-radius: 8px;
   margin: 20px auto;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.85); /* optional light background */
 }
-
 
 /* ===================== RSVP GREETING ===================== */
 #rsvp .rsvp-greeting {
@@ -58,37 +57,51 @@ ul.flashes li {
   margin-bottom: 0.5em;
   text-align: left;
   background-color: #f9e7d2;  
-  padding: 8px 12px;           
-  border-radius: 6px;          /* rounded corners */
-}
-
-
-/* ===================== LABELS ===================== */
-#rsvp label {
-  display: inline-block;        /* shrink to fit content */
-  font-weight: 600;
-  margin-bottom: 0.25em;
-  text-align: left;
-  background-color: #f9e7d2; 
-  padding: 4px 8px;            
+  padding: 8px 12px;
   border-radius: 6px;
 }
 
-
-/* ===================== SELECT DROPDOWN ===================== */
-#rsvp select {
-  width: 80px;
-  height: 30px;          /* fixed height */
-  padding: 7px;       /* vertical padding ignored, horizontal works */
-  font-size: 1em;
-  border: 1px solid #52501c;
-  border-radius: 8px;
-  background-color: #fdfaf6;
-  background-image: none;
-  color: #000;
-  margin-bottom: 10px;
+/* ===================== LABELS ===================== */
+#rsvp label {
+  display: inline-block;  /* shrink to content width */
+  font-weight: 600;
+  margin-bottom: 0.25em;
+  text-align: left;
+  background-color: #f9e7d2;
+  padding: 4px 8px;
+  border-radius: 6px;
 }
 
+/* ===================== SELECT DROPDOWN ===================== */
+/* wrapper fixes Chrome height quirks */
+.select-wrapper {
+  height: 30px;              /* fixed height for all browsers */
+  overflow: hidden;           /* hide extra height from native select */
+  border-radius: 8px;
+  border: 1px solid #52501c;
+  display: inline-block;
+}
+
+.select-wrapper select {
+  height: 100%;              /* fill wrapper height */
+  padding: 0 10px;           /* horizontal padding only */
+  font-size: 1em;
+  line-height: 1.2;          /* center text vertically */
+  appearance: none;           /* remove native dropdown arrow */
+  -webkit-appearance: none;   /* Chrome/Safari */
+  -moz-appearance: none;      /* Firefox */
+  border: none;               /* handled by wrapper */
+  border-radius: 0;           /* handled by wrapper */
+  background-color: #fdfaf6;
+  color: #000;
+  width: 100%;                /* fill wrapper horizontally */
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-image: url('../images/dropdown-arrow.png'); /* optional custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+}
 
 /* ===================== SUBMIT BUTTON ===================== */
 #rsvp input[type="submit"] {
@@ -105,7 +118,6 @@ ul.flashes li {
 }
 
 #rsvp input[type="submit"]:hover {
-  background-color: #52501c;
   transform: translateY(-1px);
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
@@ -125,17 +137,4 @@ ul.flashes li {
 .btn-container {
   text-align: right;
   margin: 2rem 0;
-}
-
-/* ===================== RSVP Overide ===================== */
-
-
-#rsvp-form input,
-#rsvp-form textarea,
-#rsvp-form select,
-#rsvp-form button {
-  padding: 6px 10px;      /* give it some spacing */
-  font-size: 1em;         /* ensure readable text */
-  height: auto;           /* let it size to content */
-  box-sizing: border-box; /* include padding in height/width */
 }
