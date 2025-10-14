@@ -77,14 +77,15 @@ nav ul li a {
   nav ul {
     flex-direction: column;     
     align-items: center;        
-    gap: 0.5rem;                
-    padding: .5rem 0;
+    gap: 0.25rem;              /* smaller spacing between items */
+    padding: 0.25rem 0;        /* reduce padding top/bottom */
+    font-size: 1rem;           /* smaller base font size for nav */
   }
 
   nav ul li {
     border-right: none;         
     border-bottom: 1px solid #333;  
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;        /* reduce vertical spacing */
     width: 100%;                
     text-align: center;
   }
@@ -93,18 +94,19 @@ nav ul li a {
     border-bottom: none;        
   }
 
-  /* Make navigation links smaller on mobile */
+  /* Make navigation links smaller */
   nav ul li a {
-    font-size: 1rem;   /* smaller than desktop 1.8rem */
-    padding: 0.25rem 0; /* optional: reduce vertical spacing */
+    font-size: 0.9rem;         /* smaller links */
+    padding: 0.2rem 0;         /* reduce vertical spacing inside links */
   }
 
-  /* Keep the logo size the same */
-  nav ul li:first-child a img {
-    height: 65px;  /* same as desktop */
-    width: auto;
+  /* Keep the logo size the same */ 
+  nav ul li:first-child a img { 
+    height: 65px;              /* same as desktop */ 
+    width: auto; 
   }
 }
+
 
 
 
@@ -258,12 +260,16 @@ main {
 /* ===================== MOBILE FIX FOR IMAGE SCROLL ===================== */
 @media (max-width: 768px) {
   .scroll-container img {
-    height: 120px;  /* smaller so about 1.5 images fit on screen */
-    width: auto;    /* maintain aspect ratio */
+    height: auto;           /* let image scale naturally */
+    max-height: 150px;      /* optional: limit max height */
+    width: 80%;             /* make images smaller than screen width */
+    flex-shrink: 0;         /* prevent image from shrinking */
+    scroll-snap-align: start; /* ensures snapping works */
   }
 
   .scroll-container {
-    gap: 2rem;     /* optional: reduce spacing between images on small screens */
+    gap: 1rem;              /* reduce spacing between images */
+    padding: 1rem;          /* optional padding for scroll area */
   }
 }
 

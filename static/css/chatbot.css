@@ -1,53 +1,58 @@
-/* Bubble button */
+/* ===================== Chat Bubble ===================== */
+/* Bubble button that triggers the chat */
 #chatbot-bubble {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 20px;                 /* distance from bottom of screen */
+  right: 20px;                  /* distance from right edge */
   background: whitesmoke;
   color: white;
   padding: 15px;
-  border-radius: 50%;
+  border-radius: 50%;           /* circular button */
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  z-index: 9999;
+  z-index: 9999;                /* above all elements */
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* ===================== Chat Container ===================== */
+/* Hidden until bubble clicked */
 #chatbot-container {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
-  width: 400px;
-  height: 200px;
+  bottom: 20px;                 /* slightly out from corner */
+  right: 20px;
+  width: 400px;                  /* desktop width */
+  height: 200px;                 /* default desktop height */
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
-  display: none; /* 👈 hidden until bubble is clicked */
-  flex-direction: column;
+  display: none;                 /* hidden by default */
+  flex-direction: column;        /* stack header, messages, input vertically */
   overflow: hidden;
-  z-index: 999;
+  z-index: 999;                  /* above page content */
+  touch-action: manipulation;    /* prevent zoom/scroll weirdness */
 }
 
-
+/* Chat header */
 #chatbot-header {
   background: whitesmoke;
-;
   padding: 12px;
   text-align: center;
   font-weight: bold;
   border-bottom: 1px solid whitesmoke;
 }
 
+/* Messages area */
 #chatbot-messages {
-  flex: 1;
+  flex: 1;                       /* expand to fill available space */
   padding: 10px;
-  overflow-y: auto;
+  overflow-y: auto;              /* scroll if content exceeds */
   font-size: 14px;
 }
 
+/* Input area */
 #chatbot-input {
   display: flex;
   border-top: 1px solid whitesmoke;
@@ -69,6 +74,7 @@
   cursor: pointer;
 }
 
+/* Close button */
 #chatbot-close {
   position: absolute;
   right: 10px;
@@ -80,45 +86,46 @@
   color: #333;
 }
 
-.message.user::before {
-  content: ""; /* removes any pseudo-content */
-}
-
+/* Remove pseudo-content for messages */
+.message.user::before,
 .message.bot::before {
-  content: ""; /* removes any pseudo-content */
+  content: "";
 }
 
 /* ===================== MOBILE FIX ===================== */
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
+
+  /* Mobile container */
   #chatbot-container {
-  position: fixed;
-  bottom: env(safe-area-inset-bottom, 15px); /* safer for notched devices */
-  right: env(safe-area-inset-right, 15px);
-  width: 90%;
-  max-width: 300px;
-  max-height: 70vh;
-  height: auto;
-  overflow: hidden;
-  z-index: 999;
-  touch-action: manipulation; /* prevent zoom/scroll weirdness */
+    width: 90%;                  /* scale with screen width */
+    max-width: 300px;            /* maximum width */
+    max-height: 70vh;            /* default height */
+    bottom: env(safe-area-inset-bottom, 15px); /* safe distance from notches */
+    right: env(safe-area-inset-right, 15px);
+    height: auto;                /* let content define height */
+  }
+
+  /* When container is open, make slightly taller */
+  #chatbot-container.open {
+    max-height: 80vh;            /* taller when selected */
   }
 
   #chatbot-messages {
     flex: 1;
-    max-height: calc(70vh - 60px); /* header + input space subtracted */
+    max-height: calc(70vh - 60px); /* subtract header + input height */
     overflow-y: auto;
   }
 
   #chatbot-input {
-    flex-shrink: 0;       /* always visible */
+    flex-shrink: 0;              /* always visible */
   }
 
   #chat-input {
-    font-size: 16px;    
+    font-size: 16px;
   }
 
   #chatbot-header {
-    font-size: 14px;      
+    font-size: 14px;
     padding: 8px;
   }
 }
