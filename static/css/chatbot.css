@@ -91,19 +91,16 @@
 /* ===================== MOBILE FIX ===================== */
 @media (max-width: 768px) { 
   #chatbot-container {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    width: 90%;           /* let it scale with screen width */
-    max-width: 300px;
-    height: auto;          /* adapt to content */
-    max-height: 70vh;      /* never taller than 70% of viewport */
-    background: white;
-    border-radius: 10px;
-    display: none; 
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 999;
+  position: fixed;
+  bottom: env(safe-area-inset-bottom, 15px); /* safer for notched devices */
+  right: env(safe-area-inset-right, 15px);
+  width: 90%;
+  max-width: 300px;
+  max-height: 70vh;
+  height: auto;
+  overflow: hidden;
+  z-index: 999;
+  touch-action: manipulation; /* prevent zoom/scroll weirdness */
   }
 
   #chatbot-messages {
@@ -117,7 +114,7 @@
   }
 
   #chat-input {
-    font-size: 14px;    
+    font-size: 16px;    
   }
 
   #chatbot-header {

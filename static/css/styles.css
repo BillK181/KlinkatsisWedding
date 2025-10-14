@@ -75,25 +75,37 @@ nav ul li a {
 /* ===================== MOBILE FIX ===================== */
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column;     /* stack items vertically */
-    align-items: center;        /* center them */
-    gap: 0.5rem;                /* spacing between items */
+    flex-direction: column;     
+    align-items: center;        
+    gap: 0.5rem;                
     padding: .5rem 0;
   }
 
   nav ul li {
-    border-right: none;         /* remove dividers */
-    border-bottom: 1px solid #333;  /* optional divider instead */
+    border-right: none;         
+    border-bottom: 1px solid #333;  
     padding: 0.5rem 0;
-    width: 100%;                /* stretch items for touch comfort */
+    width: 100%;                
     text-align: center;
   }
 
   nav ul li:last-child {
-    border-bottom: none;        /* remove last divider */
-    margin-bottom: 2px;
+    border-bottom: none;        
+  }
+
+  /* Make navigation links smaller on mobile */
+  nav ul li a {
+    font-size: 1rem;   /* smaller than desktop 1.8rem */
+    padding: 0.25rem 0; /* optional: reduce vertical spacing */
+  }
+
+  /* Keep the logo size the same */
+  nav ul li:first-child a img {
+    height: 65px;  /* same as desktop */
+    width: auto;
   }
 }
+
 
 
 /* ===================== Log Out Form ===================== */
@@ -131,7 +143,6 @@ nav ul li a {
 /* ===================== MOBILE FIX ===================== */
 @media (max-width: 768px) { 
     .logout-form {
-        position: fixed;  /* stays visible when scrolling */
         top: 10px;
         right: 10px;
         z-index: 5;
@@ -243,6 +254,19 @@ main {
 .scroll-container img:hover {
   transform: scale(1.05);     /* slight zoom on hover */
 }
+
+/* ===================== MOBILE FIX FOR IMAGE SCROLL ===================== */
+@media (max-width: 768px) {
+  .scroll-container img {
+    height: 120px;  /* smaller so about 1.5 images fit on screen */
+    width: auto;    /* maintain aspect ratio */
+  }
+
+  .scroll-container {
+    gap: 2rem;     /* optional: reduce spacing between images on small screens */
+  }
+}
+
 
 /* ===================== The Venue ===================== */
 
