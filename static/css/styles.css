@@ -30,7 +30,7 @@ nav ul li img {
 
 /* Remove link styling around the logo */
 nav ul li a img:hover {
-  opacity: 0.85; /* optional hover effect */
+  opacity: 0.85;
 }
 
 nav ul li a {
@@ -48,7 +48,7 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  align-items: center;   /* vertically center items */
+  align-items: center;   
   gap: 0;                
   padding: 1rem 0;
   background-color: #f1e7cd;
@@ -58,19 +58,43 @@ nav ul {
 
 nav ul li {
   padding: 0 1rem;
-  border-right: 1px solid #333;  /* divider */
+  border-right: 1px solid #333;
 }
 
 nav ul li:last-child {
-  border-right: none;   /* no divider on last item */
+  border-right: none;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #000;
-  display: inline-block;  /* ensures padding works properly */
+  display: inline-block;
   text-align: center;
 }
+
+/* ===================== MOBILE FIX ===================== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;     /* stack items vertically */
+    align-items: center;        /* center them */
+    gap: 0.5rem;                /* spacing between items */
+    padding: .5rem 0;
+  }
+
+  nav ul li {
+    border-right: none;         /* remove dividers */
+    border-bottom: 1px solid #333;  /* optional divider instead */
+    padding: 0.5rem 0;
+    width: 100%;                /* stretch items for touch comfort */
+    text-align: center;
+  }
+
+  nav ul li:last-child {
+    border-bottom: none;        /* remove last divider */
+    margin-bottom: 2px;
+  }
+}
+
 
 /* ===================== Log Out Form ===================== */
 
@@ -87,7 +111,7 @@ nav ul li a {
 }
 
 .logout-form input[type="submit"] {
-    background-color: #f1e7cd;      /* light, wedding-y color */
+    background-color: #f1e7cd;      
     color: #333;                     /* text color */
     border: none;                    /* remove default border */
     border-radius: 8px;              /* rounded corners */
@@ -102,6 +126,16 @@ nav ul li a {
     background-color: #e0d4b8;      /* slightly darker on hover */
     transform: translateY(-2px);    /* lift effect */
     box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+/* ===================== MOBILE FIX ===================== */
+@media (max-width: 768px) { 
+    .logout-form {
+        position: fixed;  /* stays visible when scrolling */
+        top: 10px;
+        right: 10px;
+        z-index: 5;
+    }
 }
 
 
@@ -135,23 +169,47 @@ main {
 #twocol {
   display: grid;
   grid-template-columns: 1fr 1fr; /* two equal columns */
-  gap: 2rem;                       /* space between columns */
+  gap: 2rem;                      /* space between columns */
   padding: 2rem;
   background-color: #f1e7cd;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .left {
-  grid-column: 1;  /* first column = left */
+  grid-column: 1;
   font-size: 45px;
   text-align: center;
 }
 
 .right {
-  grid-column: 2;  /* second column = right */
+  grid-column: 2;
   font-size: 20px;
   text-align: center;
 }
+
+/* ===================== MOBILE FIX ===================== */
+@media (max-width: 768px) {
+  #twocol {
+    grid-template-columns: 1fr;    /* one column on mobile */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .left, .right {
+    grid-column: auto;            /* let them flow naturally */
+    text-align: center;
+  }
+
+  .left {
+    font-size: 32px;              /* slightly smaller for phones */
+  }
+
+  .right {
+    font-size: 18px;
+  }
+}
+
 
 /* ===================== Places ===================== */
 
@@ -194,6 +252,7 @@ main {
   gap: 2rem;
   padding: 2rem;
   align-items: center; /* vertical centering */
+  box-sizing: border-box;
 }
 
 .splitcol .left img {
@@ -219,6 +278,34 @@ main {
 .splitcol p {
   font-size: 15px;
 }
+
+/* ===================== MOBILE FIX ===================== */
+@media (max-width: 768px) {
+  .splitcol {
+    grid-template-columns: 1fr;  /* stack columns */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .splitcol .left,
+  .splitcol .right {
+    grid-column: auto;          /* let them flow naturally */
+    text-align: center;
+  }
+
+  .splitcol .left img {
+    width: 100%;                /* make image full width */
+  }
+
+  .splitcol h2 {
+    font-size: 32px;            /* smaller heading for mobile */
+  }
+
+  .splitcol p {
+    font-size: 14px;            /* slightly smaller paragraph */
+  }
+}
+
 
 
 

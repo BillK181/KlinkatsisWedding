@@ -87,3 +87,41 @@
 .message.bot::before {
   content: ""; /* removes any pseudo-content */
 }
+
+/* ===================== MOBILE FIX ===================== */
+@media (max-width: 768px) { 
+  #chatbot-container {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 90%;           /* let it scale with screen width */
+    max-width: 300px;
+    height: auto;          /* adapt to content */
+    max-height: 70vh;      /* never taller than 70% of viewport */
+    background: white;
+    border-radius: 10px;
+    display: none; 
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+  }
+
+  #chatbot-messages {
+    flex: 1;
+    max-height: calc(70vh - 60px); /* header + input space subtracted */
+    overflow-y: auto;
+  }
+
+  #chatbot-input {
+    flex-shrink: 0;       /* always visible */
+  }
+
+  #chat-input {
+    font-size: 14px;    
+  }
+
+  #chatbot-header {
+    font-size: 14px;      
+    padding: 8px;
+  }
+}
