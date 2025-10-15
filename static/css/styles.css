@@ -135,62 +135,61 @@ nav ul li a {
   font-size: 1rem;
 }
 
-/* ============== FORCE HORIZONTAL COUNTDOWN ON MOBILE ============== */
-/* Ensures boxes line up horizontally, stay consistent, and can scroll smoothly */
+/* ============== FORCE HORIZONTAL COUNTDOWN ON MOBILE (TIGHTER) ============== */
 @media (max-width: 768px) {
-  /* make sure the container is a horizontal flex row and can scroll */
+  /* container settings */
   header #countdown-container,
   #countdown-container {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-evenly !important;
     align-items: center !important;
-    gap: 0.5rem !important;
-    flex-wrap: nowrap !important;        /* prevent wrapping */
-    overflow-x: auto !important;         /* allow horizontal scroll if needed */
-    -webkit-overflow-scrolling: touch;   /* smooth scrolling on iOS */
+    gap: 0.3rem !important;           /* tighter spacing between boxes */
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
     width: 100% !important;
     box-sizing: border-box !important;
-    padding: 0.5rem 0.75rem !important;
-    scroll-snap-type: x mandatory;       /* optional: smooth snap scrolling */
+    padding: 0.25rem 0.5rem !important; /* smaller vertical padding */
+    scroll-snap-type: x mandatory;
   }
 
-  /* each box keeps a consistent size and spacing */
+  /* countdown boxes */
   #countdown-container .countdown-box,
   header #countdown-container .countdown-box {
     flex: 0 0 auto !important;
-    min-width: 72px !important;    /* adjust width for 4 boxes across */
-    max-width: 90px !important;
-    padding: 0.4rem 0.6rem !important;
+    min-width: 60px !important;       /* slightly smaller width */
+    max-width: 80px !important;
+    padding: 0.25rem 0.4rem !important; /* tighter padding */
     margin: 0 !important;
     text-align: center !important;
-    scroll-snap-align: center;     /* pairs with scroll-snap-type above */
+    scroll-snap-align: center;
   }
 
-  /* smaller text for mobile */
+  /* numbers & labels */
   #countdown-container .countdown-number {
-    font-size: 1.4rem !important;
+    font-size: 1.2rem !important;     /* smaller numbers */
     line-height: 1 !important;
   }
 
   #countdown-container .countdown-label {
-    font-size: 0.75rem !important;
+    font-size: 0.7rem !important;     /* smaller label text */
   }
 }
 
 /* ============== ULTRA SMALL PHONES (under 420px) ============== */
 @media (max-width: 420px) {
   #countdown-container .countdown-box {
-    min-width: 58px !important;
-    max-width: 68px !important;
+    min-width: 55px !important;
+    max-width: 65px !important;
   }
 
   #countdown-container .countdown-number {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
   }
 
   #countdown-container .countdown-label {
-    font-size: 0.7rem !important;
+    font-size: 0.65rem !important;
   }
 }
 
@@ -233,6 +232,11 @@ nav ul li a {
         top: 10px;
         right: 10px;
         z-index: 5;
+    }
+
+    .logout-form input[type="submit"] {
+        padding: 5px 10px;   /* smaller button */
+        font-size: 0.85rem;  /* smaller text */
     }
 }
 
@@ -352,7 +356,7 @@ main {
 
   .scroll-container {
     gap: 1rem;              /* reduce spacing between images */
-    padding: 1rem;          /* optional padding for scroll area */
+    padding: .25rem;          /* optional padding for scroll area */
   }
 }
 
