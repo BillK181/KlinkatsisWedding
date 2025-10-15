@@ -96,8 +96,8 @@ nav ul li a {
 
   /* Make navigation links smaller */
   nav ul li a {
-    font-size: 0.9rem;         /* smaller links */
-    padding: 0.2rem 0;         /* reduce vertical spacing inside links */
+    font-size: 1.2 rem;         /* smaller links */
+    padding: 0.18rem 0;         /* reduce vertical spacing inside links */
   }
 
   /* Keep the logo size the same */ 
@@ -107,6 +107,63 @@ nav ul li a {
   }
 }
 
+
+
+
+/* ===================== Countdown Section ===================== */
+
+#countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* space between boxes */
+  margin: 2rem auto;
+  flex-wrap: wrap; /* fallback for smaller screens */
+}
+
+.countdown-box {
+  background: #f1e7cd;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.countdown-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.countdown-label {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* ===================== MOBILE FIX ===================== */
+@media (max-width: 768px) {
+  #countdown-container {
+    flex-direction: row;       /* force horizontal layout */
+    justify-content: space-around;
+    gap: 0.5rem;              /* tighter spacing */
+    flex-wrap: nowrap;        /* keep all in one line, scrollable if needed */
+    overflow-x: auto;         /* allow horizontal scroll if space is tight */
+  }
+
+  .countdown-box {
+    flex: 0 0 auto;           /* prevent shrinking */
+    padding: 0.5rem 0.75rem;  /* smaller padding */
+    min-width: 65px;          /* consistent box width */
+  }
+
+  .countdown-number {
+    font-size: 1.6rem;        /* smaller numbers */
+  }
+
+  .countdown-label {
+    font-size: 0.8rem;        /* smaller label text */
+  }
+}
 
 
 
@@ -262,8 +319,6 @@ main {
   .scroll-container img {
     height: auto;           /* let image scale naturally */
     max-height: 150px;      /* optional: limit max height */
-    width: 80%;             /* make images smaller than screen width */
-    flex-shrink: 0;         /* prevent image from shrinking */
     scroll-snap-align: start; /* ensures snapping works */
   }
 
