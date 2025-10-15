@@ -72,126 +72,62 @@ nav ul li a {
   text-align: center;
 }
 
-/* ===================== MOBILE FIX ===================== */
+/* ===================== MOBILE NAV (3 LEVELS) ===================== */
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column;     
-    align-items: center;        
-    gap: 0.25rem;              /* smaller spacing between items */
-    padding: 0.25rem 0;        /* reduce padding top/bottom */
-    font-size: 1rem;           /* smaller base font size for nav */
+    display: flex;
+    flex-wrap: wrap;             /* allow wrapping into 3 rows */
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0;
+    font-size: 1rem;
   }
 
   nav ul li {
-    border-right: none;         
-    border-bottom: 1px solid #333;  
-    padding: 0.25rem 0;        /* reduce vertical spacing */
-    width: 100%;                
+    list-style: none;
+    border: none;
     text-align: center;
-  }
-
-  nav ul li:last-child {
-    border-bottom: none;        
+    flex: 1 1 45%;               /* roughly 2 per row */
+    padding: 0.25rem 0;
   }
 
   nav ul li a {
-  font-size: 1rem;
-  padding: 0.1rem 0; /* top/bottom padding only, 0 on sides */
-  line-height: 1.1;  /* reduces height of the text box itself */
-  }
-  /* Keep the logo size the same */ 
-  nav ul li:first-child a img { 
-    height: 65px;              /* same as desktop */ 
-    width: auto; 
-  }
-}
-
-
-
-
-/* ===================== COUNTDOWN STYLES ===================== */
-
-/* Default desktop layout (2x2 grid or however you had it originally) */
-#countdown-container {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-.countdown-box {
-  text-align: center;
-  background-color: transparent; /* or your preferred color */
-  border-radius: 8px;
-  padding: 1rem;
-}
-
-.countdown-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.countdown-label {
-  font-size: 1rem;
-}
-
-/* ============== FORCE HORIZONTAL COUNTDOWN ON MOBILE (TIGHTER) ============== */
-@media (max-width: 768px) {
-  /* container settings */
-  header #countdown-container,
-  #countdown-container {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-evenly !important;
-    align-items: center !important;
-    gap: 0.3rem !important;           /* tighter spacing between boxes */
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 0.25rem 0.5rem !important; /* smaller vertical padding */
-    scroll-snap-type: x mandatory;
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.1rem 0;
+    line-height: 1.1;
   }
 
-  /* countdown boxes */
-  #countdown-container .countdown-box,
-  header #countdown-container .countdown-box {
-    flex: 0 0 auto !important;
-    min-width: 60px !important;       /* slightly smaller width */
-    max-width: 80px !important;
-    padding: 0.25rem 0.4rem !important; /* tighter padding */
-    margin: 0 !important;
-    text-align: center !important;
-    scroll-snap-align: center;
+  /* Logo (first item) full width on its own line */
+  nav ul li:first-child {
+    flex: 1 1 100%;
+    order: -1;                   /* keep logo on top */
   }
 
-  /* numbers & labels */
-  #countdown-container .countdown-number {
-    font-size: 1.2rem !important;     /* smaller numbers */
-    line-height: 1 !important;
+  nav ul li:first-child a img {
+    height: 65px;
+    width: auto;
   }
 
-  #countdown-container .countdown-label {
-    font-size: 0.7rem !important;     /* smaller label text */
+  /* LEVEL 1 (Mr & Mrs + RSVP) */
+  nav ul li:nth-child(2),
+  nav ul li:nth-child(3) {
+    flex: 1 1 45%;               /* two items per row */
+  }
+
+  /* LEVEL 2 (Travel only) */
+  nav ul li:nth-child(4) {
+    flex: 1 1 100%;              /* single item full width */
+  }
+
+  /* LEVEL 3 (Registry + FAQ) */
+  nav ul li:nth-child(5),
+  nav ul li:nth-child(6) {
+    flex: 1 1 45%;               /* two items per row again */
   }
 }
 
-/* ============== ULTRA SMALL PHONES (under 420px) ============== */
-@media (max-width: 420px) {
-  #countdown-container .countdown-box {
-    min-width: 55px !important;
-    max-width: 65px !important;
-  }
-
-  #countdown-container .countdown-number {
-    font-size: 1rem !important;
-  }
-
-  #countdown-container .countdown-label {
-    font-size: 0.65rem !important;
-  }
-}
 
 
 /* ===================== Log Out Form ===================== */

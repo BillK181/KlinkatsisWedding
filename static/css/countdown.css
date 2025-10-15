@@ -1,8 +1,6 @@
-/* ===================== HEADER & COUNTDOWN ===================== */
-
-/* Hero / header section */
+/* ===================== HERO / HEADER ===================== */
 #hero {
-  background-image: url('/static/images/wedding-bg.jpg'); /* Must be in static/images */
+  background-image: url('/static/images/wedding-bg.jpg');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -15,10 +13,10 @@
   text-align: center;
   position: relative;
   padding-bottom: 50px;
-  background-color: #f1e7cd; /* fallback if image fails */
+  background-color: #f1e7cd; /* fallback */
 }
 
-/* Dark overlay for readability */
+/* Dark overlay */
 #hero::before {
   content: "";
   position: absolute;
@@ -29,16 +27,17 @@
   z-index: 1;
 }
 
-/* Bring heading and countdown above overlay */
+/* Heading */
 #hero h1 {
   position: relative;
   z-index: 2;
-  margin-bottom: 5px;
+  margin-bottom: 1px;
   color: #f1e7cd;
   line-height: 0.9;
-  font-size: 4rem; /* desktop heading size */
+  font-size: 9rem; 
 }
 
+/* Countdown container - desktop default */
 #countdown-container {
   position: relative;
   z-index: 2;
@@ -49,7 +48,7 @@
   flex-wrap: wrap; /* desktop: wrap if needed */
 }
 
-/* Countdown box styling */
+/* Countdown boxes */
 .countdown-box {
   background: rgba(241, 231, 205, 0.85);
   border-radius: 12px;
@@ -59,14 +58,14 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Countdown numbers */
+/* Numbers */
 .countdown-number {
   font-size: 2.5rem;
   font-weight: bold;
   color: #000;
 }
 
-/* Countdown labels */
+/* Labels */
 .countdown-label {
   font-size: 1rem;
   color: #555;
@@ -75,9 +74,9 @@
 
 /* ===================== MOBILE FIX ===================== */
 @media (max-width: 768px) {
-  /* Shrink hero height */
+  /* shrink hero height */
   #hero {
-    min-height: 200px; /* much shorter on mobile */
+    min-height: 200px;
     padding-bottom: 30px;
   }
 
@@ -88,54 +87,54 @@
 
   /* Force countdown horizontal & tighter */
   #countdown-container {
-    display: flex !important;
-    flex-direction: row !important; /* horizontal layout */
-    justify-content: space-evenly !important;
-    align-items: center !important;
-    gap: 0.3rem !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
+    display: flex;
+    flex-direction: row; /* horizontal layout */
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0.3rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    padding: 0.25rem 0.5rem !important;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.25rem 0.5rem;
     scroll-snap-type: x mandatory;
   }
 
   /* Countdown boxes tighter */
   #countdown-container .countdown-box {
-    flex: 0 0 auto !important;
-    min-width: 60px !important;
-    max-width: 80px !important;
-    padding: 0.25rem 0.4rem !important;
-    margin: 0 !important;
-    text-align: center !important;
+    flex: 0 0 auto;
+    min-width: 60px;
+    max-width: 80px;
+    padding: 0.25rem 0.4rem;
+    margin: 0;
+    text-align: center;
     scroll-snap-align: center;
   }
 
   /* Numbers & labels smaller */
   #countdown-container .countdown-number {
-    font-size: 1.2rem !important;
-    line-height: 1 !important;
+    font-size: 1.2rem;
+    line-height: 1;
   }
 
   #countdown-container .countdown-label {
-    font-size: 0.7rem !important;
+    font-size: 0.7rem;
   }
 }
 
-/* ===================== ULTRA SMALL PHONES (under 420px) ===================== */
+/* Ultra small phones under 420px */
 @media (max-width: 420px) {
   #countdown-container .countdown-box {
-    min-width: 55px !important;
-    max-width: 65px !important;
+    min-width: 55px;
+    max-width: 65px;
   }
 
   #countdown-container .countdown-number {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 
   #countdown-container .countdown-label {
-    font-size: 0.65rem !important;
+    font-size: 0.65rem;
   }
 }
