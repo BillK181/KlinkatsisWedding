@@ -94,12 +94,11 @@ nav ul li a {
     border-bottom: none;        
   }
 
-  /* Make navigation links smaller */
   nav ul li a {
-    font-size: 1.2 rem;         /* smaller links */
-    padding: 0.18rem 0;         /* reduce vertical spacing inside links */
+  font-size: 1rem;
+  padding: 0.1rem 0; /* top/bottom padding only, 0 on sides */
+  line-height: 1.1;  /* reduces height of the text box itself */
   }
-
   /* Keep the logo size the same */ 
   nav ul li:first-child a img { 
     height: 65px;              /* same as desktop */ 
@@ -110,61 +109,90 @@ nav ul li a {
 
 
 
-/* ===================== Countdown Section ===================== */
+/* ===================== COUNTDOWN STYLES ===================== */
 
+/* Default desktop layout (2x2 grid or however you had it originally) */
 #countdown-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 2rem; /* space between boxes */
-  margin: 2rem auto;
-  flex-wrap: wrap; /* fallback for smaller screens */
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
 .countdown-box {
-  background: #f1e7cd;
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  background-color: transparent; /* or your preferred color */
+  border-radius: 8px;
+  padding: 1rem;
 }
 
 .countdown-number {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
 }
 
 .countdown-label {
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 1rem;
 }
 
-/* ===================== MOBILE FIX ===================== */
+/* ============== FORCE HORIZONTAL COUNTDOWN ON MOBILE ============== */
+/* Ensures boxes line up horizontally, stay consistent, and can scroll smoothly */
 @media (max-width: 768px) {
+  /* make sure the container is a horizontal flex row and can scroll */
+  header #countdown-container,
   #countdown-container {
-    flex-direction: row;       /* force horizontal layout */
-    justify-content: space-around;
-    gap: 0.5rem;              /* tighter spacing */
-    flex-wrap: nowrap;        /* keep all in one line, scrollable if needed */
-    overflow-x: auto;         /* allow horizontal scroll if space is tight */
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;        /* prevent wrapping */
+    overflow-x: auto !important;         /* allow horizontal scroll if needed */
+    -webkit-overflow-scrolling: touch;   /* smooth scrolling on iOS */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.5rem 0.75rem !important;
+    scroll-snap-type: x mandatory;       /* optional: smooth snap scrolling */
   }
 
-  .countdown-box {
-    flex: 0 0 auto;           /* prevent shrinking */
-    padding: 0.5rem 0.75rem;  /* smaller padding */
-    min-width: 65px;          /* consistent box width */
+  /* each box keeps a consistent size and spacing */
+  #countdown-container .countdown-box,
+  header #countdown-container .countdown-box {
+    flex: 0 0 auto !important;
+    min-width: 72px !important;    /* adjust width for 4 boxes across */
+    max-width: 90px !important;
+    padding: 0.4rem 0.6rem !important;
+    margin: 0 !important;
+    text-align: center !important;
+    scroll-snap-align: center;     /* pairs with scroll-snap-type above */
   }
 
-  .countdown-number {
-    font-size: 1.6rem;        /* smaller numbers */
+  /* smaller text for mobile */
+  #countdown-container .countdown-number {
+    font-size: 1.4rem !important;
+    line-height: 1 !important;
   }
 
-  .countdown-label {
-    font-size: 0.8rem;        /* smaller label text */
+  #countdown-container .countdown-label {
+    font-size: 0.75rem !important;
   }
 }
 
+/* ============== ULTRA SMALL PHONES (under 420px) ============== */
+@media (max-width: 420px) {
+  #countdown-container .countdown-box {
+    min-width: 58px !important;
+    max-width: 68px !important;
+  }
+
+  #countdown-container .countdown-number {
+    font-size: 1.2rem !important;
+  }
+
+  #countdown-container .countdown-label {
+    font-size: 0.7rem !important;
+  }
+}
 
 
 /* ===================== Log Out Form ===================== */
