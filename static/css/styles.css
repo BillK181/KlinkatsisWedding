@@ -72,76 +72,37 @@ nav ul li a {
   text-align: center;
 }
 
-/* ===================== MOBILE NAV: 3 LEVELS (force, high specificity) ===================== */
-/* Place this at the *end* of your CSS to ensure it overrides earlier rules */
-
+/* ===================== MOBILE FIX ===================== */
 @media (max-width: 768px) {
-  /* target the nav list specifically and make it a wrapping flex-row */
-  nav > ul {
-    display: flex !important;
-    flex-wrap: wrap !important;        /* allow rows */
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 0.25rem !important;
-    padding: 0.25rem 0 !important;
-    margin: 0 !important;
+  nav ul {
+    flex-direction: column;     
+    align-items: center;        
+    gap: 0.25rem;              /* smaller spacing between items */
+    padding: 0.25rem 0;        /* reduce padding top/bottom */
+    font-size: 1rem;           /* smaller base font size for nav */
   }
 
-  /* reset list items to a predictable baseline */
-  nav > ul > li {
-    list-style: none !important;
-    border: none !important;
-    padding: 0.25rem 0 !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
+  nav ul li {
+    border-right: none;         
+    border-bottom: 1px solid #333;  
+    padding: 0.25rem 0;        /* reduce vertical spacing */
+    width: 100%;                
+    text-align: center;
   }
 
-  /* logo: force full-width row and keep it first */
-  nav > ul > li:first-child {
-    flex: 1 1 100% !important;  /* full width */
-    order: -1 !important;       /* keep logo at top */
-    padding: 0.25rem 0 !important;
-  }
-  nav > ul > li:first-child a img {
-    height: 65px !important;
-    width: auto !important;
-    display: inline-block !important;
+  nav ul li:last-child {
+    border-bottom: none;        
   }
 
-  /* default link style for smaller text and compact spacing */
-  nav > ul > li > a {
-    display: inline-block !important;
-    font-size: 1rem !important;
-    padding: 0.1rem 0 !important;
-    line-height: 1.1 !important;
+  nav ul li a {
+  font-size: 1rem;
+  padding: 0.1rem 0; /* top/bottom padding only, 0 on sides */
+  line-height: 1.1;  /* reduces height of the text box itself */
   }
-
-  /* LEVEL 1: Mr & Mrs (2) and RSVP (3) -> side-by-side */
-  nav > ul > li:nth-child(2),
-  nav > ul > li:nth-child(3) {
-    flex: 1 1 45% !important;   /* two per row */
-    max-width: 48% !important;
-  }
-
-  /* LEVEL 2: Travel (4) -> single centered row */
-  nav > ul > li:nth-child(4) {
-    flex: 1 1 100% !important;  /* full width */
-    max-width: 100% !important;
-    padding-top: 6px !important;
-    padding-bottom: 6px !important;
-  }
-
-  /* LEVEL 3: Registry (5) and FAQ (6) -> side-by-side */
-  nav > ul > li:nth-child(5),
-  nav > ul > li:nth-child(6) {
-    flex: 1 1 45% !important;   /* two per row */
-    max-width: 48% !important;
-  }
-
-  /* ensure separators / borders don't add extra height */
-  nav > ul > li {
-    border-right: none !important;
-    border-bottom: none !important;
+  /* Keep the logo size the same */ 
+  nav ul li:first-child a img { 
+    height: 65px;              /* same as desktop */ 
+    width: auto; 
   }
 }
 
