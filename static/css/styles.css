@@ -77,8 +77,8 @@ nav ul li a {
   nav ul {
     flex-direction: column;     
     align-items: center;        
-    gap: 0.25rem;              /* smaller spacing between items */
-    padding: 0.25rem 0;        /* reduce padding top/bottom */
+    gap: 0.12rem;              /* smaller spacing between items */
+    padding: 0.12rem 0;        /* reduce padding top/bottom */
     font-size: 1rem;           /* smaller base font size for nav */
   }
 
@@ -92,7 +92,7 @@ nav ul li a {
 
   nav ul li:last-child {
     border-bottom: none;        
-  }
+  } 
 
   nav ul li a {
   font-size: 1rem;
@@ -160,7 +160,6 @@ main {
 }
 
 
-
 /* ===================== Greeting ===================== */
 
 #shorttext {
@@ -177,6 +176,23 @@ main {
 
 #shorttext h2 {
   margin-bottom: 0.5rem;
+}
+
+/* ===================== MOBILE FIX ===================== */
+@media (max-width: 768px) { 
+  #shorttext {
+    padding: 0.5rem 0.75rem;  /* tighter padding = smaller section height */
+  }
+
+  #shorttext h2 {
+    font-size: 1.5rem;        /* smaller heading */
+    margin-bottom: 0.25rem;   /* less space below */
+  }
+
+  #shorttext p {
+    font-size: 0.9rem;        /* smaller paragraph text */
+    line-height: 1.2;         /* tighter line spacing */
+  }
 }
 
 /* ===================== The Details ===================== */
