@@ -223,10 +223,15 @@ main {
 @media (max-width: 768px) {
   #twocol {
     grid-template-columns: 1fr;   /* stack into one column */
-    gap: 0rem;                    /* no gap between left/right */
-    padding: 0.5rem 0.75rem;      /* less inner spacing */
-    margin-top: 5px;              /* less space above */
-    margin-bottom: 5px;           /* less space below */
+    gap: 0rem;                  
+    padding: 0.5rem 0.75rem;     
+    margin-top: 5px;             
+    margin-bottom: 5px;           
+  }
+
+  #twocol h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .left, .right {
@@ -285,14 +290,11 @@ main {
     height: auto;           /* let image scale naturally */
     max-height: 150px;      /* optional: limit max height */
     scroll-snap-align: start; /* ensures snapping works */
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
   }
 
   .scroll-container {
     height: auto !important;
-    padding: 0.25rem !important;
-    margin: 0 !important;
+    padding: 0.5rem !important;
   }
 }
 
@@ -325,7 +327,7 @@ main {
 }
 
 .splitcol h2 {
-  font-size: 45px;
+  font-size: 60px;
 }
 
 .splitcol p {

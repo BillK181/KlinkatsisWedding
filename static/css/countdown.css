@@ -4,7 +4,7 @@
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  min-height: 380px; /* desktop height */
+  min-height: 300px; /* desktop height */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@
   color: white;
   text-align: center;
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   background-color: #f1e7cd; /* fallback */
 }
 
@@ -34,7 +34,7 @@
   margin-bottom: 1px;
   color: #f1e7cd;
   line-height: 0.9;
-  font-size: 9rem; 
+  font-size: 10rem; 
 }
 
 /* Countdown container - desktop default */
