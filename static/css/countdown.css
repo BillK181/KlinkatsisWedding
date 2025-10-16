@@ -34,7 +34,7 @@
   margin-bottom: 1px;
   color: #f1e7cd;
   line-height: 0.9;
-  font-size: 11rem; 
+  font-size: 9rem; 
 }
 
 /* Countdown container - desktop default */
@@ -82,7 +82,7 @@
 
   /* shrink heading */
   #hero h1 {
-    font-size: 3rem;
+    font-size: 4.5rem;
   }
 
   /* Force countdown horizontal & tighter */
