@@ -286,6 +286,8 @@ main {
   .scroll-container {
     gap: 1rem;              /* reduce spacing between images */
     padding: .25rem;          /* optional padding for scroll area */
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 }
 
@@ -341,6 +343,7 @@ main {
 
   .splitcol .left img {
     width: 100%;                /* make image full width */
+    margin-bottom: 15px;
   }
 
   .splitcol h2 {
