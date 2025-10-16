@@ -185,12 +185,12 @@ main {
   }
 
   #shorttext h2 {
-    font-size: 1.5rem;        /* smaller heading */
-    margin-bottom: 0.25rem;   /* less space below */
+  font-size: 0.8rem !important;
+  margin-bottom: 0.25rem;
   }
 
   #shorttext p {
-    font-size: 0.9rem;        /* smaller paragraph text */
+    font-size: 0.5rem;        /* smaller paragraph text */
     line-height: 1.2;         /* tighter line spacing */
   }
 }
