@@ -353,10 +353,8 @@ main {
   }
 
   .splitcol h2 {
-    font-size: 32px !important;  /* make it clearly larger */
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-    text-align: center !important;
+    font-size: 32px !important; 
+    margin-top: 5px;       
   }
 
   .splitcol p {
