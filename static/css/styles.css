@@ -222,20 +222,22 @@ main {
 /* ===================== MOBILE FIX ===================== */
 @media (max-width: 768px) {
   #twocol {
-    grid-template-columns: 1fr;    /* one column on mobile */
-    gap: 0rem;
-    padding: 1rem;
-    margin-top: 15px;
+    grid-template-columns: 1fr;   /* stack into one column */
+    gap: 0rem;                    /* no gap between left/right */
+    padding: 0.5rem 0.75rem;      /* less inner spacing */
+    margin-top: 5px;              /* less space above */
+    margin-bottom: 5px;           /* less space below */
   }
 
   .left, .right {
-    grid-column: auto;            /* let them flow naturally */
+    grid-column: auto;
     text-align: center;
   }
 
   .left {
-    font-size: 32px;      
+    font-size: 32px;
     margin-bottom: 5px;
+  }
 
   .right {
     font-size: 18px;
@@ -283,13 +285,14 @@ main {
     height: auto;           /* let image scale naturally */
     max-height: 150px;      /* optional: limit max height */
     scroll-snap-align: start; /* ensures snapping works */
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
   }
 
   .scroll-container {
-    gap: 1rem;              /* reduce spacing between images */
-    padding: .25rem;          /* optional padding for scroll area */
+    height: auto !important;
+    padding: 0.25rem !important;
+    margin: 0 !important;
   }
 }
 
