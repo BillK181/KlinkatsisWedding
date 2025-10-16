@@ -339,11 +339,12 @@ main {
   .splitcol .right {
     grid-column: auto;          /* let them flow naturally */
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .splitcol .left img {
     width: 100%;                /* make image full width */
-    margin-bottom: 15px;
   }
 
   .splitcol h2 {
