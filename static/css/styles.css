@@ -223,8 +223,9 @@ main {
 @media (max-width: 768px) {
   #twocol {
     grid-template-columns: 1fr;    /* one column on mobile */
-    gap: 1rem;
+    gap: 0rem;
     padding: 1rem;
+    margin-top: 15px;
   }
 
   .left, .right {
@@ -233,11 +234,12 @@ main {
   }
 
   .left {
-    font-size: 32px;              /* slightly smaller for phones */
-  }
+    font-size: 32px;      
+    margin-bottom: 5px;
 
   .right {
     font-size: 18px;
+    margin-top: 1px;
   }
 }
 
@@ -281,13 +283,13 @@ main {
     height: auto;           /* let image scale naturally */
     max-height: 150px;      /* optional: limit max height */
     scroll-snap-align: start; /* ensures snapping works */
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .scroll-container {
     gap: 1rem;              /* reduce spacing between images */
     padding: .25rem;          /* optional padding for scroll area */
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 }
 
@@ -339,8 +341,6 @@ main {
   .splitcol .right {
     grid-column: auto;          /* let them flow naturally */
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
 
   .splitcol .left img {
