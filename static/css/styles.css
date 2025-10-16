@@ -190,7 +190,7 @@ main {
   }
 
   #shorttext p {
-    font-size: 0.7rem;        /* smaller paragraph text */
+    font-size: 0.8rem;        /* smaller paragraph text */
     line-height: 1.2;         /* tighter line spacing */
   }
 }
