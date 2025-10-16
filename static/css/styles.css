@@ -344,20 +344,21 @@ main {
 
   .splitcol .left,
   .splitcol .right {
-    grid-column: auto;          /* let them flow naturally */
+    grid-column: auto;         
     text-align: center;
   }
 
   .splitcol .left img {
-    width: 100%;                /* make image full width */
+    width: 100%;             
   }
 
   .splitcol h2 {
-    font-size: 32px;            /* smaller heading for mobile */
+    font-size: 32px !important; 
+    margin-top: 5px;       
   }
 
   .splitcol p {
-    font-size: 14px;            /* slightly smaller paragraph */
+    font-size: 14px;            
   }
 }
 
