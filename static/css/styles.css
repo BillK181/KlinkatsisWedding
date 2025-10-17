@@ -319,8 +319,8 @@ main {
     width: 100%;
   }
 
-  .splitcol .left {
-    font-size: 19px; 
+  .splitcol .right {
+    font-size: 32px; 
   }
 
   .splitcol p {
