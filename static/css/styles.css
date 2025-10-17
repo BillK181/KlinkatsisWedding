@@ -9,6 +9,10 @@ html, body {
   scroll-behavior: smooth;
 }
 
+h4 {
+  font-size: 80px;
+}
+
 /* ===================== HEADER ===================== */
 header {
   text-align: center;
