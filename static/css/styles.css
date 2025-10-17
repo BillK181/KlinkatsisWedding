@@ -9,10 +9,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-h4 {
-  font-size: 80px;
-}
-
 /* ===================== HEADER ===================== */
 header {
   text-align: center;
@@ -303,7 +299,7 @@ main {
   text-align: center;
 }
 
-.splitcol h4 {
+.splitcol h2 {
   font-size: 60px;
 }
 
@@ -323,9 +319,8 @@ main {
     width: 100%;
   }
 
-  .splitcol h4 {
-    font-size: 32px !important;
-    margin-top: 5px;
+  .splitcol .left {
+    font-size: 100px; 
   }
 
   .splitcol p {
