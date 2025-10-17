@@ -1,6 +1,5 @@
 /* ===================== GLOBAL STYLES ===================== */
 
-/* Reset margins, set font, background */
 html, body {
   height: 100%;
   margin: 0;
@@ -20,7 +19,6 @@ header {
 }
 
 /* ===================== NAVIGATION ===================== */
-/* Logo inside nav */
 nav ul li img {
   height: 65px;    
   width: auto;  
@@ -28,7 +26,6 @@ nav ul li img {
   vertical-align: middle;
 }
 
-/* Remove link styling around the logo */
 nav ul li a img:hover {
   opacity: 0.85;
 }
@@ -65,103 +62,90 @@ nav ul li:last-child {
   border-right: none;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #000;
-  display: inline-block;
-  text-align: center;
-}
-
-/* ===================== MOBILE FIX ===================== */
+/* ===================== MOBILE NAV FIX ===================== */
 @media (max-width: 768px) {
   nav ul {
-    flex-direction: column;     
-    align-items: center;        
-    gap: 0.12rem;              /* smaller spacing between items */
-    padding: 0.12rem 0;        /* reduce padding top/bottom */
-    font-size: 1rem;           /* smaller base font size for nav */
+    flex-direction: column;
+    align-items: center;
+    gap: 0.12rem;
+    padding: 0.12rem 0;
+    font-size: 1rem;
   }
 
   nav ul li {
-    border-right: none;         
-    border-bottom: 1px solid #333;  
-    padding: 0.25rem 0;        /* reduce vertical spacing */
-    width: 100%;                
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding: 0.25rem 0;
+    width: 100%;
     text-align: center;
   }
 
   nav ul li:last-child {
-    border-bottom: none;        
+    border-bottom: none;
   } 
 
   nav ul li a {
-  font-size: 1rem;
-  padding: 0.1rem 0; /* top/bottom padding only, 0 on sides */
-  line-height: 1.1;  /* reduces height of the text box itself */
+    font-size: 1rem;
+    padding: 0.1rem 0;
+    line-height: 1.1;
   }
-  /* Keep the logo size the same */ 
+
   nav ul li:first-child a img { 
-    height: 65px;              /* same as desktop */ 
+    height: 65px;  
     width: auto; 
   }
 }
 
-
-/* ===================== Log Out Form ===================== */
-
+/* ===================== LOGOUT FORM ===================== */
 .logout-form {
-    position: absolute;      /* place it relative to parent or page */
-    top: 90px;               /* distance from top of page */
-    right: 20px;             /* distance from right edge */
-    z-index: 5;              /* make sure it’s above other elements */
+  position: absolute;
+  top: 90px;
+  right: 20px;
+  z-index: 5;
 }
 
 .logout-form form {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logout-form input[type="submit"] {
-    background-color: #f1e7cd;      
-    color: #333;                     /* text color */
-    border: none;                    /* remove default border */
-    border-radius: 8px;              /* rounded corners */
-    padding: 8px 16px;               /* space inside button */
-    font-size: 1rem;
-    cursor: pointer;                 /* shows hand on hover */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* subtle shadow */
-    transition: all 0.2s ease;      /* smooth hover effects */
+  background-color: #f1e7cd;      
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: all 0.2s ease;
 }
 
 .logout-form input[type="submit"]:hover {
-    background-color: #e0d4b8;      /* slightly darker on hover */
-    transform: translateY(-2px);    /* lift effect */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  background-color: #e0d4b8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
 }
 
-/* ===================== MOBILE FIX ===================== */
+/* ===================== MOBILE LOGOUT FIX ===================== */
 @media (max-width: 768px) { 
-    .logout-form {
-        top: 10px;
-        right: 10px;
-        z-index: 5;
-    }
+  .logout-form {
+    top: 10px;
+    right: 10px;
+  }
 
-    .logout-form input[type="submit"] {
-        padding: 5px 10px;   /* smaller button */
-        font-size: 0.85rem;  /* smaller text */
-    }
+  .logout-form input[type="submit"] {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
 }
-
 
 /* ===================== MAIN CONTENT ===================== */
 main {
-  padding: 0rem;
+  padding: 0;
 }
 
-
-/* ===================== Greeting ===================== */
-
+/* ===================== GREETING ===================== */
 #shorttext {
   background-color: #52501c;
   text-align: center;
@@ -178,29 +162,28 @@ main {
   margin-bottom: 0.5rem;
 }
 
-/* ===================== MOBILE FIX ===================== */
+/* ===================== MOBILE GREETING FIX ===================== */
 @media (max-width: 768px) { 
   #shorttext {
-    padding: 0.5rem 0.75rem;  /* tighter padding = smaller section height */
+    padding: 0.5rem 0.75rem;
   }
 
   #shorttext h2 {
-  font-size: 1rem !important;
-  margin-bottom: 0.25rem;
+    font-size: 1rem !important;
+    margin-bottom: 0.25rem;
   }
 
   #shorttext p {
-    font-size: 0.8rem;        /* smaller paragraph text */
-    line-height: 1.2;         /* tighter line spacing */
+    font-size: 0.8rem;
+    line-height: 1.2;
   }
 }
 
-/* ===================== The Details ===================== */
-
+/* ===================== THE DETAILS ===================== */
 #twocol {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal columns */
-  gap: 2rem;                      /* space between columns */
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
   padding: 2rem;
   background-color: #f1e7cd;
   align-items: center;
@@ -219,24 +202,19 @@ main {
   text-align: center;
 }
 
-/* ===================== MOBILE FIX ===================== */
+/* ===================== MOBILE DETAILS FIX ===================== */
 @media (max-width: 768px) {
   #twocol {
-    grid-template-columns: 1fr;   /* stack into one column */
-    gap: 0rem;                  
-    padding: 0.5rem 0.75rem;     
-    margin-top: 5px;             
-    margin-bottom: 5px;           
+    grid-template-columns: 1fr;
+    gap: 0rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   #twocol h2 {
     margin-top: 10px;
     margin-bottom: 10px;
-  }
-
-  .left, .right {
-    grid-column: auto;
-    text-align: center;
   }
 
   .left {
@@ -250,69 +228,66 @@ main {
   }
 }
 
-
-/* ===================== Places ===================== */
-
+/* ===================== PLACES SCROLL ===================== */
 #image-scroll {
   padding: 2rem 1rem;
-  background-color: #858f29;  /* optional section background */
-  overflow-x: auto;           /* allow horizontal scroll */
-  scroll-snap-type: x mandatory; /* smooth snapping */
-  -webkit-overflow-scrolling: touch; /* for smooth mobile scroll */
+  background-color: #858f29;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .scroll-container {
-  display: flex;              /* horizontal layout */
-  gap: 5rem;                  /* space between images */
+  display: flex;
+  gap: 5rem;
 }
 
 .scroll-container a {
-  flex: 0 0 auto;             /* prevent shrinking, keep width */
-  scroll-snap-align: start;   /* snap each image to the left */
+  flex: 0 0 auto;
+  scroll-snap-align: start;
   display: block;
 }
 
 .scroll-container img {
-  height: 200px;              /* adjust as needed */
-  width: auto;                /* keep aspect ratio */
+  height: 200px;
+  width: auto;
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s;
 }
 
 .scroll-container img:hover {
-  transform: scale(1.05);     /* slight zoom on hover */
+  transform: scale(1.05);
 }
 
-/* ===================== MOBILE FIX FOR IMAGE SCROLL ===================== */
+/* ===================== MOBILE SCROLL FIX ===================== */
 @media (max-width: 768px) {
   .scroll-container img {
-    height: auto;           /* let image scale naturally */
-    max-height: 150px;      /* optional: limit max height */
-    scroll-snap-align: start; /* ensures snapping works */
+    height: auto;
+    max-height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .scroll-container {
-    height: auto !important;
-    padding: 0.5rem !important;
+    gap: 1rem;
+    padding: 0.25rem;
   }
 }
 
-
-/* ===================== The Venue ===================== */
-
+/* ===================== THE VENUE ===================== */
 .splitcol {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* left image smaller, right text larger */
+  grid-template-columns: 1fr 2fr;
   gap: 2rem;
   padding: 2rem;
-  align-items: center; /* vertical centering */
+  align-items: center;
   box-sizing: border-box;
 }
 
 .splitcol .left img {
-  width: 70%;       /* image fills its column */
-  height: auto;      /* keeps aspect ratio */
+  width: 70%;
+  height: auto;
   border-radius: 8px;
 }
 
@@ -334,36 +309,34 @@ main {
   font-size: 15px;
 }
 
-/* ===================== MOBILE FIX ===================== */
+/* ===================== MOBILE VENUE FIX ===================== */
 @media (max-width: 768px) {
   .splitcol {
-    grid-template-columns: 1fr;  /* stack columns */
+    grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
   }
 
   .splitcol .left,
   .splitcol .right {
-    grid-column: auto;         
+    grid-column: auto;
     text-align: center;
   }
 
   .splitcol .left img {
-    width: 100%;             
+    width: 100%;
   }
 
   .splitcol h4 {
-    font-size: 32px !important; 
-    margin-top: 5px;       
+    font-size: 32px !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 
   .splitcol p {
-    font-size: 14px;            
+    font-size: 14px;
   }
 }
-
-
-
 
 /* ===================== FOOTER ===================== */
 footer {
@@ -373,25 +346,15 @@ footer {
 }
 
 footer img {
-  align-items: center;
-  text-align: center;
-  width: 170px;       /* image fills its column */
-  height: auto;      /* keeps aspect ratio */
+  width: 170px;
+  height: auto;
   border-radius: 8px;
-
 }
 
-/* ===================== FORMS ===================== */
+/* ===================== FORM INPUTS ===================== */
 input, textarea, select, button {
   background-color: #fdfaf6;
   border: 1px solid #ccc;
   padding: 0rem;
   font-family: 'Georgia', serif;
-}
-
-/* ===================== MEDIA QUERIES ===================== */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
 }
