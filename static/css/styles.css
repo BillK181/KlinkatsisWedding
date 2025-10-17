@@ -320,7 +320,8 @@ main {
   }
 
   .splitcol .left {
-    font-size: 32px; 
+    font-size: 24px; 
+    margin-top: 5px;
   }
 
   .splitcol p {
