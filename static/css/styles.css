@@ -1,11 +1,10 @@
 /* ===================== GLOBAL STYLES ===================== */
-
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Georgia', serif; 
-  background-color: #f1e7cd;    
+  background-color: #f1e7cd;
   color: #333;
   scroll-behavior: smooth;
 }
@@ -14,39 +13,17 @@ html, body {
 header {
   text-align: center;
   font-size: 5rem;
-  padding: 0rem;
-  background-color: #f1e7cd; 
+  padding: 0;
+  background-color: #f1e7cd;
 }
 
 /* ===================== NAVIGATION ===================== */
-nav ul li img {
-  height: 65px;    
-  width: auto;  
-  object-fit: contain;
-  vertical-align: middle;
-}
-
-nav ul li a img:hover {
-  opacity: 0.85;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: inherit;
-}
-
-nav a {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-}
-
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  align-items: center;   
-  gap: 0;                
+  align-items: center;
+  gap: 0;
   padding: 1rem 0;
   background-color: #f1e7cd;
   margin: 1px 0;
@@ -62,7 +39,26 @@ nav ul li:last-child {
   border-right: none;
 }
 
-/* ===================== MOBILE NAV FIX ===================== */
+nav ul li img {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
+
+nav ul li a img:hover {
+  opacity: 0.85;
+}
+
+/* ===================== NAV - MOBILE ===================== */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -82,7 +78,7 @@ nav ul li:last-child {
 
   nav ul li:last-child {
     border-bottom: none;
-  } 
+  }
 
   nav ul li a {
     font-size: 1rem;
@@ -90,9 +86,9 @@ nav ul li:last-child {
     line-height: 1.1;
   }
 
-  nav ul li:first-child a img { 
-    height: 65px;  
-    width: auto; 
+  nav ul li:first-child a img {
+    height: 65px;
+    width: auto;
   }
 }
 
@@ -110,7 +106,7 @@ nav ul li:last-child {
 }
 
 .logout-form input[type="submit"] {
-  background-color: #f1e7cd;      
+  background-color: #f1e7cd;
   color: #333;
   border: none;
   border-radius: 8px;
@@ -127,8 +123,8 @@ nav ul li:last-child {
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
 }
 
-/* ===================== MOBILE LOGOUT FIX ===================== */
-@media (max-width: 768px) { 
+/* ===================== LOGOUT FORM - MOBILE ===================== */
+@media (max-width: 768px) {
   .logout-form {
     top: 10px;
     right: 10px;
@@ -149,21 +145,21 @@ main {
 #shorttext {
   background-color: #52501c;
   text-align: center;
-  padding: 1rem 1rem;
+  padding: 1rem;
 }
 
 #shorttext h2, 
 #shorttext p {
   margin: 0;
-  color: #FFFFFF;
+  color: #fff;
 }
 
 #shorttext h2 {
   margin-bottom: 0.5rem;
 }
 
-/* ===================== MOBILE GREETING FIX ===================== */
-@media (max-width: 768px) { 
+/* ===================== GREETING - MOBILE ===================== */
+@media (max-width: 768px) {
   #shorttext {
     padding: 0.5rem 0.75rem;
   }
@@ -202,11 +198,11 @@ main {
   text-align: center;
 }
 
-/* ===================== MOBILE DETAILS FIX ===================== */
+/* ===================== THE DETAILS - MOBILE ===================== */
 @media (max-width: 768px) {
   #twocol {
     grid-template-columns: 1fr;
-    gap: 0rem;
+    gap: 0;
     padding: 0.5rem 0.75rem;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -215,6 +211,11 @@ main {
   #twocol h2 {
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+
+  .left, .right {
+    grid-column: auto;
+    text-align: center;
   }
 
   .left {
@@ -228,7 +229,7 @@ main {
   }
 }
 
-/* ===================== PLACES SCROLL ===================== */
+/* ===================== PLACES ===================== */
 #image-scroll {
   padding: 2rem 1rem;
   background-color: #858f29;
@@ -260,18 +261,17 @@ main {
   transform: scale(1.05);
 }
 
-/* ===================== MOBILE SCROLL FIX ===================== */
+/* ===================== PLACES - MOBILE ===================== */
 @media (max-width: 768px) {
   .scroll-container img {
     height: auto;
     max-height: 150px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    scroll-snap-align: start;
   }
 
   .scroll-container {
-    gap: 1rem;
-    padding: 0.25rem;
+    height: auto !important;
+    padding: 0.5rem !important;
   }
 }
 
@@ -285,20 +285,18 @@ main {
   box-sizing: border-box;
 }
 
+.splitcol .left {
+  text-align: center;
+}
+
 .splitcol .left img {
   width: 70%;
   height: auto;
   border-radius: 8px;
 }
 
-.splitcol .left {
-  grid-column: 1;
-  text-align: center;
-}
-
 .splitcol .right {
-  grid-column: 2;
-  text-align: center; 
+  text-align: center;
 }
 
 .splitcol h4 {
@@ -309,18 +307,12 @@ main {
   font-size: 15px;
 }
 
-/* ===================== MOBILE VENUE FIX ===================== */
+/* ===================== THE VENUE - MOBILE ===================== */
 @media (max-width: 768px) {
   .splitcol {
     grid-template-columns: 1fr;
     gap: 1rem;
     padding: 1rem;
-  }
-
-  .splitcol .left,
-  .splitcol .right {
-    grid-column: auto;
-    text-align: center;
   }
 
   .splitcol .left img {
@@ -330,7 +322,6 @@ main {
   .splitcol h4 {
     font-size: 32px !important;
     margin-top: 5px;
-    margin-bottom: 5px;
   }
 
   .splitcol p {
@@ -351,10 +342,10 @@ footer img {
   border-radius: 8px;
 }
 
-/* ===================== FORM INPUTS ===================== */
+/* ===================== FORMS ===================== */
 input, textarea, select, button {
   background-color: #fdfaf6;
   border: 1px solid #ccc;
-  padding: 0rem;
+  padding: 0;
   font-family: 'Georgia', serif;
 }
