@@ -326,7 +326,7 @@ main {
   text-align: center; 
 }
 
-.splitcol h2 {
+.splitcol h4 {
   font-size: 60px;
 }
 
@@ -352,7 +352,7 @@ main {
     width: 100%;             
   }
 
-  .splitcol h2 {
+  .splitcol h4 {
     font-size: 32px !important; 
     margin-top: 5px;       
   }
