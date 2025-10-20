@@ -263,6 +263,14 @@ main {
 
 /* ===================== PLACES - MOBILE ===================== */
 @media (max-width: 768px) {
+  #image-scroll {
+  padding: .75rem .5rem;
+  background-color: #858f29;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  }
+
   .scroll-container img {
     height: auto;
     max-height: 150px;
@@ -311,8 +319,8 @@ main {
 @media (max-width: 768px) {
   .splitcol {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1rem;
+    gap: .5rem;
+    padding: .5rem;
   }
 
   .splitcol .left img {
@@ -320,7 +328,7 @@ main {
   }
 
   .splitcol .right {
-    font-size: 20px; 
+    font-size: 70px; 
   }
 
   .splitcol p {
