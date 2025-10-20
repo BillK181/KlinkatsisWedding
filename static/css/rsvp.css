@@ -6,7 +6,7 @@ ul.flashes {
   width: 80%;
   max-width: 600px;
   position: absolute;
-  top: 10%;
+  top: 17%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -28,7 +28,7 @@ ul.flashes li {
 @media (max-width: 768px) {
   ul.flashes {
     width: 90%;
-    top: 45%;
+    top: 38%;
   }
 
   ul.flashes li {
@@ -61,6 +61,8 @@ ul.flashes li {
     max-height: 350px;      
     padding: 20px 0;        
     background-position: center;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -82,7 +84,7 @@ ul.flashes li {
 /* ================== RSVP FORM - MOBILE =================== */
 @media (max-width: 768px) {
   #rsvp-form {
-    width: 100%;
+    width: auto;
     padding: 12px;
     margin: 0 auto;
     display: flex;      
