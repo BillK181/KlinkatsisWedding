@@ -209,7 +209,9 @@ main {
   }
 
   main h2 {
-    font-size: 45px;
+    font-size: 55px;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   .left, .right {
@@ -312,7 +314,7 @@ main {
 @media (max-width: 768px) {
   .splitcol {
     grid-template-columns: 1fr;
-    gap: .5rem;
+    gap: 0rem;
     padding: .75px;
     margin-top: 0px;
   }
@@ -326,14 +328,11 @@ main {
     margin-left: 0px;
   }
 
-  .splitcol .right {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
   .splitcol p {
     font-size: 14px;
     margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
