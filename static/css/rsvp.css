@@ -18,12 +18,20 @@ ul.flashes li {
   margin-bottom: 8px;
 }
 
+/* ================ FLASH MESSAGES - MOBILE =============== */
+
+@media (max-width: 768px) {
+  ul.flashes {
+  max-width: 75%;
+  }
+}
+
 /* ===================== RSVP SECTION ===================== */
 #rsvp {
   width: 100%;
   display: flex;
-  justify-content: center;  /* center the form horizontally */
-  align-items: center;      /* center vertically if min-height allows */
+  justify-content: center; 
+  align-items: center;  
   margin: 0;
   
   background-image: url('../images/rsvpbackground.jpg'); /* section background */
@@ -31,9 +39,16 @@ ul.flashes li {
   background-position: bottom;
   background-repeat: no-repeat;
 
-  min-height: 600px;  /* minimum height for desktop view */
+  min-height: 600px;
   padding: 50px 0;
   box-sizing: border-box;
+}
+
+/* ================ RSVP SECTION - MOBILE ============== */
+@media (max-width: 768px) {
+  #rsvp {
+  max-height: 200px;
+  }
 }
 
 /* ===================== RSVP FORM ===================== */
@@ -49,6 +64,13 @@ ul.flashes li {
   margin: 20px auto;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.85); /* optional light background */
+}
+
+/* ================== RSVP FORM - MOBILE =================== */
+@media (max-width: 768px) {
+  #rsvp-form {
+  width: 75%;
+  }
 }
 
 /* ===================== RSVP GREETING ===================== */

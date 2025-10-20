@@ -325,10 +325,7 @@ main {
   .splitcol .left img {
     width: 100%;
     border-radius: 0;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-left: 0px;
+    margin: 0;
   }
 
   .splitcol .left {
