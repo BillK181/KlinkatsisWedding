@@ -92,7 +92,7 @@ ul.flashes li {
   background-color: #f9e7d2;
   padding: 8px 12px;
   border-radius: 6px;
-  width: 80%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -101,9 +101,9 @@ ul.flashes li {
 @media (max-width: 768px) {
   #rsvp .rsvp-greeting {
     width: 90%;
-    font-size: 1em;
+    font-size: .85em;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 20px;
   }
 }
 
