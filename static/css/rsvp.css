@@ -37,13 +37,12 @@ ul.flashes li {
   }
 }
 
-
 /* ===================== RSVP SECTION ===================== */
 #rsvp {
   width: 100%;
   display: flex;
-  justify-content: center; 
-  align-items: center;  
+  justify-content: center;
+  align-items: center;
   margin: 0;
   background-image: url('../images/rsvpbackground.jpg');
   background-size: cover;
@@ -57,9 +56,9 @@ ul.flashes li {
 /* ================ RSVP SECTION - MOBILE ============== */
 @media (max-width: 768px) {
   #rsvp {
-    min-height: 250px;      
-    max-height: 350px;      
-    padding: 20px 0;        
+    min-height: 250px;
+    max-height: 350px;
+    padding: 20px 0;
     background-position: center;
   }
 }
@@ -67,28 +66,22 @@ ul.flashes li {
 /* ===================== RSVP FORM ===================== */
 #rsvp-form {
   width: 90%;
-  max-width: 600px;     
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-  gap: 12px;                
+  max-width: 600px;
+  display: block;
   padding: 16px;
   border-radius: 8px;
   margin: 20px auto;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.85); 
+  background-color: rgba(255, 255, 255, 0.85);
+  text-align: center;
 }
 
 /* ================== RSVP FORM - MOBILE =================== */
 @media (max-width: 768px) {
   #rsvp-form {
-    width: 80%;
+    width: 95%;
     padding: 12px;
-    display: flex;      
-    flex-direction: column;
-    align-items: center;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 auto;
   }
 }
 
@@ -96,82 +89,64 @@ ul.flashes li {
 #rsvp .rsvp-greeting {
   font-size: 1.2em;
   margin-bottom: 0.5em;
-  text-align: left;
-  background-color: #f9e7d2;  
+  background-color: #f9e7d2;
   padding: 8px 12px;
   border-radius: 6px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ================ RSVP GREETING - MOBILE ================ */
 @media (max-width: 768px) {
   #rsvp .rsvp-greeting {
-    width: 95%;
-    text-align: center;
+    width: 90%;
     font-size: 1em;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
 /* ===================== LABELS ===================== */
 #rsvp label {
-  display: inline-block; 
+  display: block;
   font-weight: 600;
-  margin-bottom: 0.25em;
-  text-align: left; 
+  margin: 0.5em auto 0.25em auto;
+  text-align: center;
   background-color: #f9e7d2;
   padding: 4px 8px;
   border-radius: 6px;
-}
-
-/* ===================== LABELS - MOBILE ===================== */
-@media (max-width: 768px) {
-  #rsvp label {
-    text-align: center;
-  }
+  width: fit-content;
 }
 
 /* ===================== SELECT DROPDOWN ===================== */
 .select-wrapper {
-  height: 30px;              
-  overflow: hidden;           
+  height: 30px;
+  overflow: hidden;
   border-radius: 8px;
   border: 1px solid #52501c;
-  display: inline-block;
+  margin: 0 auto 10px auto;
+  width: fit-content;
 }
 
 .select-wrapper select {
-  height: 100%;              
-  padding: 0 10px;           
+  height: 100%;
+  padding: 0 10px;
   font-size: 1em;
-  line-height: 1.2;          
-  appearance: none;           
-  -webkit-appearance: none;   
-  -moz-appearance: none;      
-  border: none;               
-  border-radius: 0;           
+  line-height: 1.2;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-radius: 0;
   background-color: #fdfaf6;
   color: #000;
-  width: 100%;                
-  box-sizing: border-box;
   cursor: pointer;
-}
-
-/* ===================== SELECT DROPDOWN - MOBILE ===================== */
-@media (max-width: 768px) {
-  .select-wrapper {
-    width: auto;
-    text-align: center;
-  }
-
-  .select-wrapper select {
-    width: auto;
-    font-size: 0.95em;
-  }
 }
 
 /* ===================== SUBMIT BUTTON ===================== */
 #rsvp input[type="submit"] {
-  width: 100%;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 1em;
   background-color: #52501c;
   color: white;
@@ -180,13 +155,15 @@ ul.flashes li {
   border: 1px solid #52501c;
   cursor: pointer;
   transition: all 0.2s ease;
+  margin: 10px auto 0 auto;
+  display: block;
 }
 
 /* ================ SUBMIT BUTTON - MOBILE ================ */
 @media (max-width: 768px) {
   #rsvp input[type="submit"] {
-    width: 75%;
-    padding: 10px 20px;
+    width: 50%;
+    padding: 12px 20px;
   }
 }
 
