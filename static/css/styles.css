@@ -266,13 +266,13 @@ main {
 
   .scroll-container img {
     height: auto;
-    max-height 150px:
-    scroll-snap-align: start;
+    max-height: 150px;         
+    scroll-snap-align: start;  
   }
 
   .scroll-container {
     height: auto !important;
-    max-height 180px;
+    max-height: 180px;     
     padding: 0.5rem !important;
   }
 }
