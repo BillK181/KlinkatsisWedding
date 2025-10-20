@@ -23,11 +23,13 @@ ul.flashes li {
   ul.flashes {
     width: 90%;
     max-width: none;
+    justify-content: center;
   }
 
   ul.flashes li {
     font-size: 1em;
     text-align: center;
+    padding: 10px 12px;
   }
 }
 
@@ -38,12 +40,10 @@ ul.flashes li {
   justify-content: center; 
   align-items: center;  
   margin: 0;
-  
   background-image: url('../images/rsvpbackground.jpg'); /* section background */
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-
   min-height: 600px;
   padding: 50px 0;
   box-sizing: border-box;
@@ -52,35 +52,35 @@ ul.flashes li {
 /* ================ RSVP SECTION - MOBILE ============== */
 @media (max-width: 768px) {
   #rsvp {
-    min-height: 250px;      /* smaller section height */
-    max-height: 350px;      /* optional limit */
-    padding: 20px 0;        /* less vertical padding */
-    background-size: cover;  /* ensures image still fills section */
-    background-position: center; /* center the image */
+    min-height: 250px;      
+    max-height: 350px;      
+    padding: 20px 0;        
+    background-size: cover;  
+    background-position: center;
   }
 }
 
 /* ===================== RSVP FORM ===================== */
 #rsvp-form {
   width: 90%;
-  max-width: 600px;     /* constrain form width */
+  max-width: 600px;     
   display: flex;
   flex-direction: column;
-  align-items: flex-start;  /* allow elements to size naturally */
-  gap: 12px;                /* spacing between elements */
+  align-items: flex-start;  
+  gap: 12px;                
   padding: 16px;
   border-radius: 8px;
   margin: 20px auto;
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.85); /* optional light background */
+  background-color: rgba(255, 255, 255, 0.85); 
 }
 
 /* ================== RSVP FORM - MOBILE =================== */
 @media (max-width: 768px) {
   #rsvp-form {
-    width: 75%;
+    width: 90%;
     max-width: none;
-    align-items: center;
+    padding: 12px;
   }
 }
 
@@ -99,12 +99,14 @@ ul.flashes li {
   #rsvp .rsvp-greeting {
     font-size: 1em;
     text-align: center;
+    justify-content: center;
+    width: 75%;
   }
 }
 
 /* ===================== LABELS ===================== */
 #rsvp label {
-  display: inline-block;  /* shrink to content width */
+  display: inline-block;  
   font-weight: 600;
   margin-bottom: 0.25em;
   text-align: left;
@@ -116,38 +118,38 @@ ul.flashes li {
 /* ===================== LABELS - MOBILE ===================== */
 @media (max-width: 768px) {
   #rsvp label {
-    width: 50%;
+    width: 100%;
     text-align: center;
     display: block;
+    justify-content: center;
   }
 }
 
 /* ===================== SELECT DROPDOWN ===================== */
-/* wrapper fixes Chrome height quirks */
 .select-wrapper {
-  height: 30px;              /* fixed height for all browsers */
-  overflow: hidden;           /* hide extra height from native select */
+  height: 30px;              
+  overflow: hidden;           
   border-radius: 8px;
   border: 1px solid #52501c;
   display: inline-block;
 }
 
 .select-wrapper select {
-  height: 100%;              /* fill wrapper height */
-  padding: 0 10px;           /* horizontal padding only */
+  height: 100%;              
+  padding: 0 10px;           
   font-size: 1em;
-  line-height: 1.2;          /* center text vertically */
-  appearance: none;           /* remove native dropdown arrow */
-  -webkit-appearance: none;   /* Chrome/Safari */
-  -moz-appearance: none;      /* Firefox */
-  border: none;               /* handled by wrapper */
-  border-radius: 0;           /* handled by wrapper */
+  line-height: 1.2;          
+  appearance: none;           
+  -webkit-appearance: none;   
+  -moz-appearance: none;      
+  border: none;               
+  border-radius: 0;           
   background-color: #fdfaf6;
   color: #000;
-  width: 100%;                /* fill wrapper horizontally */
+  width: 100%;                
   box-sizing: border-box;
   margin-bottom: 10px;
-  background-image: url('../images/dropdown-arrow.png'); /* optional custom arrow */
+  background-image: url('../images/dropdown-arrow.png'); 
   background-repeat: no-repeat;
   background-position: right 10px center;
   cursor: pointer;
@@ -156,7 +158,8 @@ ul.flashes li {
 /* ===================== SELECT DROPDOWN - MOBILE ===================== */
 @media (max-width: 768px) {
   .select-wrapper {
-    width: 50%;
+    width: 25%;
+    justify-content: center;
   }
 
   .select-wrapper select {
@@ -188,7 +191,8 @@ ul.flashes li {
   #rsvp input[type="submit"] {
     font-size: 0.95em;
     padding: 12px;
-    width: 50%;
+    width: 25%;
+    justify-content: center;
   }
 }
 
@@ -208,4 +212,3 @@ ul.flashes li {
   text-align: right;
   margin: 2rem 0;
 }
-

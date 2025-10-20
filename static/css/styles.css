@@ -319,7 +319,7 @@ main {
     grid-template-columns: 1fr;
     gap: 0rem;
     padding: .75px;
-    margin-top: 0px;
+    margin: 0;
   }
 
   .splitcol .left img {
