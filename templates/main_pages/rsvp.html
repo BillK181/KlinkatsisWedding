@@ -27,8 +27,6 @@
         Hello <strong>{{ name }}</strong>, you have RSVP’ed 
         <span class="rsvp-status">{{ rsvp_status or "—" }}</span>!
       </p>
-
-      <label for="rsvp-select">RSVP:</label>
       <div class="select-wrapper">
         <select name="rsvp" id="rsvp-select" required>
           <option value="going" {% if rsvp_status == 'going' %}selected{% endif %}>Going</option>

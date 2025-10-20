@@ -107,18 +107,6 @@ ul.flashes li {
   }
 }
 
-/* ===================== LABELS ===================== */
-#rsvp label {
-  display: block;
-  font-weight: 600;
-  margin: 0.5em auto 0.25em auto;
-  text-align: center;
-  background-color: #f9e7d2;
-  padding: 4px 8px;
-  border-radius: 6px;
-  width: fit-content;
-}
-
 /* ===================== SELECT DROPDOWN ===================== */
 .select-wrapper {
   height: 30px;
