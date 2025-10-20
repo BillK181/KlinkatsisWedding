@@ -52,9 +52,11 @@ ul.flashes li {
 /* ================ RSVP SECTION - MOBILE ============== */
 @media (max-width: 768px) {
   #rsvp {
-    min-height: 400px;
-    padding: 30px 0;
-    background-position: center;
+    min-height: 250px;      /* smaller section height */
+    max-height: 350px;      /* optional limit */
+    padding: 20px 0;        /* less vertical padding */
+    background-size: cover;  /* ensures image still fills section */
+    background-position: center; /* center the image */
   }
 }
 
@@ -76,7 +78,7 @@ ul.flashes li {
 /* ================== RSVP FORM - MOBILE =================== */
 @media (max-width: 768px) {
   #rsvp-form {
-    width: 90%;
+    width: 75%;
     max-width: none;
     align-items: center;
   }
@@ -114,6 +116,7 @@ ul.flashes li {
 /* ===================== LABELS - MOBILE ===================== */
 @media (max-width: 768px) {
   #rsvp label {
+    width: 50%;
     text-align: center;
     display: block;
   }
@@ -153,7 +156,7 @@ ul.flashes li {
 /* ===================== SELECT DROPDOWN - MOBILE ===================== */
 @media (max-width: 768px) {
   .select-wrapper {
-    width: 100%;
+    width: 50%;
   }
 
   .select-wrapper select {
@@ -185,6 +188,7 @@ ul.flashes li {
   #rsvp input[type="submit"] {
     font-size: 0.95em;
     padding: 12px;
+    width: 50%;
   }
 }
 
