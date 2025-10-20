@@ -19,10 +19,15 @@ ul.flashes li {
 }
 
 /* ================ FLASH MESSAGES - MOBILE =============== */
-
 @media (max-width: 768px) {
   ul.flashes {
-  max-width: 75%;
+    width: 90%;
+    max-width: none;
+  }
+
+  ul.flashes li {
+    font-size: 1em;
+    text-align: center;
   }
 }
 
@@ -47,7 +52,9 @@ ul.flashes li {
 /* ================ RSVP SECTION - MOBILE ============== */
 @media (max-width: 768px) {
   #rsvp {
-  max-height: 200px;
+    min-height: 400px;
+    padding: 30px 0;
+    background-position: center;
   }
 }
 
@@ -69,7 +76,9 @@ ul.flashes li {
 /* ================== RSVP FORM - MOBILE =================== */
 @media (max-width: 768px) {
   #rsvp-form {
-  width: 75%;
+    width: 90%;
+    max-width: none;
+    align-items: center;
   }
 }
 
@@ -83,6 +92,14 @@ ul.flashes li {
   border-radius: 6px;
 }
 
+/* ================ RSVP GREETING - MOBILE ================ */
+@media (max-width: 768px) {
+  #rsvp .rsvp-greeting {
+    font-size: 1em;
+    text-align: center;
+  }
+}
+
 /* ===================== LABELS ===================== */
 #rsvp label {
   display: inline-block;  /* shrink to content width */
@@ -92,6 +109,14 @@ ul.flashes li {
   background-color: #f9e7d2;
   padding: 4px 8px;
   border-radius: 6px;
+}
+
+/* ===================== LABELS - MOBILE ===================== */
+@media (max-width: 768px) {
+  #rsvp label {
+    text-align: center;
+    display: block;
+  }
 }
 
 /* ===================== SELECT DROPDOWN ===================== */
@@ -125,6 +150,17 @@ ul.flashes li {
   cursor: pointer;
 }
 
+/* ===================== SELECT DROPDOWN - MOBILE ===================== */
+@media (max-width: 768px) {
+  .select-wrapper {
+    width: 100%;
+  }
+
+  .select-wrapper select {
+    font-size: 0.95em;
+  }
+}
+
 /* ===================== SUBMIT BUTTON ===================== */
 #rsvp input[type="submit"] {
   width: 100%;
@@ -144,6 +180,14 @@ ul.flashes li {
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
+/* ================ SUBMIT BUTTON - MOBILE ================ */
+@media (max-width: 768px) {
+  #rsvp input[type="submit"] {
+    font-size: 0.95em;
+    padding: 12px;
+  }
+}
+
 /* ===================== AFTER FOOTER BUTTON ===================== */
 .btn {
   background-color: #52501c;
@@ -160,3 +204,4 @@ ul.flashes li {
   text-align: right;
   margin: 2rem 0;
 }
+
