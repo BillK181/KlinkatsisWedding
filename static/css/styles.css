@@ -264,11 +264,13 @@ main {
 /* ===================== PLACES - MOBILE ===================== */
 @media (max-width: 768px) {
   #image-scroll {
-  padding: .75rem .5rem;
+  padding: 2rem 1rem;
   background-color: #858f29;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  margin-top: 10px;
+  margin-bottom: 10px;
   }
 
   .scroll-container img {
@@ -319,20 +321,23 @@ main {
 @media (max-width: 768px) {
   .splitcol {
     grid-template-columns: 1fr;
-    gap: .5rem;
-    padding: .5rem;
+    gap: .85rem;
+    padding: 1px;
   }
 
   .splitcol .left img {
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .splitcol .right {
     font-size: 70px; 
+    margin-top: 1px;
   }
 
   .splitcol p {
     font-size: 14px;
+    margin-top: 20px;
   }
 }
 
