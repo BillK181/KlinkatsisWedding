@@ -208,7 +208,7 @@ main {
     margin-bottom: 5px;
   }
 
-  #twocol h2 {
+  main h2 {
     margin-top: 10px;
     margin-bottom: 10px;
   }
@@ -266,13 +266,13 @@ main {
 
   .scroll-container img {
     height: auto;
-    max height 150px:
+    max-height 150px:
     scroll-snap-align: start;
   }
 
   .scroll-container {
     height: auto !important;
-    max height 180px;
+    max-height 180px;
     padding: 0.5rem !important;
   }
 }
@@ -299,10 +299,6 @@ main {
 
 .splitcol .right {
   text-align: center;
-}
-
-.splitcol h2 {
-  font-size: 60px;
 }
 
 .splitcol p {
