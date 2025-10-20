@@ -211,6 +211,7 @@ main {
   main h2 {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 32px;
   }
 
   .left, .right {
@@ -219,7 +220,6 @@ main {
   }
 
   .left {
-    font-size: 32px;
     margin-bottom: 5px;
   }
 
@@ -266,13 +266,12 @@ main {
 
   .scroll-container img {
     height: auto;
-    max-height: 150px;         
+    max-height: 180px;         
     scroll-snap-align: start;  
   }
 
   .scroll-container {
-    height: auto !important;
-    max-height: 180px;     
+    height: auto !important;   
     padding: 0.5rem !important;
   }
 }
@@ -282,7 +281,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
-  padding: 2rem;
+  0.5rem 0.75rem;
   align-items: center;
   box-sizing: border-box;
 }
@@ -294,7 +293,7 @@ main {
 .splitcol .left img {
   width: 70%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 0px;
 }
 
 .splitcol .right {
@@ -318,10 +317,6 @@ main {
   .splitcol .left img {
     width: 100%;
     border-radius: 0;
-  }
-
-  .splitcol h2 {
-  font-size: 60px;
   }
 
   .splitcol p {
