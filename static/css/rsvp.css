@@ -61,8 +61,6 @@ ul.flashes li {
     max-height: 350px;      
     padding: 20px 0;        
     background-position: center;
-    margin-left: 20px;
-    margin-right: 20px;
   }
 }
 
@@ -84,12 +82,13 @@ ul.flashes li {
 /* ================== RSVP FORM - MOBILE =================== */
 @media (max-width: 768px) {
   #rsvp-form {
-    width: auto;
+    width: 80%;
     padding: 12px;
-    margin: 0 auto;
     display: flex;      
     flex-direction: column;
     align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
