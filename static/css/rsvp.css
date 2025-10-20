@@ -2,9 +2,15 @@
 ul.flashes {
   list-style: none;
   padding: 0;
-  margin: 1em 0;
-  width: 100%;
-  max-width: 600px;  /* constrain flash messages */
+  margin: 0;
+  width: 80%;
+  max-width: 600px;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
 }
 
 ul.flashes li {
@@ -14,7 +20,7 @@ ul.flashes li {
   color: #22543d;
   font-size: 1.1em;
   padding: 12px 16px;
-  text-align: left;
+  text-align: center;
   margin-bottom: 8px;
 }
 
@@ -22,16 +28,15 @@ ul.flashes li {
 @media (max-width: 768px) {
   ul.flashes {
     width: 90%;
-    max-width: none;
-    justify-content: center;
+    top: 10px;
   }
 
   ul.flashes li {
     font-size: 1em;
-    text-align: center;
     padding: 10px 12px;
   }
 }
+
 
 /* ===================== RSVP SECTION ===================== */
 #rsvp {
@@ -40,7 +45,7 @@ ul.flashes li {
   justify-content: center; 
   align-items: center;  
   margin: 0;
-  background-image: url('../images/rsvpbackground.jpg'); /* section background */
+  background-image: url('../images/rsvpbackground.jpg');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -55,7 +60,6 @@ ul.flashes li {
     min-height: 250px;      
     max-height: 350px;      
     padding: 20px 0;        
-    background-size: cover;  
     background-position: center;
   }
 }
@@ -66,7 +70,7 @@ ul.flashes li {
   max-width: 600px;     
   display: flex;
   flex-direction: column;
-  align-items: flex-start;  
+  align-items: flex-start; 
   gap: 12px;                
   padding: 16px;
   border-radius: 8px;
@@ -78,8 +82,8 @@ ul.flashes li {
 /* ================== RSVP FORM - MOBILE =================== */
 @media (max-width: 768px) {
   #rsvp-form {
-    width: 90%;
-    max-width: none;
+    align-items: center; 
+    width: 95%;
     padding: 12px;
   }
 }
@@ -97,19 +101,18 @@ ul.flashes li {
 /* ================ RSVP GREETING - MOBILE ================ */
 @media (max-width: 768px) {
   #rsvp .rsvp-greeting {
-    font-size: 1em;
+    width: 80%;  /* mobile width */
     text-align: center;
-    justify-content: center;
-    width: 75%;
+    font-size: 1em;
   }
 }
 
 /* ===================== LABELS ===================== */
 #rsvp label {
-  display: inline-block;  
+  display: inline-block; 
   font-weight: 600;
   margin-bottom: 0.25em;
-  text-align: left;
+  text-align: left; 
   background-color: #f9e7d2;
   padding: 4px 8px;
   border-radius: 6px;
@@ -118,10 +121,7 @@ ul.flashes li {
 /* ===================== LABELS - MOBILE ===================== */
 @media (max-width: 768px) {
   #rsvp label {
-    width: 100%;
     text-align: center;
-    display: block;
-    justify-content: center;
   }
 }
 
@@ -148,21 +148,18 @@ ul.flashes li {
   color: #000;
   width: 100%;                
   box-sizing: border-box;
-  margin-bottom: 10px;
-  background-image: url('../images/dropdown-arrow.png'); 
-  background-repeat: no-repeat;
-  background-position: right 10px center;
   cursor: pointer;
 }
 
 /* ===================== SELECT DROPDOWN - MOBILE ===================== */
 @media (max-width: 768px) {
   .select-wrapper {
-    width: 25%;
-    justify-content: center;
+    width: auto;
+    text-align: center;
   }
 
   .select-wrapper select {
+    width: auto;
     font-size: 0.95em;
   }
 }
@@ -181,18 +178,11 @@ ul.flashes li {
   transition: all 0.2s ease;
 }
 
-#rsvp input[type="submit"]:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
-
 /* ================ SUBMIT BUTTON - MOBILE ================ */
 @media (max-width: 768px) {
   #rsvp input[type="submit"] {
-    font-size: 0.95em;
-    padding: 12px;
-    width: 25%;
-    justify-content: center;
+    width: auto;
+    padding: 10px 20px;
   }
 }
 

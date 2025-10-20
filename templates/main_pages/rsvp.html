@@ -10,7 +10,9 @@
 {% block content %}
 <main>
 
-  <!-- Flash messages -->
+  <!-- RSVP Section -->
+  <section id="rsvp">
+    <!-- Flash messages -->
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
       <ul class="flashes">
@@ -20,9 +22,6 @@
       </ul>
     {% endif %}
   {% endwith %}
-
-  <!-- RSVP Section -->
-  <section id="rsvp">
     <form action="/rsvp" method="POST" class="rsvp-form">
       <p class="rsvp-greeting">
         Hello <strong>{{ name }}</strong>, you have RSVP’ed 
