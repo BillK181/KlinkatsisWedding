@@ -209,9 +209,7 @@ main {
   }
 
   main h2 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 60px;
+    font-size: 45px;
   }
 
   .left, .right {
@@ -225,7 +223,7 @@ main {
 
   .right {
     font-size: 18px;
-    margin-top: 1px;
+    margin-top: 0px;
   }
 }
 
@@ -271,8 +269,9 @@ main {
   }
 
   .scroll-container {
-    height: auto !important;   
-    padding: 0.5rem !important;
+    height: auto;   
+    padding: 0.5rem;
+    gap: 2rem;
   }
 
   #image-scroll {
@@ -313,8 +312,8 @@ main {
 @media (max-width: 768px) {
   .splitcol {
     grid-template-columns: 1fr;
-    gap: .85rem;
-    padding: 1px;
+    gap: .5rem;
+    padding: .75px;
     margin-top: 0px;
   }
 
@@ -325,6 +324,11 @@ main {
     margin-top: 0px;
     margin-left: 0px;
     margin-left: 0px;
+  }
+
+  .splitcol .right {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .splitcol p {
