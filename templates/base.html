@@ -22,17 +22,26 @@
 
 <body>
   <!-- ===================== NAVIGATION ===================== -->
-  <nav aria-label="Main navigation">
+  <nav>
     <div class="nav-header">
-      <a href="/" aria-label="Home">
-        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo" width="120" height="auto" loading="lazy">
+      <a href="/">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo">
       </a>
-      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
-        &#9776;
-      </button>
+      <!-- Hamburger menu for mobile -->
+      <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
     </div>
 
-    <ul class="nav-links" id="nav-links">
+    <!-- Desktop menu -->
+    <ul class="nav-links desktop-menu">
+      <li><a href="/mr-mrs">Mr & Mrs</a></li>
+      <li><a href="/rsvpage">RSVP & Schedule</a></li>
+      <li><a href="/travel">Travel & Accommodations</a></li>
+      <li><a href="/registry">Registry</a></li>
+      <li><a href="/faq">FAQ</a></li>
+    </ul>
+
+    <!-- Mobile menu (dropdown) -->
+    <ul class="nav-links mobile-menu">
       <li><a href="/mr-mrs">Mr & Mrs</a></li>
       <li><a href="/rsvpage">RSVP & Schedule</a></li>
       <li><a href="/travel">Travel & Accommodations</a></li>
@@ -40,6 +49,7 @@
       <li><a href="/faq">FAQ</a></li>
     </ul>
   </nav>
+
 
   <!-- ===================== LOGOUT FORM ===================== -->
   <div class="logout-form">
@@ -82,16 +92,15 @@
   </script>
 
   <!-- ===================== NAV SCRIPT ===================== -->
-  <script defer>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggleButton = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.querySelector(".menu-toggle");
+    const mobileMenu = document.querySelector(".mobile-menu");
 
-      toggleButton.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("show");
-        toggleButton.setAttribute("aria-expanded", isOpen);
-      });
+    toggleButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
     });
+  });
   </script>
 
   <!-- ===================== JS FILES ===================== -->
