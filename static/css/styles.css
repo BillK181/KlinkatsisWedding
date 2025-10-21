@@ -18,37 +18,47 @@ header {
 }
 
 /* ===================== NAVIGATION ===================== */
-nav {
-  position: relative;
-  width: 100%;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  z-index: 1000;
-}
-
-nav .nav-links {
+nav ul {
+  list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  gap: 0;
+  padding: 1rem 0;
+  background-color: #f1e7cd;
+  margin: 1px 0;
+  font-size: 1.8rem;
 }
 
-nav .nav-links li a {
-  font-size: 1rem;
-  color: #333;
+nav ul li {
+  padding: 0 1rem;
+  border-right: 1px solid #333;
+}
+
+nav ul li:last-child {
+  border-right: none;
+}
+
+nav ul li img {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+nav ul li a {
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  transition: color 0.3s;
+  color: #000;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
 }
 
-nav .nav-links li a:hover {
-  color: #555;
+nav ul li a img:hover {
+  opacity: 0.85;
 }
 
-/* ===================== NAVIGATION - MOBILE ===================== */
+/* ===================== NAV - MOBILE ===================== */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -81,7 +91,6 @@ nav .nav-links li a:hover {
     width: auto;
   }
 }
-
 
 /* ===================== LOGOUT FORM ===================== */
 .logout-form {

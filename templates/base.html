@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ===================== META ===================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Marisa & Bill's Wedding — RSVP, Travel, Registry, and FAQs.">
-  <meta name="theme-color" content="#ffffff">
   <title>{% block title %}{% endblock %}</title>
 
-  <!-- ===================== FAVICON ===================== -->
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
-
-  <!-- ===================== STYLESHEETS ===================== -->
-  <link rel="preload" href="{{ url_for('static', filename='css/styles.css') }}" as="style">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/countdown.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
-  
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   {% block head %}{% endblock %}
 </head>
-
 <body>
-  <!-- ===================== NAVIGATION ===================== -->
+
+  <!-- ===================== Navigation ===================== -->
   <nav>
-    <ul class="nav-links">
+    <ul>
       <li>
         <a href="/">
           <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo">
@@ -37,51 +30,46 @@
     </ul>
   </nav>
 
-
-
-  <!-- ===================== LOGOUT FORM ===================== -->
+  <!-- ===================== Logout Form ===================== -->
   <div class="logout-form">
     <form action="/logout" method="POST">
       <input type="submit" value="Log Out">
     </form>
   </div>
 
-  <!-- ===================== MAIN CONTENT ===================== -->
-  <main id="content">
-    {% block content %}{% endblock %}
-  </main>
+  <!-- ===================== Page Content ===================== -->
+  {% block content %}
+  {% endblock %}
 
-  <!-- ===================== CHATBOT ===================== -->
-  <div id="chatbot-bubble" role="button" aria-label="Open Chatbot">💬</div>
-  <div id="chatbot-container" aria-live="polite" hidden>
+  <!-- ===================== Chatbot ===================== -->
+  <div id="chatbot-bubble">💬</div>
+  <div id="chatbot-container">
     <div id="chatbot-header">
       Just Ask!
-      <button id="chatbot-close" aria-label="Close Chatbot">✖</button>
+      <button id="chatbot-close">✖</button>
     </div>
     <div id="chatbot-messages"></div>
     <div id="chatbot-input">
-      <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off">
+      <input type="text" id="chat-input" placeholder="Type your question..." />
       <button id="chat-send">Send</button>
     </div>
   </div>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- ===================== Footer ===================== -->
   <footer>
-    <a href="/" aria-label="Home">
-      <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo" width="100" height="auto" loading="lazy">
+    <a href="/">
+      <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo">
     </a>
   </footer>
 
   {% block after_footer %}{% endblock %}
 
-  <!-- ===================== GLOBAL VARS ===================== -->
-  <script>
-    window.userName = "{{ name | e }}";
-  </script>
-  
+ <script>
+  window.userName = "{{ name }}";
+</script>
 
-  <!-- ===================== JS FILES ===================== -->
-  <script src="{{ url_for('static', filename='js/chatbot.js') }}" defer></script>
-  <script src="{{ url_for('static', filename='js/countdown.js') }}" defer></script>
+  <!-- JS Files -->
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
 </body>
 </html>
