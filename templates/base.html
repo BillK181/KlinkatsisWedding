@@ -23,33 +23,24 @@
 <body>
   <!-- ===================== NAVIGATION ===================== -->
   <nav>
-    <div class="nav-header">
-      <a href="/">
-        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo">
-      </a>
-      <!-- Hamburger menu for mobile -->
-      <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
-    </div>
-
-    <!-- Desktop menu -->
-    <ul class="nav-links desktop-menu">
-      <li><a href="/mr-mrs">Mr & Mrs</a></li>
-      <li><a href="/rsvpage">RSVP & Schedule</a></li>
-      <li><a href="/travel">Travel & Accommodations</a></li>
-      <li><a href="/registry">Registry</a></li>
-      <li><a href="/faq">FAQ</a></li>
-    </ul>
-
-    <!-- Mobile menu (dropdown) -->
-    <ul class="nav-links mobile-menu">
-      <li><a href="/mr-mrs">Mr & Mrs</a></li>
-      <li><a href="/rsvpage">RSVP & Schedule</a></li>
-      <li><a href="/travel">Travel & Accommodations</a></li>
-      <li><a href="/registry">Registry</a></li>
-      <li><a href="/faq">FAQ</a></li>
+    <ul class="nav-links">
+      <li class="dropdown-toggle">
+        <a href="/mr-mrs">Mr & Mrs</a>
+        <!-- Mobile dropdown menu -->
+        <ul class="dropdown-menu">
+          <li><a href="/rsvpage">RSVP & Schedule</a></li>
+          <li><a href="/travel">Travel & Accommodations</a></li>
+          <li><a href="/registry">Registry</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </li>
+      <!-- Desktop only links -->
+      <li class="desktop-only"><a href="/rsvpage">RSVP & Schedule</a></li>
+      <li class="desktop-only"><a href="/travel">Travel & Accommodations</a></li>
+      <li class="desktop-only"><a href="/registry">Registry</a></li>
+      <li class="desktop-only"><a href="/faq">FAQ</a></li>
     </ul>
   </nav>
-
 
   <!-- ===================== LOGOUT FORM ===================== -->
   <div class="logout-form">
@@ -94,11 +85,11 @@
   <!-- ===================== NAV SCRIPT ===================== -->
   <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const toggleButton = document.querySelector(".menu-toggle");
-    const mobileMenu = document.querySelector(".mobile-menu");
+    const dropdownToggle = document.querySelector(".dropdown-toggle > a");
 
-    toggleButton.addEventListener("click", () => {
-      mobileMenu.classList.toggle("show");
+    dropdownToggle.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevent navigation on mobile
+      dropdownToggle.parentElement.classList.toggle("active");
     });
   });
   </script>
