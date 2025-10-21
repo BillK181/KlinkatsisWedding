@@ -58,7 +58,7 @@ nav ul li a img:hover {
   opacity: 0.85;
 }
 
-/* ===================== NAV - MOBILE ===================== */
+/* ================= NAVIGATION - MOBILE ================= */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -308,6 +308,10 @@ main {
 .splitcol .right {
   text-align: center;
   margin-right: 20px;
+}
+
+.splitcol h2 {
+  font-size: 45px;
 }
 
 .splitcol p {
