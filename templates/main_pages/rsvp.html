@@ -8,43 +8,33 @@
 {% endblock %}
 
 {% block content %}
-<main id="main-content" role="main">
+<main>
 
-  <!-- ===================== RSVP SECTION ===================== -->
-  <section id="rsvp" aria-labelledby="rsvp-heading">
-    <h1 id="rsvp-heading" class="visually-hidden">RSVP Form</h1>
-
-    <!-- Flash Messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <ul class="flashes" role="alert" aria-live="assertive">
-          {% for category, message in messages %}
-            <li class="flash {{ category | e }}">{{ message | e }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endwith %}
-
-    <!-- RSVP Form -->
-    <form action="{{ url_for('rsvp') }}" method="POST" class="rsvp-form" novalidate>
+  <!-- RSVP Section -->
+  <section id="rsvp">
+    <!-- Flash messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="flashes">
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+    <form action="/rsvp" method="POST" class="rsvp-form">
       <p class="rsvp-greeting">
-        Hello <strong>{{ name | e }}</strong>, you have RSVP’d 
+        Hello <strong>{{ name }}</strong>, you have RSVP’ed 
         <span class="rsvp-status">{{ rsvp_status or "—" }}</span>!
       </p>
-
       <div class="select-wrapper">
-        <label for="rsvp-select" class="visually-hidden">Select RSVP status</label>
-        <select name="rsvp" id="rsvp-select" required aria-required="true">
+        <select name="rsvp" id="rsvp-select" required>
           <option value="going" {% if rsvp_status == 'going' %}selected{% endif %}>Going</option>
           <option value="not_going" {% if rsvp_status == 'not_going' %}selected{% endif %}>Not Going</option>
         </select>
       </div>
 
-      <input 
-        type="submit" 
-        value="{% if rsvp_status %}Change RSVP{% else %}RSVP{% endif %}"
-        aria-label="Submit RSVP form"
-      >
+      <input type="submit" value="{% if rsvp_status %}Change RSVP{% else %}RSVP{% endif %}">
     </form>
   </section>
 
@@ -52,7 +42,7 @@
 {% endblock %}
 
 {% block after_footer %}
-  <div class="btn-container">
-    <a href="{{ url_for('checkstatus') }}" class="btn" aria-label="Check RSVP Status"></a>
-  </div>
+<div class="btn-container">
+  <a href="/checkstatus" class="btn"></a>
+</div>
 {% endblock %}
