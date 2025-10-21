@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ===================== META ===================== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Marisa & Bill's Wedding — RSVP, Travel, Registry, and FAQs.">
+  <meta name="theme-color" content="#ffffff">
   <title>{% block title %}{% endblock %}</title>
 
+  <!-- ===================== FAVICON ===================== -->
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
-  <!-- Stylesheets -->
+
+  <!-- ===================== STYLESHEETS ===================== -->
+  <link rel="preload" href="{{ url_for('static', filename='css/styles.css') }}" as="style">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/countdown.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  
   {% block head %}{% endblock %}
 </head>
-<body>
 
-  <!-- ===================== Navigation ===================== -->
-  <nav>
-    <ul>
-      <li>
-        <a href="/">
-          <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo">
-        </a>
-      </li>
+<body>
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav aria-label="Main navigation">
+    <div class="nav-header">
+      <a href="/" aria-label="Home">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo" width="120" height="auto" loading="lazy">
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        &#9776;
+      </button>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
       <li><a href="/mr-mrs">Mr & Mrs</a></li>
       <li><a href="/rsvpage">RSVP & Schedule</a></li>
       <li><a href="/travel">Travel & Accommodations</a></li>
@@ -30,46 +41,61 @@
     </ul>
   </nav>
 
-  <!-- ===================== Logout Form ===================== -->
+  <!-- ===================== LOGOUT FORM ===================== -->
   <div class="logout-form">
     <form action="/logout" method="POST">
       <input type="submit" value="Log Out">
     </form>
   </div>
 
-  <!-- ===================== Page Content ===================== -->
-  {% block content %}
-  {% endblock %}
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main id="content">
+    {% block content %}{% endblock %}
+  </main>
 
-  <!-- ===================== Chatbot ===================== -->
-  <div id="chatbot-bubble">💬</div>
-  <div id="chatbot-container">
+  <!-- ===================== CHATBOT ===================== -->
+  <div id="chatbot-bubble" role="button" aria-label="Open Chatbot">💬</div>
+  <div id="chatbot-container" aria-live="polite" hidden>
     <div id="chatbot-header">
       Just Ask!
-      <button id="chatbot-close">✖</button>
+      <button id="chatbot-close" aria-label="Close Chatbot">✖</button>
     </div>
     <div id="chatbot-messages"></div>
     <div id="chatbot-input">
-      <input type="text" id="chat-input" placeholder="Type your question..." />
+      <input type="text" id="chat-input" placeholder="Type your question..." autocomplete="off">
       <button id="chat-send">Send</button>
     </div>
   </div>
 
-  <!-- ===================== Footer ===================== -->
+  <!-- ===================== FOOTER ===================== -->
   <footer>
-    <a href="/">
-      <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo">
+    <a href="/" aria-label="Home">
+      <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo" width="100" height="auto" loading="lazy">
     </a>
   </footer>
 
   {% block after_footer %}{% endblock %}
 
- <script>
-  window.userName = "{{ name }}";
-</script>
+  <!-- ===================== GLOBAL VARS ===================== -->
+  <script>
+    window.userName = "{{ name | e }}";
+  </script>
 
-  <!-- JS Files -->
-  <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+  <!-- ===================== NAV SCRIPT ===================== -->
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButton = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      toggleButton.addEventListener("click", () => {
+        const isOpen = navLinks.classList.toggle("show");
+        toggleButton.setAttribute("aria-expanded", isOpen);
+      });
+    });
+  </script>
+
+  <!-- ===================== JS FILES ===================== -->
+  <script src="{{ url_for('static', filename='js/chatbot.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='js/countdown.js') }}" defer></script>
 </body>
 </html>
