@@ -9,15 +9,13 @@
 
 {% block content %}
 <main>
-  <div>
-   <!-- Mobile-only Hotel Button -->
-      <a href="https://www.nfl.com" class="hotel-button-mobile" target="_blank">
-        Reserve Your Hotel Room
-      </a>
-  </div>
   <!-- ===================== Map Section ===================== -->
   <section id="map-exp">
     <div class="map">
+      <!-- Mobile-only Hotel Button (above the map image) -->
+      <a href="https://www.nfl.com" class="hotel-button-mobile" target="_blank">
+        Reserve Your Hotel Room
+      </a>
 
       <img 
         src="{{ url_for('static', filename='images/southerncaliforniamap.jpg') }}" 
@@ -26,34 +24,19 @@
       >
 
       <map name="socalmap">
-        <!-- Area for "Los Angeles" -->
         <area shape="rect" coords="600,191,945,290" href="/los_angeles" alt="Los Angeles">
-
-        <!-- Area for "Anaheim" -->
         <area shape="rect" coords="922,506,1195,598" href="/anaheim" alt="Anaheim">
-
-        <!-- Area for "Irvine" -->
         <area shape="rect" coords="841,677,1118,780" href="/irvine" alt="Irvine">
-
-        <!-- Area for "Newport Beach" -->
         <area shape="rect" coords="380,698,810,791" href="/newport_beach" alt="Newport Beach">
-
-        <!-- Area for "Laguna Beach" -->
         <area shape="rect" coords="478,824,922,912" href="/laguna" alt="Laguna Beach">
-
-        <!-- Area for "San Clemente" -->
         <area shape="rect" coords="531,1071,898,1169" href="/san_clemente" alt="San Clemente">
-
-        <!-- Area for "Dana Point" -->
         <area shape="rect" coords="630,951,968,1038" href="/dana_point" alt="Dana Point">
-
-        <!-- Area for "San Diego" -->
         <area shape="rect" coords="677,1747,1177,1977" href="/san_diego" alt="San Diego">
       </map>
     </div>
 
     <div class="map-text">
-       <!-- Hotel Reservation Button -->
+       <!-- Desktop-only Hotel Button (above map-text content) -->
       <a href="https://www.nfl.com" class="hotel-button" target="_blank">
         Reserve Your Hotel Room
       </a>
@@ -87,8 +70,6 @@
       <li><strong>Pismo Beach:</strong> Famous for sand dunes and clam festivals.</li>
     </ul>
   </section>
-
-
 </main>
 
 <!-- Image map resizer for responsiveness -->
@@ -98,5 +79,4 @@
     imageMapResize();
   };
 </script>
-
 {% endblock %}
