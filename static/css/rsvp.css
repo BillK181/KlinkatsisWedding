@@ -28,12 +28,12 @@ ul.flashes li {
 @media (max-width: 768px) {
   ul.flashes {
     width: 90%;
-    top: 1.5%;
+    top: 3%;
   }
 
   ul.flashes li {
-    font-size: 1em;
-    padding: 10px 12px;
+    font-size: .7em;
+    padding: 10px 10px;
   }
 }
 
