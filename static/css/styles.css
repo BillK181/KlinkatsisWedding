@@ -143,21 +143,33 @@ main {
   padding: 0;
 }
 
+main h2 {
+    font-size: 85px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+h3 {
+  font-size: 30px;
+}
+
 /* ===================== GREETING ===================== */
 #shorttext {
   background-color: #52501c;
   text-align: center;
   padding: 1rem;
 }
-
-#shorttext h2, 
+ 
 #shorttext p {
+  font-size: 15px;
   margin: 0;
   color: #fff;
 }
 
 #shorttext h2 {
+  font-size: 33px;
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 
 /* ===================== GREETING - MOBILE ===================== */
@@ -188,17 +200,16 @@ main {
   box-sizing: border-box;
 }
 
-.left {
+#twocol .left {
   grid-column: 1;
-  font-size: 45px;
   text-align: center;
 }
 
-.right {
+#twocol .right {
   grid-column: 2;
-  font-size: 20px;
   text-align: center;
 }
+
 
 /* ===================== THE DETAILS - MOBILE ===================== */
 @media (max-width: 768px) {
@@ -263,70 +274,51 @@ main {
   transform: scale(1.05);
 }
 
-/* ===================== PLACES - MOBILE ===================== */
-@media (max-width: 768px) {
-
-  .scroll-container img {
-    height: auto;
-    max-height: 150px;         
-    scroll-snap-align: start;  
-    object-fit: contain;
-    overflow-x: auto;   
-    overflow-y: visible;
-  }
-
-  .scroll-container {
-    height: auto;   
-    padding: 0.5rem;
-    gap: 2rem;
-  }
-
-  #image-scroll {
-  padding: 0.5rem 1rem;
-  }
-
-}
-
 /* ===================== THE VENUE ===================== */
 .splitcol {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
   padding: 0.5rem 0.75rem;
-  align-items: start;
+  align-items: start; /* columns align to top */
   box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .splitcol .left {
-  text-align: center;
+  margin-left: 20px;
   display: flex;
-  align-items: stretch;
+  justify-content: center; /* horizontal centering */
+  align-items: center;     /* vertical centering */
 }
 
 .splitcol .left img {
-  height: auto;
-  max-height: 100%;
-  width: auto;
+  max-width: 100%;   /* don’t overflow column width */
+  height: auto;      /* maintain aspect ratio */
   border-radius: 0;
   display: block;
-  object-fit: cover;
+  border-radius: 12px; /* round corners */
+  vertical-align: center;
+  align-items: center;
 }
 
 .splitcol .right {
-  text-align: center;
   margin-right: 20px;
+  text-align: center;
 }
 
 .splitcol p {
   font-size: 20px;
 }
 
+
 /* ===================== THE VENUE - MOBILE ===================== */
 @media (max-width: 768px) {
   .splitcol {
     grid-template-columns: 1fr;
     gap: 0rem;
-    padding: .75px;
+    padding: 0;
     margin: 0;
   }
 

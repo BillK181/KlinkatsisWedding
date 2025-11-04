@@ -99,14 +99,14 @@
   padding: 1rem;
 }
 
-h1 {
+#map-exp h1 {
   font-size: 4rem;
   margin-bottom: 2rem;
   text-align: center;
   color: #f1e7cd;
 }
 
-h2 {
+#map-exp h2 {
   font-size: 1.7rem;
   text-align: center;
   color: #f1e7cd;
