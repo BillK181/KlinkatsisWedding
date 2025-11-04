@@ -12,7 +12,6 @@
 
   <!-- ===================== RSVP Section ===================== -->
   <section id="rsvp" aria-labelledby="rsvp-heading">
-    <h2 id="rsvp-heading" class="visually-hidden">RSVP Section</h2>
 
     <!-- ===================== Flash Messages ===================== -->
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -33,7 +32,6 @@
       </p>
 
       <div class="select-wrapper">
-        <label for="rsvp-select" class="visually-hidden">RSVP Status</label>
         <select name="rsvp" id="rsvp-select" required>
           <option value="going" {% if rsvp_status == 'going' %}selected{% endif %}>Going</option>
           <option value="not_going" {% if rsvp_status == 'not_going' %}selected{% endif %}>Not Going</option>
@@ -49,6 +47,6 @@
 
 {% block after_footer %}
 <div class="btn-container">
-  <a href="/checkstatus" class="btn" aria-label="Check RSVP Status">Check Status</a>
+  <a href="/checkstatus" class="btn"></a>
 </div>
 {% endblock %}

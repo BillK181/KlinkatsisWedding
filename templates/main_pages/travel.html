@@ -2,8 +2,65 @@
 
 {% block title %}Klinkatsis Wedding{% endblock %}
 
-{% block content %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/travel.css') }}">
+{% endblock %}
 
-  <!-- ===================== Main Content ===================== -->
-  <main></main>
+{% block content %}
+<main>
+  <!-- ===================== Map Section ===================== -->
+  <section id="map-exp">
+    <div class="map">
+      <img 
+        src="{{ url_for('static', filename='images/southerncaliforniamap.jpg') }}" 
+        alt="southern-california" 
+        usemap="#socalmap"
+      >
+
+      <map name="socalmap">
+        <!-- Area for "Los Angeles" -->
+        <area shape="rect" coords="600,191,945,290" href="/los_angeles" alt="Los Angeles">
+
+        <!-- Area for "Anaheim" -->
+        <area shape="rect" coords="922,506,1195,598" href="/anaheim" alt="Anaheim">
+
+        <!-- Area for "Irvine" -->
+        <area shape="rect" coords="841,677,1118,780" href="/irvine" alt="Irvine">
+
+        <!-- Area for "Newport Beach" -->
+        <area shape="rect" coords="380,698,810,791" href="/newport_beach" alt="Newport Beach">
+
+        <!-- Area for "Laguna Beach" -->
+        <area shape="rect" coords="478,824,922,912" href="/laguna" alt="Laguna Beach">
+
+        <!-- Area for "San Clemente" -->
+        <area shape="rect" coords="531,1071,898,1169" href="/san_clemente" alt="San Clemente">
+
+        <!-- Area for "Dana Point" -->
+        <area shape="rect" coords="630,951,968,1038" href="/dana_point" alt="Dana Point">
+
+        <!-- Area for "San Diego" -->
+        <area shape="rect" coords="677,1747,1177,1977" href="/san_diego" alt="San Diego">
+      </map>
+    </div>
+
+    <div class="map-text">
+      <h1>Oh The Places You'll Go</h1>
+      <h2>
+        Looking to turn our wedding into a great vacation? Well check out some of the best spots in Southern California.
+        Be sure to click on each city to see what it has to offer!
+      </h2>
+    </div>
+  </section>
+</main>
+
+<!-- Image map resizer for responsiveness -->
+<script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+  window.onload = function() {
+    imageMapResize();
+  };
+</script>
+
 {% endblock %}

@@ -9,6 +9,37 @@
 
 {% block content %}
   <main>
-    <img src="{{ url_for('static', filename='images/laguna.jpg') }}" alt="Laguna">
+
+    <div class="photo">
+      <img src="{{ url_for('static', filename='images/laguna.jpg') }}" alt="Laguna Beach">
+    </div>
+
+    <div class="overview">
+      <h1>
+        A small amount of text giving an overview
+      </h1>
+    </div>
+
+    <div class="to-do">
+      <h2>Attractions & Things To Do</h2>
+      <ul>
+        <li>
+          List Item
+        </li>
+      </ul>
+    </div>
+
+    <div class="food">
+      <h2>Food</h2>
+      <ul>
+        <li>
+          List Item
+        </li>
+      </ul>
+    </div>
+
+    <div class="directions">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d106342.1338319208!2d-117.83003762282375!3d33.60033068796777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x80dcdd578b031b05%3A0x32b545a680c4ee0e!2sMarriott%20Irvine%20Spectrum%2C%207905%20Irvine%20Center%20Dr%2C%20Irvine%2C%20CA%2092618!3m2!1d33.6575025!2d-117.7483431!4m5!1s0x80dce0c88f5b24c1%3A0xde7b435a879daf6!2sLaguna%20Beach%2C%20CA!3m2!1d33.5427189!2d-117.78535679999999!5e0!3m2!1sen!2sus!4v1762201925847!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
   </main>
 {% endblock %}
+

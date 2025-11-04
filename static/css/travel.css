@@ -1,0 +1,79 @@
+/* ===================== MAP SECTION ===================== */
+#map-exp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #f1e7cd;
+}
+
+/* left (map) container */
+.map {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: 100px;
+}
+
+/* Map image responsive */
+.map img {
+  width: auto;
+  height: auto;
+  display: block;
+  border: none;
+  max-height: 80vh; 
+}
+
+/* right (text) container */
+.map-text {
+  margin-right: 100px;
+  background-color: #52501c;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #f1e7cd;
+}
+
+h2 {
+  font-size: 1.7rem;
+  text-align: center;
+  color: #f1e7cd;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+/* Make clickable areas have pointer cursor */
+area {
+  cursor: pointer;
+}
+
+/*: highlight areas on hover */
+area:hover {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===================== MAP SECTION - MOBILE ===================== */
+@media (max-width: 768px) {
+  #map-exp {
+    grid-template-columns: 1fr; /* stack map and text */
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  #map-exp .text {
+    text-align: center;
+  }
+
+  #map-exp .text h1 {
+    font-size: 2rem;
+  }
+
+  #map-exp .text h2 {
+    font-size: 1.2rem;
+  }
+}
