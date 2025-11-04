@@ -143,33 +143,21 @@ main {
   padding: 0;
 }
 
-main h2 {
-    font-size: 85px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-h3 {
-  font-size: 30px;
-}
-
 /* ===================== GREETING ===================== */
 #shorttext {
   background-color: #52501c;
   text-align: center;
   padding: 1rem;
 }
- 
+
+#shorttext h2, 
 #shorttext p {
-  font-size: 15px;
   margin: 0;
   color: #fff;
 }
 
 #shorttext h2 {
-  font-size: 33px;
   margin-bottom: 0.5rem;
-  color: #fff;
 }
 
 /* ===================== GREETING - MOBILE ===================== */
@@ -200,16 +188,17 @@ h3 {
   box-sizing: border-box;
 }
 
-#twocol .left {
+.left {
   grid-column: 1;
+  font-size: 45px;
   text-align: center;
 }
 
-#twocol .right {
+.right {
   grid-column: 2;
+  font-size: 20px;
   text-align: center;
 }
-
 
 /* ===================== THE DETAILS - MOBILE ===================== */
 @media (max-width: 768px) {
@@ -274,56 +263,69 @@ h3 {
   transform: scale(1.05);
 }
 
+/* ===================== PLACES - MOBILE ===================== */
+@media (max-width: 768px) {
+
+  .scroll-container img {
+    height: auto;
+    max-height: 150px;         
+    scroll-snap-align: start;  
+    object-fit: contain;
+    overflow-x: auto;   
+    overflow-y: visible;
+  }
+
+  .scroll-container {
+    height: auto;   
+    padding: 0.5rem;
+    gap: 2rem;
+  }
+
+  #image-scroll {
+  padding: 0.5rem 1rem;
+  }
+
+}
+
 /* ===================== THE VENUE ===================== */
 .splitcol {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 2rem;
   padding: 0.5rem 0.75rem;
-  align-items: start; /* columns align to top */
+  align-items: center;
   box-sizing: border-box;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .splitcol .left {
-  margin-left: 20px;
-  display: flex;
-  justify-content: center; /* horizontal centering */
-  align-items: center;     /* vertical centering */
+  text-align: center;
 }
 
 .splitcol .left img {
-  max-width: 100%;   /* don’t overflow column width */
-  height: auto;      /* maintain aspect ratio */
-  border-radius: 0;
-  display: block;
-  border-radius: 12px; /* round corners */
-  vertical-align: center;
-  align-items: center;
+  width: 85%;
+  height: auto;
+  border-radius: 0px;
 }
 
 .splitcol .right {
-  margin-right: 20px;
   text-align: center;
+  margin-right: 20px;
 }
 
 .splitcol p {
   font-size: 20px;
 }
 
-
 /* ===================== THE VENUE - MOBILE ===================== */
 @media (max-width: 768px) {
   .splitcol {
     grid-template-columns: 1fr;
     gap: 0rem;
-    padding: 0;
+    padding: .75px;
     margin: 0;
   }
 
   .splitcol .left img {
-    display: inline;
     width: 100%;
     border-radius: 0;
     margin: 0;
