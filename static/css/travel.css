@@ -28,16 +28,18 @@
 
 /* ===================== HOTEL BUTTON - MOBILE ===================== */
 @media (max-width: 768px) {
+  #map-exp {
+    position: relative; /* parent for absolute positioning */
+  }
+
   .hotel-button {
-    position: static;        /* let it flow naturally above text */
-    display: block;
-    margin: 0 auto 1rem auto; /* center with spacing below */
-    transform: none;
-    top: -100px;
-    left: auto;
+    position: absolute;
+    top: 50vh;          /* roughly half the screen height */
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin: 0;          /* remove margins */
   }
 }
-
 
 
 /* ===================== MAP SECTION ===================== */
@@ -108,7 +110,7 @@ area:hover {
     padding: 1rem;
     justify-items: center; /* center horizontally */
     text-align: center;
-    margin-top: 40px;
+    margin-top: 70px;
   }
 
   #map-exp .map {
