@@ -34,7 +34,7 @@
 
   .hotel-button {
     position: absolute;
-    top: -70vh;          /* roughly half the screen height */
+    top: -68vh;          /* roughly half the screen height */
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     margin: 0;          /* remove margins */
