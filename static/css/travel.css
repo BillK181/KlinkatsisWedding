@@ -64,16 +64,26 @@ area:hover {
     grid-template-columns: 1fr; /* stack map and text */
     gap: 1.5rem;
     padding: 1rem;
+    justify-items: center; /* center horizontally */
+    text-align: center;
   }
 
   #map-exp .map {
     margin-left: 0;
-    max-width: 100%;
+    max-width: 90%; /* make it slightly smaller for mobile */
+  }
+
+  #map-exp .map img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
   }
 
   #map-exp .map-text {
     margin-right: 0;
     padding: 1rem 0.5rem;
+    width: 90%;
   }
 
   #map-exp h1 {
@@ -82,8 +92,8 @@ area:hover {
 
   #map-exp h2 {
     font-size: 1.2rem;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -140,6 +150,33 @@ area:hover {
   opacity: 0.85;
 }
 
+/* ===================== COASTAL NAVIGATION - MOBILE ===================== */
+@media (max-width: 768px) {
+  #coastal-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
+  #coastal-nav ul li {
+    width: 90%;
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding: 0.5rem 0;
+  }
+
+  #coastal-nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  #coastal-nav ul li a {
+    font-size: 1rem;
+  }
+}
+
 /* ===================== HONORABLE MENTIONS ===================== */
 #honorable-mentions {
   padding: 20px 0;
@@ -174,64 +211,18 @@ area:hover {
   font-weight: bold;
 }
 
-/* ===================== MOBILE COASTAL NAV SECTIONS ===================== */
+/* ===================== HONORABLE MENTIONS - MOBILE ===================== */
 @media (max-width: 768px) {
-  #coastal-nav {
-    display: none; /* hide original nav on mobile */
-  }
-
-  #coastal-nav-mobile {
-    display: block;
+  #honorable-mentions {
     padding: 1rem;
-    background-color: #f1e7cd;
   }
 
-  /* Individual sections under map */
-  #coastal-nav-mobile .nav-section {
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #333;
-    padding-bottom: 0.5rem;
+  #honorable-mentions h2 {
+    font-size: 1.5rem;
   }
 
-  #coastal-nav-mobile .nav-section:last-child {
-    border-bottom: none;
-  }
-
-  #coastal-nav-mobile h3 {
+  #honorable-mentions li {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  #coastal-nav-mobile ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  #coastal-nav-mobile li {
-    margin: 0.25rem 0;
-  }
-
-  #coastal-nav-mobile li a {
-    display: block;
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-  }
-
-  #coastal-nav-mobile li a:hover {
-    color: #52501c;
-  }
-
-  #coastal-nav-mobile li span {
-    display: block;
-    font-size: 0.8rem;
-    color: #555;
-    margin-left: 0.5rem;
+    line-height: 1.4;
   }
 }
