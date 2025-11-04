@@ -33,7 +33,7 @@
     display: block;
     margin: 0 auto 1rem auto; /* center with spacing below */
     transform: none;
-    top: auto;
+    top: -100px;
     left: auto;
   }
 }
@@ -108,6 +108,7 @@ area:hover {
     padding: 1rem;
     justify-items: center; /* center horizontally */
     text-align: center;
+    margin-top: 40px;
   }
 
   #map-exp .map {
