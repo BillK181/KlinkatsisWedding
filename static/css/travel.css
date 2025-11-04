@@ -34,18 +34,18 @@
 
   .hotel-button {
     position: absolute;
-    top: -69.5vh;          /* roughly half the screen height */
+    top: -70vh;          /* roughly half the screen height */
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%); /* keep it steady */
     margin: 0;          /* remove margins */
   }
 
   .hotel-button:hover {
-  background-color: #414016;
-  transform: none;
+    background-color: #414016;
+    transform: translateX(-50%); /* prevent jumping */
   }
-
 }
+
 
 
 /* ===================== MAP SECTION ===================== */
