@@ -45,7 +45,7 @@ html, body {
 @media (max-width: 768px) {
   .overview {
     padding: 1rem 0.5rem;
-    font-size: .7rem;
+    font-size: .5rem;
   }
 }
 
@@ -125,7 +125,13 @@ html, body {
   }
 
   .section-group {
-    margin: 10px 0;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+
+  .sections-container {
+    margin-top: 10px;
+    margin-top: 10px;
   }
 }
 

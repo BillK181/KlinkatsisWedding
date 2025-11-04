@@ -220,7 +220,6 @@ area:hover {
 /* ===================== HONORABLE MENTIONS - MOBILE ===================== */
 @media (max-width: 768px) {
   #honorable-mentions {
-    padding: 1rem;
   }
 
   #honorable-mentions h2 {
