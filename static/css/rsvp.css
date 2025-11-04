@@ -28,7 +28,7 @@ ul.flashes li {
 @media (max-width: 768px) {
   ul.flashes {
     width: 90%;
-    top: 38%;
+    top: 30%;
   }
 
   ul.flashes li {
