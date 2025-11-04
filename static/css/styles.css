@@ -302,8 +302,8 @@ main {
 }
 
 .splitcol .left img {
-  width: 85%;
-  height: auto;
+  height: 100%;
+  width: auto;
   border-radius: 0px;
 }
 

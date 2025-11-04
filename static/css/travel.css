@@ -132,7 +132,6 @@ area:hover {
     padding: 1rem;
     justify-items: center; /* center horizontally */
     text-align: center;
-    margin-top: 70px;
   }
 
   #map-exp .map {
