@@ -45,7 +45,7 @@ html, body {
 @media (max-width: 768px) {
   .overview {
     padding: 1rem 0.5rem;
-    font-size: .3rem;
+    font-size: .7rem;
   }
 }
 
@@ -122,6 +122,10 @@ html, body {
 
   .subsection ul li {
     font-size: 1rem;
+  }
+
+  .section-group {
+    margin: 10px 0;
   }
 }
 
