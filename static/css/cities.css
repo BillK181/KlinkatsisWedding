@@ -23,6 +23,14 @@ html, body {
   vertical-align: top; 
 }
 
+/* ===================== Top City Image - MOBILE ===================== */
+@media (max-width: 768px) {
+  .photo img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 /* ===================== Overview Section ===================== */
 .overview {
   background-color: #52501c;
@@ -31,6 +39,14 @@ html, body {
   padding: 2rem 1rem;
   color: white;
   font-size: 1.3rem;
+}
+
+/* ===================== Overview Section - MOBILE ===================== */
+@media (max-width: 768px) {
+  .overview {
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+  }
 }
 
 /* ===================== Main Sections Container ===================== */
@@ -86,6 +102,29 @@ html, body {
   margin-bottom: 0.5rem;
 }
 
+/* ===================== Subsections - MOBILE ===================== */
+@media (max-width: 768px) {
+  .subsections {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .subsection {
+    min-width: auto;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .subsection h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .subsection ul li {
+    font-size: 1rem;
+  }
+}
+
 /* ===================== Google Maps / Directions ===================== */
 .directions {
   margin-top: 30px;
@@ -101,9 +140,16 @@ html, body {
   display: block;
 }
 
+/* ===================== Google Maps / Directions - MOBILE ===================== */
+@media (max-width: 768px) {
+  .directions iframe {
+    height: 300px;
+  }
+}
+
 /* ===================== COASTAL NAVIGATION ===================== */
 #coastal-nav {
-  height: 70px; /* Adjust as needed */
+  height: 70px; 
   background-color: #f1e7cd;
   margin-top: 10px;
 }
@@ -153,4 +199,41 @@ html, body {
 
 #coastal-nav ul li a img:hover {
   opacity: 0.85;
+}
+
+/* ===================== COASTAL NAVIGATION - MOBILE ===================== */
+@media (max-width: 768px) {
+  #coastal-nav {
+    height: auto;
+  }
+
+  #coastal-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+  }
+
+  #coastal-nav ul li {
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding: 0.25rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  #coastal-nav ul li:last-child {
+    border-bottom: none;
+  }
+
+  #coastal-nav ul li a {
+    font-size: 1rem;
+    padding: 0.25rem 0;
+  }
+
+  #coastal-nav ul li:first-child a img {
+    height: 55px;
+    width: auto;
+    margin-bottom: 0.25rem;
+  }
 }
