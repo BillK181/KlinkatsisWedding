@@ -34,7 +34,7 @@
 
   .hotel-button {
     position: absolute;
-    top: -90vh;          /* roughly half the screen height */
+    top: -60vh;          /* roughly half the screen height */
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     margin: 0;          /* remove margins */
@@ -110,7 +110,7 @@ area:hover {
     padding: 1rem;
     justify-items: center; /* center horizontally */
     text-align: center;
-    margin-top: 70px;
+    margin-top: 90px;
   }
 
   #map-exp .map {
