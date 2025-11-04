@@ -304,10 +304,12 @@ main {
 }
 
 .splitcol .left img {
+  height: auto;
   max-height: 100%;
   width: auto;
   border-radius: 0;
   display: block;
+  object-fit: cover;
 }
 
 .splitcol .right {
