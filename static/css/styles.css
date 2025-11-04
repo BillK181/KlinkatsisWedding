@@ -33,6 +33,9 @@ nav ul {
 nav ul li {
   padding: 0 1rem;
   border-right: 1px solid #333;
+  display: flex;          /* make flex container */
+  align-items: center;    /* vertically center content */
+  height: 100%;           /* ensure it stretches full height of nav */
 }
 
 nav ul li:last-child {
@@ -49,9 +52,10 @@ nav ul li img {
 nav ul li a {
   text-decoration: none;
   color: #000;
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  align-items: center;
   font-weight: bold;
+  height: 100%;
 }
 
 nav ul li a img:hover {
