@@ -39,6 +39,12 @@
     transform: translateX(-50%) translateY(-50%);
     margin: 0;          /* remove margins */
   }
+
+  .hotel-button:hover {
+  background-color: #414016;
+  transform: none;
+  }
+
 }
 
 
