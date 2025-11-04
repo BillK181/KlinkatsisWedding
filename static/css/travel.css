@@ -37,13 +37,11 @@
     display: none;
   }
 
-  /* Show mobile version */
+  /* Show mobile version above the map image */
   .hotel-button-mobile {
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: -30px;
-    transform: translateX(-50%);
+    display: inline-block;  /* behaves like a block-level button but respects content width */
+    position: relative;     /* keeps it in flow above the map */
+    margin: 0 auto 1rem auto; /* center horizontally with spacing below */
     background-color: #52501c;
     color: #f1e7cd;
     font-weight: bold;
@@ -53,15 +51,16 @@
     text-decoration: none;
     z-index: 3;
     box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-    transition: background-color 0.3s, transform 0.2s;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
   }
 
   .hotel-button-mobile:hover {
     background-color: #414016;
-    transform: translateX(-50%) translateY(-4px);
+    transform: none; /* prevent jumping */
   }
 }
+
 
 
 
@@ -133,7 +132,7 @@ area:hover {
     padding: 1rem;
     justify-items: center; /* center horizontally */
     text-align: center;
-    margin-top: 50px;
+    margin-top: 70px;
   }
 
   #map-exp .map {
