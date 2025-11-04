@@ -30,6 +30,7 @@
 .map-text {
   margin-right: 100px;
   background-color: #52501c;
+  padding: 1rem;
 }
 
 h1 {
@@ -52,7 +53,7 @@ area {
   cursor: pointer;
 }
 
-/*: highlight areas on hover */
+/* Highlight areas on hover */
 area:hover {
   outline: 2px solid rgba(255, 255, 255, 0.3);
 }
@@ -65,23 +66,30 @@ area:hover {
     padding: 1rem;
   }
 
-  #map-exp .text {
-    text-align: center;
+  #map-exp .map {
+    margin-left: 0;
+    max-width: 100%;
   }
 
-  #map-exp .text h1 {
+  #map-exp .map-text {
+    margin-right: 0;
+    padding: 1rem 0.5rem;
+  }
+
+  #map-exp h1 {
     font-size: 2rem;
   }
 
-  #map-exp .text h2 {
+  #map-exp h2 {
     font-size: 1.2rem;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
-
 /* ===================== COASTAL NAVIGATION ===================== */
 #coastal-nav {
-  height: 70px; /* Adjust as needed */
+  height: 70px;
   background-color: #f1e7cd;
 }
 
@@ -164,4 +172,66 @@ area:hover {
 #honorable-mentions li strong {
   color: #000;
   font-weight: bold;
+}
+
+/* ===================== MOBILE COASTAL NAV SECTIONS ===================== */
+@media (max-width: 768px) {
+  #coastal-nav {
+    display: none; /* hide original nav on mobile */
+  }
+
+  #coastal-nav-mobile {
+    display: block;
+    padding: 1rem;
+    background-color: #f1e7cd;
+  }
+
+  /* Individual sections under map */
+  #coastal-nav-mobile .nav-section {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+  }
+
+  #coastal-nav-mobile .nav-section:last-child {
+    border-bottom: none;
+  }
+
+  #coastal-nav-mobile h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  #coastal-nav-mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #coastal-nav-mobile li {
+    margin: 0.25rem 0;
+  }
+
+  #coastal-nav-mobile li a {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+  }
+
+  #coastal-nav-mobile li a:hover {
+    color: #52501c;
+  }
+
+  #coastal-nav-mobile li span {
+    display: block;
+    font-size: 0.8rem;
+    color: #555;
+    margin-left: 0.5rem;
+  }
 }
