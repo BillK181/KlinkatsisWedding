@@ -42,6 +42,7 @@
     display: block;
     position: absolute;
     left: 50%;
+    top: -30px;
     transform: translateX(-50%);
     background-color: #52501c;
     color: #f1e7cd;
@@ -132,7 +133,7 @@ area:hover {
     padding: 1rem;
     justify-items: center; /* center horizontally */
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
   }
 
   #map-exp .map {
