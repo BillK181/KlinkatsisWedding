@@ -54,6 +54,7 @@
     box-shadow: 0 3px 6px rgba(0,0,0,0.2);
     transition: background-color 0.3s, transform 0.2s;
     cursor: pointer;
+    margin: 1.5rem auto; /* centers it naturally above the image */
   }
 
   .hotel-button-mobile:hover {
