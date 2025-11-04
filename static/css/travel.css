@@ -152,6 +152,10 @@ area:hover {
 
 /* ===================== COASTAL NAVIGATION - MOBILE ===================== */
 @media (max-width: 768px) {
+  #coastal-nav {
+    margin-bottom: 2rem;
+  }
+
   #coastal-nav ul {
     flex-direction: column;
     align-items: center;
