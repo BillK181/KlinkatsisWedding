@@ -153,7 +153,8 @@ area:hover {
 /* ===================== COASTAL NAVIGATION - MOBILE ===================== */
 @media (max-width: 768px) {
   #coastal-nav {
-    margin-bottom: 2rem;
+    height: auto;           /* allow nav to expand */
+    margin-bottom: 2rem;    /* spacing below nav */
   }
 
   #coastal-nav ul {
@@ -161,7 +162,7 @@ area:hover {
     align-items: center;
     gap: 0.25rem;
     font-size: 1rem;
-    height: auto;
+    height: auto;           /* let the list expand naturally */
     padding: 0.5rem 0;
   }
 
@@ -180,6 +181,7 @@ area:hover {
     font-size: 1rem;
   }
 }
+
 
 /* ===================== HONORABLE MENTIONS ===================== */
 #honorable-mentions {
