@@ -1,3 +1,45 @@
+/* ===================== HOTEL BUTTON ===================== */
+.map-text {
+  position: relative; /* parent for absolute positioning of the button */
+}
+
+.hotel-button {
+  position: absolute;
+  top: -80px;           /* 20px above the map-text content */
+  left: 50%;            /* center horizontally */
+  transform: translateX(-50%);
+  background-color: #52501c;
+  color: #f1e7cd;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  z-index: 2;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.hotel-button:hover {
+  background-color: #414016;
+  transform: translateX(-50%) translateY(-4px); /* subtle lift on hover */
+}
+
+/* ===================== HOTEL BUTTON - MOBILE ===================== */
+@media (max-width: 768px) {
+  .hotel-button {
+    position: static;        /* let it flow naturally above text */
+    display: block;
+    margin: 0 auto 1rem auto; /* center with spacing below */
+    transform: none;
+    top: auto;
+    left: auto;
+  }
+}
+
+
+
 /* ===================== MAP SECTION ===================== */
 #map-exp {
   display: grid;
@@ -154,7 +196,7 @@ area:hover {
 @media (max-width: 768px) {
   #coastal-nav {
     height: auto;           /* allow nav to expand */
-    margin-bottom: 2rem;    /* spacing below nav */
+    margin-bottom: .5rem;    /* spacing below nav */
   }
 
   #coastal-nav ul {
@@ -220,6 +262,8 @@ area:hover {
 /* ===================== HONORABLE MENTIONS - MOBILE ===================== */
 @media (max-width: 768px) {
   #honorable-mentions {
+    margin-left: 10px;
+    margin-left: 10px;
   }
 
   #honorable-mentions h2 {
