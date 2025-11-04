@@ -23,19 +23,22 @@
 
   <!-- ===================== NAVIGATION ===================== -->
   <nav>
-    <ul>
-      <li>
+    <ul class="main-nav">
+      <li class="logo">
         <a href="/" aria-label="Home">
           <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo" height="65" width="auto" loading="lazy">
         </a>
       </li>
+
       <li><a href="/mr-mrs">Mr & Mrs</a></li>
-      <li><a href="/rsvpage">RSVP & Schedule</a></li>
       <li><a href="/travel">Travel & Accommodations</a></li>
-      <li><a href="/registry">Registry</a></li>
       <li><a href="/faq">FAQ</a></li>
+      <li class="bottom-link"><a href="/rsvpage">RSVP & Schedule</a></li>
+      <li class="bottom-link"><a href="/registry">Registry</a></li>
     </ul>
   </nav>
+
+
 
   <!-- ===================== LOGOUT FORM ===================== -->
   <div class="logout-form">
