@@ -7,6 +7,16 @@
 </head>
 <body>
   <header id="hero">
+    <!-- Desktop Background Video -->
+    <video autoplay muted loop playsinline id="hero-video-desktop">
+      <source src="{{ url_for('static', filename='images/waves_horizontal.mp4') }}" type="video/mp4">
+    </video>
+
+    <!-- Mobile Background Video -->
+    <video autoplay muted loop playsinline id="hero-video-mobile">
+      <source src="{{ url_for('static', filename='images/waves_vertical.mp4') }}" type="video/mp4">
+    </video>
+
     <h1>Marisa & Bill</h1>
 
     <!-- Countdown Boxes -->
@@ -44,6 +54,7 @@
       {% endif %}
     {% endwith %}
   </header>
+
 
   <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
 </body>

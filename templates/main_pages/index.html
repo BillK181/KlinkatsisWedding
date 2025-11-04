@@ -4,6 +4,11 @@
 {% block content %}
 <!-- ===================== HERO / HEADER ===================== -->
 <header id="hero">
+  <video autoplay muted loop playsinline id="hero-video">
+    <source src="{{ url_for('static', filename='images/waves_vertical.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
   <h1>Klinkatsis Wedding</h1>
 
   <div id="countdown-container">
