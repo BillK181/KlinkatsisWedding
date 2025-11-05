@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Klinkatsis Wedding{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/rsvpre.css') }}" media="all">
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="hero-video-container">
+        <video autoplay muted loop playsinline id="hero-video">
+            <source src="{{ url_for('static', filename='images/olersvp.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay-text">Coming Soon!</div>
+    </div>
+</main>
+{% endblock %}
