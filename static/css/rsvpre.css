@@ -36,3 +36,20 @@ body, html {
   0%, 100% { transform: translate(-50%, -50%) scale(1); }
   50% { transform: translate(-50%, -50%) scale(1.05); }
 }
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+  /* Make video scale properly */
+  #hero-video {
+    width: 100%;           /* full width */
+    height: auto;          /* maintain aspect ratio */
+    min-height: 100vh;     /* ensure it fills the screen */
+    object-fit: cover;     /* crop if necessary to fill viewport */
+  }
+
+  /* Container height adjustment */
+  .hero-video-container {
+    height: auto;          /* let it adapt */
+    min-height: 100vh;     /* full viewport height */
+  }
+}
