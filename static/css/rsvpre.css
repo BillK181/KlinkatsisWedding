@@ -43,13 +43,10 @@ body, html {
   #hero-video {
     width: 100%;           /* full width */
     height: auto;          /* maintain aspect ratio */
-    min-height: 100vh;     /* ensure it fills the screen */
-    object-fit: cover;     /* crop if necessary to fill viewport */
   }
 
   /* Container height adjustment */
   .hero-video-container {
     height: auto;          /* let it adapt */
-    min-height: 100vh;     /* full viewport height */
   }
 }
