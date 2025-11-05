@@ -24,6 +24,7 @@
 
 .faq-question {
   background-color: #f5f5f5;
+  text-align: center;
   border: none;
   width: 100%;
   text-align: left;
@@ -45,8 +46,44 @@
   transition: max-height 0.3s ease;
   background-color: #fff;
   padding: 0 20px;
+  text-align: center;
 }
 
 .faq-answer p {
   margin: 15px 0;
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+  .faq {
+    max-width: 95%;       /* use almost full width */
+    margin: 20px auto;    /* smaller top/bottom margin */
+    padding: 0 10px;      /* extra side padding */
+  }
+
+  .faq h2 {
+    font-size: 28px;       /* slightly smaller header */
+    padding: 15px 10px;    /* adjust padding */
+  }
+
+  .faq-item {
+    margin-bottom: 15px;   /* more space between items */
+  }
+
+  .faq-question {
+    text-align: center;     /* center question text */
+    font-size: 18px;        /* slightly bigger for mobile readability */
+    padding: 15px;          /* more padding around text */
+    color: black;
+  }
+
+  .faq-answer {
+    padding: 10px 15px;     /* more padding on sides */
+    text-align: center;      /* center answer text */
+  }
+
+  .faq-answer p {
+    margin: 10px 0;         /* adjust spacing for mobile */
+    line-height: 1.5;       /* better readability */
+  }
 }
