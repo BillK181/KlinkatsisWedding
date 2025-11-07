@@ -203,6 +203,8 @@ area:hover {
     padding: 1rem 0.5rem;
     width: 90%;
     height: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   #map-exp h1 {
