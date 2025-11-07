@@ -43,10 +43,16 @@ body, html {
   #hero-video {
     width: 100%;           /* full width */
     height: auto;          /* maintain aspect ratio */
+    display: block;
   }
 
   /* Container height adjustment */
   .hero-video-container {
     height: auto;          /* let it adapt */
   }
+  .overlay-text {
+  font-size: 2rem;
+  }
+
+
 }

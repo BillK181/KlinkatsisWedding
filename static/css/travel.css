@@ -5,7 +5,7 @@
 
 .hotel-button {
   position: absolute;
-  top: -80px;           /* 20px above the map-text content */
+  top: -80px;         
   left: 50%;            /* center horizontally */
   transform: translateX(-50%);
   background-color: #52501c;
@@ -24,6 +24,15 @@
 .hotel-button:hover {
   background-color: #414016;
   transform: translateX(-50%) translateY(-4px); /* subtle lift on hover */
+}
+
+
+/* ==================== BUTTON FIX 1000PX ==================== */
+
+@media (max-width: 1000px) {
+  .hotel-button {
+    top: -90px;
+  }
 }
 
 /* ===================== MOBILE HOTEL BUTTON ===================== */
@@ -62,8 +71,6 @@
 }
 
 
-
-
 /* ===================== MAP SECTION ===================== */
 #map-exp {
   display: grid;
@@ -92,13 +99,28 @@
   max-height: 80vh; 
 }
 
+/* Make clickable areas have pointer cursor */
+area {
+  cursor: pointer;
+}
+
+/* Highlight areas on hover */
+area:hover {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+
+
+/* ==================== MAP-TEXT SECTION ==================== */
+
 /* right (text) container */
 .map-text {
   margin-right: 100px;
   background-color: #52501c;
   padding: 1rem;
+  width: 90%;
+  height: 70%;
 }
-
 #map-exp h1 {
   font-size: 4rem;
   margin-bottom: 2rem;
@@ -114,15 +136,45 @@
   margin-right: 25px;
 }
 
-/* Make clickable areas have pointer cursor */
-area {
-  cursor: pointer;
+
+/* ================== MAP-TEXT SCREEN ADJUST FIX ================== */
+
+@media (max-width: 1300px) {
+  #map-exp .map-text h1 {
+    font-size: 3.5rem;
+  }
+  #map-exp .map-text h2 {
+    font-size: 1.7rem;
+  }
 }
 
-/* Highlight areas on hover */
-area:hover {
-  outline: 2px solid rgba(255, 255, 255, 0.3);
+@media (max-width: 1100px) {
+  #map-exp .map-text h1 {
+    font-size: 3rem;
+  }
+  #map-exp .map-text h2 {
+    font-size: 1.55rem;
+  }
 }
+
+@media (max-width: 1030px) {
+  #map-exp .map-text h1 {
+    font-size: 3rem;
+  }
+  #map-exp .map-text h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 990px) {
+  #map-exp .map-text h1 {
+    font-size: 3rem;
+  }
+  #map-exp .map-text h2 {
+    font-size: 1.2rem;
+  }
+}
+
 
 /* ===================== MAP SECTION - MOBILE ===================== */
 @media (max-width: 768px) {
@@ -150,6 +202,7 @@ area:hover {
     margin-right: 0;
     padding: 1rem 0.5rem;
     width: 90%;
+    height: 100%;
   }
 
   #map-exp h1 {
@@ -161,6 +214,7 @@ area:hover {
     margin-left: 0;
     margin-right: 0;
   }
+
 }
 
 /* ===================== COASTAL NAVIGATION ===================== */
