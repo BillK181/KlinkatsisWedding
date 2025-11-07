@@ -58,6 +58,72 @@ nav ul li a img:hover {
   opacity: 0.85;
 }
 
+/* ===================== NAV SCREEN RESIZE FIX ===================== */
+@media (max-width: 1320px) {
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* make li fill row height */
+    gap: 0;
+    padding: 1rem 0;      /* controls vertical spacing */
+    background-color: #f1e7cd;
+    margin: 1px 0;
+    font-size: 1.8rem;
+  }
+
+  nav ul li {
+    display: flex;           /* flex container for the link inside */
+    align-items: center;     /* vertically center content */
+    justify-content: center; /* horizontally center content */
+    padding: 0 1rem;         /* horizontal spacing */
+    border-right: 1px solid #333;
+  }
+
+  nav ul li:last-child {
+    border-right: none;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #000;
+    display: flex;           /* fill the li */
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  nav ul li img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    vertical-align: middle;
+  }
+
+  nav ul li a img:hover {
+    opacity: 0.85;
+  }
+
+}
+
+
+
+
+@media (max-width: 1000px) {
+  nav ul {
+    padding: .5rem;
+    font-size: 1.4rem;
+  }
+} 
+
+@media (max-width: 900px) {
+  nav ul {
+    padding: .2rem;
+    font-size: 1.2rem;
+  }
+} 
+
 /* ===================== NAV - MOBILE ===================== */
 @media (max-width: 768px) {
   nav ul {
@@ -331,9 +397,9 @@ main {
   }
 
   .splitcol .left img {
-    width: 100%;
-    border-radius: 0;
-    margin: 0;
+    width: 80%;
+    border-radius: 15;
+    margin: 15px;
   }
 
   .splitcol .left {
@@ -346,7 +412,7 @@ main {
 }
 
   .splitcol p {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
@@ -365,6 +431,19 @@ footer img {
   height: auto;
   border-radius: 8px;
 }
+
+/* =================== FOOTER MOBILE =================== */
+@media (max-width: 768px) {
+  footer {
+    padding: 0.3rem; /* reduce vertical space */
+  }
+
+  footer img {
+    width: 100px; /* smaller logo for mobile */
+  }
+}
+
+
 
 /* ===================== FORMS ===================== */
 input, textarea, select, button {
