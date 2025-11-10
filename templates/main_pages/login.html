@@ -7,19 +7,18 @@
 </head>
 <body>
   <header id="hero">
-    <!-- Desktop Background Video -->
-    <video autoplay muted loop playsinline id="hero-video-desktop">
-      <source src="{{ url_for('static', filename='images/waves_horizontal.mp4') }}" type="video/mp4">
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline id="hero-video">
+      <source src="" type="video/mp4">
     </video>
+    <div class="video-credit">Video by Bill Klinkatsis</div>
 
-    <!-- Mobile Background Video -->
-    <video autoplay muted loop playsinline id="hero-video-mobile">
-      <source src="{{ url_for('static', filename='images/waves_vertical.mp4') }}" type="video/mp4">
-    </video>
+    <!-- Overlay for darkness -->
+    <div class="hero-overlay"></div>
 
+    <!-- Hero Content -->
     <h1>Marisa & Bill</h1>
 
-    <!-- Countdown Boxes -->
     <div id="countdown-container">
       <div class="countdown-box">
         <div id="days" class="countdown-number">0</div>
@@ -55,7 +54,24 @@
     {% endwith %}
   </header>
 
-
   <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+  <script>
+    const video = document.getElementById('hero-video');
+    if (window.innerWidth <= 768) {
+      video.src = "{{ url_for('static', filename='images/waves_vertical.mp4') }}";
+    } else {
+      video.src = "{{ url_for('static', filename='images/waves_horizontal.mp4') }}";
+    }
+    video.load();
+
+    // Pause video when tab is inactive
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        video.pause();
+      } else {
+        video.play();
+      }
+    });
+  </script>
 </body>
 </html>

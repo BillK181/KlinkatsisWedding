@@ -13,14 +13,43 @@ html, body {
   min-height: 100%;
 }
 
-/* ===================== Top City Image ===================== */
+.photo {
+  position: relative;
+  display: block;          /* was inline-block — this ensures full-width */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .photo img {
-  display: block;     
+  display: block;           /* removes baseline gap */
   width: 100%;
   height: auto;
-  margin: 0;            
+  border: none;
   border-radius: 0;
-  vertical-align: top; 
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;   /* optional, safe default */
+}
+
+.photo .credit {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+.photo .credit a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.photo .credit a:hover {
+  text-decoration: underline;
 }
 
 /* ===================== Top City Image - MOBILE ===================== */
@@ -29,6 +58,12 @@ html, body {
     width: 100%;
     height: auto;
   }
+
+  .photo .credit {
+  font-size: 0.5rem;
+  margin-top: 2px;
+  }
+
 }
 
 /* ===================== Overview Section ===================== */

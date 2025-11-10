@@ -1,5 +1,5 @@
 /* ===================== Chat Bubble ===================== */
-/* Bubble button that triggers the chat */
+/* Floating button to trigger chat */
 #chatbot-bubble {
   position: fixed;
   bottom: 20px;                 /* distance from bottom of screen */
@@ -15,16 +15,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* Attention animation */
+  animation: pulse 2s infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Enlarge bubble on hover */
+#chatbot-bubble:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Pulse keyframes for attention */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
 }
 
 /* ===================== Chat Container ===================== */
 /* Hidden until bubble clicked */
 #chatbot-container {
   position: fixed;
-  bottom: 20px;                 /* slightly out from corner */
+  bottom: 20px;
   right: 20px;
-  width: 400px;                  /* desktop width */
-  height: 200px;                 /* default desktop height */
+  width: 400px;
+  height: 200px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
@@ -97,17 +114,17 @@
 
   /* Mobile container */
   #chatbot-container {
-    width: 90%;                  /* scale with screen width */
-    max-width: 300px;            /* maximum width */
-    max-height: 70vh;            /* default height */
-    bottom: env(safe-area-inset-bottom, 15px); /* safe distance from notches */
+    width: 90%;
+    max-width: 300px;
+    max-height: 70vh;
+    bottom: env(safe-area-inset-bottom, 15px);
     right: env(safe-area-inset-right, 15px);
-    height: auto;                /* let content define height */
+    height: auto;
   }
 
-  /* When container is open, make slightly taller */
+  /* Slightly taller when open */
   #chatbot-container.open {
-    max-height: 80vh;            /* taller when selected */
+    max-height: 80vh;
   }
 
   #chatbot-messages {
@@ -117,7 +134,7 @@
   }
 
   #chatbot-input {
-    flex-shrink: 0;              /* always visible */
+    flex-shrink: 0;
   }
 
   #chat-input {
@@ -127,5 +144,11 @@
   #chatbot-header {
     font-size: 14px;
     padding: 8px;
+  }
+
+  /* Make bubble slightly smaller on mobile */
+  #chatbot-bubble {
+    padding: 12px;
+    font-size: 18px;
   }
 }

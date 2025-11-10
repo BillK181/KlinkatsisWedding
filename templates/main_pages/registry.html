@@ -2,8 +2,25 @@
 
 {% block title %}Klinkatsis Wedding{% endblock %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/registry.css') }}">
+{% endblock %}
+
 {% block content %}
 
   <!-- ===================== Main Content ===================== -->
-  <main></main>
+ <main class="venmo-main">
+    <div>
+      <h2>
+        Things? Ugh... Things are soooooo lame. GIVE US MONEY!
+      </h2>
+    </div>
+    <a href="https://venmo.com/Bill-Klinkatsis" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="venmo-qr-link">
+      <img src="{{ url_for('static', filename='images/qr.jpg') }}" alt="Scan to pay with Venmo">
+    </a>
+  </main>
+
 {% endblock %}

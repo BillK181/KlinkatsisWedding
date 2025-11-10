@@ -1,0 +1,29 @@
+.venmo-main {
+  display: flex;
+  flex-direction: column;   /* stack items vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 40px;
+}
+
+.venmo-main h2 {
+  font-size: 4rem;
+  margin-bottom: 20px; /* space between text and image */
+}
+
+.venmo-qr-link img {
+  width: 400px;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.venmo-qr-link img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}

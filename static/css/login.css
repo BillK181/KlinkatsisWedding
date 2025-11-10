@@ -1,7 +1,4 @@
-/* ===========================
-   HERO SECTION WITH VIDEO BACKGROUND
-   =========================== */
-
+/* ===================== HERO ===================== */
 #hero {
   position: relative;
   min-height: 100vh;
@@ -15,7 +12,7 @@
   background: url('../images/load.jpg') center center / cover no-repeat; /* fallback image */
 }
 
-/* Background Videos */
+/* Background Video */
 #hero video {
   position: absolute;
   top: 0; left: 0;
@@ -23,32 +20,37 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  opacity: 0;
+  animation: fadeInVideo 1.5s ease forwards;
 }
 
 /* Overlay for darkness */
-#hero::before {
+.hero-overlay {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.016);
+  background-color: rgba(0, 0, 0, 0.16);
   z-index: 1;
 }
 
-/* Desktop / Mobile Video Display Rules */
-#hero-video-mobile { display: none; }
-#hero-video-desktop { display: block; }
-
-@media (max-width: 768px) {
-  #hero-video-desktop { display: none; }
-  #hero-video-mobile { display: block; }
+#hero .video-credit {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 2; /* above overlay, below text */
+  font-family: 'Inter', sans-serif;
+  pointer-events: none; /* prevents clicks */
+  background: rgba(0, 0, 0, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: #f1e7cd;
 }
 
-/* ===========================
-   HERO CONTENT
-   =========================== */
-
+/* Hero Content */
 #hero h1 {
   margin-top: 50px;
   font-size: 130pt;
@@ -58,15 +60,15 @@
   position: relative;
 }
 
+/* ===================== COUNTDOWN ===================== */
+
 #countdown-container {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin: 50px 0;
+  margin: 20px 0;
   position: relative;
   z-index: 2;
-  margin-top: 0px;
-  margin-bottom: 20px;
 }
 
 .countdown-box {
@@ -90,9 +92,7 @@
   margin-top: 2px;
 }
 
-/* ===========================
-   FORM STYLING
-   =========================== */
+/* ===================== FORM ===================== */
 
 #hero form {
   margin-top: 0.5px;
@@ -116,11 +116,6 @@
   color: #000000;
 }
 
-#hero form input:focus {
-  border-color: #fff;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
-
 #hero form button {
   font-size: 1.2rem;
   padding: 12px 25px;
@@ -140,15 +135,7 @@
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-#hero form input::placeholder {
-  color: rgb(95, 95, 95);
-  opacity: 1;
-}
-
-/* ===========================
-   FLASHED MESSAGES
-   =========================== */
-
+/* ===================== FLASHED MESSAGE ===================== */
 #hero ul {
   list-style: none;
   padding: 0;
@@ -167,24 +154,31 @@
   margin-bottom: 10px;
 }
 
-/* ===========================
-   OPTIONAL FADE-IN ANIMATION
-   =========================== */
-
-#hero video {
-  opacity: 0;
-  animation: fadeInVideo 1.5s ease forwards;
-}
-
+/* Fade-in Animation */
 @keyframes fadeInVideo {
   to { opacity: 1; }
 }
 
-/* ===========================
-   Mobile Fix
-   =========================== */
+/* ===================== MOBILE ===================== */
 @media (max-width: 768px) {
   #hero {
     background: url('../images/load_mobile.jpg') center center / cover no-repeat;
+  }
+
+  #hero h1 {
+    font-size: 60pt;
+  }
+
+  #countdown-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #hero form input {
+    width: 90%;
+  }
+
+  #hero .video-credit {
+    font-size: 0.5rem;
   }
 }
