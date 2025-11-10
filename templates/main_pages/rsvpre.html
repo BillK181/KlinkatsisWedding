@@ -15,6 +15,20 @@
             Your browser does not support the video tag.
         </video>
         <div class="overlay-text">Coming Soon!</div>
+        <div class="video-credit">Video by Bill Klinkatsis</div>
     </div>
 </main>
 {% endblock %}
+<!-- =================== VIDEO PAUSE SCRIPT =================== -->
+<script>
+  const video = document.getElementById('hero-video');
+
+  // Pause video when tab is inactive
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      video.pause();
+    } else {
+      video.play();
+    }
+  });
+</script>

@@ -25,6 +25,23 @@
   z-index: 0;
 }
 
+/* Video Credit */
+#hero .video-credit {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  z-index: 2; /* above overlay, below text */
+  font-family: 'Inter', sans-serif;
+  pointer-events: none; /* prevents clicks */
+  background: rgba(0, 0, 0, 0.3);
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: #f1e7cd;
+}
+
+
 /* Dark overlay */
 #hero::before {
   content: "";
@@ -43,6 +60,23 @@
   line-height: 0.9;
   font-size: 10rem;
   font-family: 'Playfair Display', serif;
+}
+
+/* ===================== HERO MOBILE FIX ===================== */
+@media (max-width: 768px) {
+  #hero {
+    min-height: 200px;
+    padding-bottom: 30px;
+  }
+
+  #hero h1 {
+    font-size: 3.88rem;
+    margin-bottom: 10px;
+  }
+
+  #hero .video-credit {
+    font-size: 0.5rem;
+  }
 }
 
 /* ===================== COUNTDOWN - DESKTOP ===================== */
@@ -83,18 +117,8 @@
   margin-top: 2px;
 }
 
-/* ===================== MOBILE FIX ===================== */
+/* ===================== COUNTDOWN MOBILE FIX ===================== */
 @media (max-width: 768px) {
-  #hero {
-    min-height: 200px;
-    padding-bottom: 30px;
-  }
-
-  #hero h1 {
-    font-size: 3.88rem;
-    margin-bottom: 10px;
-  }
-
   #countdown-container {
     display: flex;
     flex-direction: row;

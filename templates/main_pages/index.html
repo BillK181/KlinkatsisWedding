@@ -10,6 +10,7 @@
   </video>
 
   <h1>Klinkatsis Wedding</h1>
+  <div class="video-credit">Video by Bill Klinkatsis</div>
 
   <div id="countdown-container">
     <div class="countdown-box">
@@ -80,7 +81,7 @@
   <!-- ===================== VENUE SECTION ===================== -->
   <section class="splitcol">
     <div class="left">
-      <img src="{{ url_for('static', filename='images/oletwo.jpg') }}" alt="The Ole Hanson Beach Club">
+      <a href="/rsvpage"><img src="{{ url_for('static', filename='images/oletwo.jpg') }}" alt="The Ole Hanson Beach Club"></a>
     </div>
     <div class="right">
       <h2>The Venue</h2>
@@ -99,3 +100,17 @@
 
 </main>
 {% endblock %}
+
+<!-- =================== VIDEO PAUSE SCRIPT =================== -->
+<script>
+  const video = document.getElementById('hero-video');
+
+  // Pause video when tab is inactive
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      video.pause();
+    } else {
+      video.play();
+    }
+  });
+</script>
