@@ -1,6 +1,25 @@
 # === Imports ===
 from openai import OpenAI
-from weddingbot import globals
+from weddingbot.globals import (
+    get_openai_key,
+    SYSTEM_PROMPT,
+    DRESS_CODE,
+    WEDDING_COLORS,
+    GUEST_ARRIVAL_TIME,
+    RSVP_DEADLINE,
+    FOOD_MENU,
+    OPEN_BAR,
+    GIFT_REGISTRY,
+    KIDS,
+    HOTEL_BLOCK,
+    BUS_TO_WEDDING,
+    BUS_FROM_WEDDING,
+    THINGS_TO_DO,
+    CITIES,
+    WEDDING_LOCATION,
+    WEDDING_DATE,
+    PERSONALITY
+)
 
 # === Client Setup ===
 client = None  # Will initialize when needed
@@ -9,7 +28,7 @@ def get_client():
     """Create OpenAI client using environment variable key."""
     global client
     if client is None:
-        key = globals.get_openai_key()
+        key = get_openai_key()
         client = OpenAI(api_key=key)
     return client
 
@@ -29,30 +48,30 @@ def main():
         {
             "role": "system",
             "content": f"""
-{globals.SYSTEM_PROMPT}
+{SYSTEM_PROMPT}
 
 WEDDING DETAILS
 ---------------
-Dress Code: {globals.DRESS_CODE}
-Wedding Location: {globals.WEDDING_LOCATION}
-Wedding Date: {globals.WEDDING_DATE}
-Wedding Colors: {globals.WEDDING_COLORS}
-Guest Arrival Time: {globals.GUEST_ARRIVAL_TIME}
-RSVP Deadline: {globals.RSVP_DEADLINE}
+Dress Code: {DRESS_CODE}
+Wedding Location: {WEDDING_LOCATION}
+Wedding Date: {WEDDING_DATE}
+Wedding Colors: {WEDDING_COLORS}
+Guest Arrival Time: {GUEST_ARRIVAL_TIME}
+RSVP Deadline: {RSVP_DEADLINE}
 
-Food Menu: {globals.FOOD_MENU}
-Open Bar: {globals.OPEN_BAR}
-Kids Policy: {globals.KIDS}
-Gift Registry: {globals.GIFT_REGISTRY}
+Food Menu: {FOOD_MENU}
+Open Bar: {OPEN_BAR}
+Kids Policy: {KIDS}
+Gift Registry: {GIFT_REGISTRY}
 
-Hotel Block: {globals.HOTEL_BLOCK}
-Bus To Wedding: {globals.BUS_TO_WEDDING}
-Bus From Wedding: {globals.BUS_FROM_WEDDING}
+Hotel Block: {HOTEL_BLOCK}
+Bus To Wedding: {BUS_TO_WEDDING}
+Bus From Wedding: {BUS_FROM_WEDDING}
 
-Things To Do Instruction: {globals.THINGS_TO_DO}
-Local cities to visit: {globals.CITIES}
+Things To Do Instruction: {THINGS_TO_DO}
+Local cities to visit: {CITIES}
 
-Personality: {globals.PERSONALITY}
+Personality: {PERSONALITY}
 """
         }
     ]
