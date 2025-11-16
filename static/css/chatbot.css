@@ -1,41 +1,41 @@
-/* ===================== Chat Bubble ===================== */
-/* Floating button to trigger chat */
+/* --- Chat Bubble --- */
+
+
 #chatbot-bubble {
   position: fixed;
-  bottom: 20px;                 /* distance from bottom of screen */
-  right: 20px;                  /* distance from right edge */
+  bottom: 20px;         
+  right: 20px;                  
   background: whitesmoke;
   color: white;
   padding: 15px;
-  border-radius: 50%;           /* circular button */
+  border-radius: 50%;       
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  z-index: 9999;                /* above all elements */
+  z-index: 9999;            
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* Attention animation */
-  animation: pulse 2s infinite;
+  animation: bubble-pulse 2s infinite;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Enlarge bubble on hover */
+
 #chatbot-bubble:hover {
   transform: scale(1.2);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
-/* Pulse keyframes for attention */
-@keyframes pulse {
+/* Pulse modifier */
+@keyframes bubble-pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.5); }
   100% { transform: scale(1); }
 }
 
-/* ===================== Chat Container ===================== */
-/* Hidden until bubble clicked */
+/* --- Chat Open --- */
+
+
 #chatbot-container {
   position: fixed;
   bottom: 20px;
@@ -45,14 +45,14 @@
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
-  display: none;                 /* hidden by default */
-  flex-direction: column;        /* stack header, messages, input vertically */
+  display: none;                 /* Hidden until bubble clicked */
+  flex-direction: column;        
   overflow: hidden;
-  z-index: 999;                  /* above page content */
-  touch-action: manipulation;    /* prevent zoom/scroll weirdness */
+  z-index: 999;                 
+  touch-action: manipulation;   
 }
 
-/* Chat header */
+
 #chatbot-header {
   background: whitesmoke;
   padding: 12px;
@@ -61,11 +61,11 @@
   border-bottom: 1px solid whitesmoke;
 }
 
-/* Messages area */
+
 #chatbot-messages {
-  flex: 1;                       /* expand to fill available space */
+  flex: 1;                      
   padding: 10px;
-  overflow-y: auto;              /* scroll if content exceeds */
+  overflow-y: auto;              
   font-size: 14px;
 }
 
@@ -91,7 +91,6 @@
   cursor: pointer;
 }
 
-/* Close button */
 #chatbot-close {
   position: absolute;
   right: 10px;
@@ -109,10 +108,9 @@
   content: "";
 }
 
-/* ===================== MOBILE FIX ===================== */
+/* Mobile */
 @media (max-width: 768px) {
 
-  /* Mobile container */
   #chatbot-container {
     width: 90%;
     max-width: 300px;
@@ -122,14 +120,13 @@
     height: auto;
   }
 
-  /* Slightly taller when open */
   #chatbot-container.open {
     max-height: 80vh;
   }
 
   #chatbot-messages {
     flex: 1;
-    max-height: calc(70vh - 60px); /* subtract header + input height */
+    max-height: calc(70vh - 80px); /* subtract header + input height */
     overflow-y: auto;
   }
 
@@ -146,7 +143,6 @@
     padding: 8px;
   }
 
-  /* Make bubble slightly smaller on mobile */
   #chatbot-bubble {
     padding: 12px;
     font-size: 18px;

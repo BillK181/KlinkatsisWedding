@@ -161,7 +161,12 @@ def mr_mrs():
 def rsvpage():
     guest, name = get_current_guest()
     rsvp_status = guest.rsvp_status if guest else None
+
+    if name and name.strip().lower() == "cs50":
+        return render_template('main_pages/rsvp.html', name=name, rsvp_status=rsvp_status)
+
     return render_template('main_pages/rsvpre.html', name=name, rsvp_status=rsvp_status)
+
 
 
 @app.route('/travel', methods=['GET'])

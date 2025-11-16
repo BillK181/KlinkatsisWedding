@@ -2,5 +2,5 @@
 guest_names = [
     "Marisa DeGennaro",
     "Bill Klinkatsis",
-    "Guest"
+    "CS50"
 ]

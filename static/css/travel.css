@@ -1,12 +1,14 @@
-/* ===================== HOTEL BUTTON (DESKTOP) ===================== */
+/* --- Hotel Button --- */
+
+
 .map-text {
-  position: relative; /* parent for absolute positioning of the button */
+  position: relative; 
 }
 
 .hotel-button {
   position: absolute;
   top: -80px;         
-  left: 50%;            /* center horizontally */
+  left: 50%;
   transform: translateX(-50%);
   background-color: #52501c;
   color: #f1e7cd;
@@ -23,34 +25,30 @@
 
 .hotel-button:hover {
   background-color: #414016;
-  transform: translateX(-50%) translateY(-4px); /* subtle lift on hover */
+  transform: translateX(-50%) translateY(-4px);
 }
 
-
-/* ==================== BUTTON FIX 1000PX ==================== */
-
+/* Hotel Button Resize Fix */
 @media (max-width: 1000px) {
   .hotel-button {
     top: -90px;
   }
 }
 
-/* ===================== MOBILE HOTEL BUTTON ===================== */
+/* Mobile */
 .hotel-button-mobile {
-  display: none; /* hidden by default on desktop */
+  display: none; /* hidden on desktop */
 }
 
 @media (max-width: 768px) {
-  /* Hide desktop version */
   .hotel-button {
-    display: none;
+    display: none; /* hide desktop version */
   }
 
-  /* Show mobile version above the map image */
   .hotel-button-mobile {
-    display: inline-block;  /* behaves like a block-level button but respects content width */
-    position: relative;     /* keeps it in flow above the map */
-    margin: 0 auto 1rem auto; /* center horizontally with spacing below */
+    display: inline-block;  
+    position: relative;
+    margin: 0 auto 1rem auto;
     background-color: #52501c;
     color: #f1e7cd;
     font-weight: bold;
@@ -66,12 +64,13 @@
 
   .hotel-button-mobile:hover {
     background-color: #414016;
-    transform: none; /* prevent jumping */
+    transform: none; 
   }
 }
 
+/* --- Map Section --- */
 
-/* ===================== MAP SECTION ===================== */
+
 #map-exp {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -82,7 +81,7 @@
   background-color: #f1e7cd;
 }
 
-/* left (map) container */
+
 .map {
   position: relative;
   width: 100%;
@@ -90,7 +89,6 @@
   margin-left: 100px;
 }
 
-/* Map image responsive */
 .map img {
   width: auto;
   height: auto;
@@ -99,21 +97,13 @@
   max-height: 80vh; 
 }
 
-/* Make clickable areas have pointer cursor */
 area {
   cursor: pointer;
 }
 
-/* Highlight areas on hover */
-area:hover {
-  outline: 2px solid rgba(255, 255, 255, 0.3);
-}
+/* --- Map Text --- */
 
 
-
-/* ==================== MAP-TEXT SECTION ==================== */
-
-/* right (text) container */
 .map-text {
   margin-right: 100px;
   background-color: #52501c;
@@ -137,7 +127,7 @@ area:hover {
 }
 
 
-/* ================== MAP-TEXT SCREEN ADJUST FIX ================== */
+/* Map Text Screen Rezise Fix */
 
 @media (max-width: 1300px) {
   #map-exp .map-text h1 {
@@ -176,19 +166,19 @@ area:hover {
 }
 
 
-/* ===================== MAP SECTION - MOBILE ===================== */
+/* Map + Map Text Mobile */
 @media (max-width: 768px) {
   #map-exp {
-    grid-template-columns: 1fr; /* stack map and text */
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 1rem;
-    justify-items: center; /* center horizontally */
+    justify-items: center;
     text-align: center;
   }
 
   #map-exp .map {
     margin-left: 0;
-    max-width: 90%; /* make it slightly smaller for mobile */
+    max-width: 90%;
   }
 
   #map-exp .map img {
@@ -219,7 +209,7 @@ area:hover {
 
 }
 
-/* ===================== COASTAL NAVIGATION ===================== */
+/* --- Coastal Nav --- */
 #coastal-nav {
   height: 70px;
   background-color: #f1e7cd;
@@ -272,11 +262,11 @@ area:hover {
   opacity: 0.85;
 }
 
-/* ===================== COASTAL NAVIGATION - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   #coastal-nav {
-    height: auto;           /* allow nav to expand */
-    margin-bottom: .5rem;    /* spacing below nav */
+    height: auto;           
+    margin-bottom: .5rem;   
   }
 
   #coastal-nav ul {
@@ -284,7 +274,7 @@ area:hover {
     align-items: center;
     gap: 0.25rem;
     font-size: 1rem;
-    height: auto;           /* let the list expand naturally */
+    height: auto;         
     padding: 0.5rem 0;
   }
 
@@ -305,7 +295,7 @@ area:hover {
 }
 
 
-/* ===================== HONORABLE MENTIONS ===================== */
+/* --- Honorable Mentions --- */
 #honorable-mentions {
   padding: 20px 0;
   text-align: center;
@@ -339,7 +329,7 @@ area:hover {
   font-weight: bold;
 }
 
-/* ===================== HONORABLE MENTIONS - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   #honorable-mentions {
     margin-left: 10px;

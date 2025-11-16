@@ -9,11 +9,11 @@
 
 {% block content %}
 <main>
-  <!-- ===================== Map Section ===================== -->
+  <!-- Map Section -->
   <section id="map-exp">
     <div class="map">
-      <!-- Mobile-only Hotel Button (above the map image) -->
-      <a href="https://www.nfl.com" class="hotel-button-mobile" target="_blank">
+      <!-- Mobile Only Button -->
+      <a href="https://book.passkey.com/gt/220960342?gtid=c6987b61e7c49eeb5b9afd67d9a0e70d&mobile=true&dw=375" class="hotel-button-mobile" target="_blank">
         Reserve Your Hotel Room
       </a>
 
@@ -36,11 +36,12 @@
     </div>
 
     <div class="map-text">
-       <!-- Desktop-only Hotel Button (above map-text content) -->
+       <!-- Desktop Only Button -->
       <a href="https://book.passkey.com/gt/220960342?gtid=c6987b61e7c49eeb5b9afd67d9a0e70d&mobile=true&dw=375" class="hotel-button" target="_blank">
         Reserve Your Hotel Room
       </a>
 
+      <!-- Map Text -->
       <h1>Oh The Places You'll Go</h1>
       <h2>
         Looking to turn our wedding into a great vacation? Well check out some of the best spots in Southern California.
@@ -49,6 +50,7 @@
     </div>
   </section>
 
+<!-- Coastal Nav -->
   <nav id="coastal-nav">
     <ul>
       <li><a href="/los_angeles">Los Angeles</a></li>
@@ -62,6 +64,7 @@
     </ul>
   </nav>
 
+  <!-- Honorabloe Mentions -->
   <section id="honorable-mentions">
     <h2>Honorable Mentions</h2>
     <ul>
@@ -72,11 +75,14 @@
   </section>
 </main>
 
-<!-- Image map resizer for responsiveness -->
-<script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
-<script>
-  window.onload = function() {
-    imageMapResize();
-  };
+<!-- JS for Image Resizer (https://github.com/davidjbradshaw/image-map-resizer) -->
+<script src="{{ url_for('static', filename='js/mapresize.js') }}" defer></script>
+<script defer>
+  window.addEventListener("load", function() {
+    if (typeof imageMapResize === "function") {
+      imageMapResize();
+    }
+  });
 </script>
+
 {% endblock %}

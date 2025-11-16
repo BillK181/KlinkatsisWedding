@@ -8,6 +8,8 @@
 {% endblock %}
 
 {% block content %}
+
+<!-- Hero Video -->
 <main>
     <div class="hero-video-container">
         <video autoplay muted loop playsinline id="hero-video">
@@ -19,11 +21,11 @@
     </div>
 </main>
 {% endblock %}
-<!-- =================== VIDEO PAUSE SCRIPT =================== -->
+
+<!-- Pause Video Script -->
 <script>
   const video = document.getElementById('hero-video');
 
-  // Pause video when tab is inactive
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       video.pause();
