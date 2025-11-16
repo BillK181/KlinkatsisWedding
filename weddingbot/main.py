@@ -1,6 +1,6 @@
 # === Imports ===
 from openai import OpenAI
-from . import globals
+from weddingbot import globals
 
 # === Client Setup ===
 client = None  # Will initialize when needed
