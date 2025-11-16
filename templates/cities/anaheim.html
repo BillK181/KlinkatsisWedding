@@ -10,6 +10,7 @@
 {% block content %}
   <main>
 
+ <!-- Hero Photo -->
     <div class="photo">
       <img src="{{ url_for('static', filename='images/anaheim.jpg') }}" alt="Anaheim">
       <div class="credit">
@@ -17,13 +18,14 @@
       </div>
     </div>
 
-
+ <!-- Overview -->
     <div class="overview">
       <h1>
         A small amount of text giving an overview
       </h1>
     </div>
 
+ <!-- Things to do, 3 sections -->
    <div class="sections-container">
     <!-- Attractions -->
     <div class="section-group">
@@ -59,7 +61,7 @@
       </div>
     </div>
 
-    <!-- Food -->
+<!-- Food, 3 sections -->
     <div class="section-group">
       <h2>Food</h2>
       <div class="subsections">
@@ -93,7 +95,8 @@
       </div>
     </div>
   </div>
-
+  
+  <!-- Coastal Nav -->
   <nav id="coastal-nav">
     <ul>
       <li><a href="/los_angeles">Los Angeles</a></li>
@@ -107,6 +110,7 @@
     </ul>
   </nav>
 
+  <!-- Directions -->
     <div class="directions">
       <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d106153.17885955561!2d-117.91855346584411!3d33.75325292707879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x80dcdd578b031b05%3A0x32b545a680c4ee0e!2sMarriott%20Irvine%20Spectrum%2C%207905%20Irvine%20Center%20Dr%2C%20Irvine%2C%20CA%2092618!3m2!1d33.6575025!2d-117.7483431!4m5!1s0x80dcd6f98055e867%3A0x1ab89ab9a2bb160!2sAnaheim%2C%20CA!3m2!1d33.836593199999996!2d-117.9143012!5e0!3m2!1sen!2sus!4v1762201540409!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
   </main>
