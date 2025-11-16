@@ -1,3 +1,6 @@
+/* --- Registr --- */
+
+
 .venmo-main {
   display: flex;
   flex-direction: column;   /* stack items vertically */
@@ -10,8 +13,8 @@
 }
 
 .venmo-main h2 {
-  font-size: 4rem;
-  margin-bottom: 20px; /* space between text and image */
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
 .venmo-qr-link img {
@@ -27,3 +30,12 @@
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .venmo-main h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  }
+}
+

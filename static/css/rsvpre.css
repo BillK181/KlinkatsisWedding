@@ -1,20 +1,24 @@
+/* Globals */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
+/* --- Hero Video --- */
+
+
 .hero-video-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* full screen */
+  height: 74vh; 
   overflow: hidden;
 }
 
 #hero-video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fills screen without distortion */
+  object-fit: cover; 
 }
 
 .overlay-text {
@@ -28,44 +32,39 @@ body, html {
   text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
   text-align: center;
   pointer-events: none;
-  animation: pulse 2s infinite;
+  animation: coming-soon-pulse 2s infinite;
 }
 
-/* Video Credit */
 .hero-video-container .video-credit {
   position: absolute;
   bottom: 10px;
   right: 15px;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
-  z-index: 2; /* above overlay, below text */
+  z-index: 2; 
   font-family: 'Inter', sans-serif;
-  pointer-events: none; /* prevents clicks */
+  pointer-events: none;
   background: rgba(0, 0, 0, 0.3);
   padding: 3px 8px;
   border-radius: 6px;
   color: #f1e7cd;
 }
 
-
-/* optional pulse animation */
-@keyframes pulse {
+@keyframes coming-soon-pulse {
   0%, 100% { transform: translate(-50%, -50%) scale(1); }
   50% { transform: translate(-50%, -50%) scale(1.05); }
 }
 
-/* ===================== MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
-  /* Make video scale properly */
   #hero-video {
-    width: 100%;           /* full width */
-    height: auto;          /* maintain aspect ratio */
+    width: 100%;           
+    height: auto;         
     display: block;
   }
 
-  /* Container height adjustment */
   .hero-video-container {
-    height: auto;          /* let it adapt */
+    height: auto;      
   }
   .overlay-text {
   font-size: 2rem;
@@ -74,5 +73,4 @@ body, html {
   .hero-video-container .video-credit {
     font-size: 0.5rem;
   }
-
 }

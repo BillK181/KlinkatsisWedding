@@ -12,11 +12,9 @@
       <source src="" type="video/mp4">
     </video>
     <div class="video-credit">Video by Bill Klinkatsis</div>
-
-    <!-- Overlay for darkness -->
     <div class="hero-overlay"></div>
 
-    <!-- Hero Content -->
+    <!-- Hero/Countdown -->
     <h1>Marisa & Bill</h1>
 
     <div id="countdown-container">
@@ -38,6 +36,7 @@
       </div>
     </div>
 
+    <!-- Login Form -->
     <form method="POST" action="/login">
       <input name="name" type="text" placeholder="Your Name (As Written On Invitation)" required />
       <button type="submit">Enter</button>
@@ -54,7 +53,10 @@
     {% endwith %}
   </header>
 
+  <!-- Countdown Script -->
   <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
+
+  <!-- Mobile vs Desktop Video Script + Pause Video -->
   <script>
     const video = document.getElementById('hero-video');
     if (window.innerWidth <= 768) {
@@ -63,8 +65,6 @@
       video.src = "{{ url_for('static', filename='images/waves_horizontal.mp4') }}";
     }
     video.load();
-
-    // Pause video when tab is inactive
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         video.pause();

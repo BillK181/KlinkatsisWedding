@@ -2,7 +2,7 @@
 {% block title %}Klinkatsis Wedding{% endblock %}
 
 {% block content %}
-<!-- ===================== HERO / HEADER ===================== -->
+<!-- Hero Video Countdown -->
 <header id="hero">
   <video autoplay muted loop playsinline id="hero-video">
     <source src="{{ url_for('static', filename='images/waves_vertical.mp4') }}" type="video/mp4">
@@ -32,10 +32,10 @@
   </div>
 </header>
 
-<!-- ===================== MAIN CONTENT ===================== -->
+
 <main>
 
-  <!-- ===================== WELCOME SECTION ===================== -->
+  <!-- Welcome Message-->
   <section id="shorttext">
     <div class="space">
       <h2>
@@ -46,7 +46,7 @@
     </div>
   </section>
 
-  <!-- ===================== DETAILS SECTION ===================== -->
+  <!-- The Details -->
   <section id="twocol">
     <div class="left">
       <h2>The Details</h2>
@@ -64,7 +64,7 @@
     </div>
   </section>
 
-  <!-- ===================== IMAGE SCROLL SECTION ===================== -->
+  <!-- Travel Image Scroll -->
   <section id="image-scroll">
     <div class="scroll-container">
       <a href="/laguna"><img src="{{ url_for('static', filename='images/laguna.jpg') }}" alt="Laguna Beach"></a>
@@ -78,7 +78,7 @@
     </div>
   </section>
 
-  <!-- ===================== VENUE SECTION ===================== -->
+  <!-- the Venue -->
   <section class="splitcol">
     <div class="left">
       <a href="/rsvpage"><img src="{{ url_for('static', filename='images/oletwo.jpg') }}" alt="The Ole Hanson Beach Club"></a>
@@ -101,11 +101,10 @@
 </main>
 {% endblock %}
 
-<!-- =================== VIDEO PAUSE SCRIPT =================== -->
+<!-- Video Pause JS -->
 <script>
   const video = document.getElementById('hero-video');
-
-  // Pause video when tab is inactive
+  
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       video.pause();

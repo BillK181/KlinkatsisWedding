@@ -10,7 +10,7 @@
 {% block content %}
 <main>
 
-  <!-- ===================== RSVP Section ===================== -->
+  <!-- RSVP Background Video -->
   <section id="rsvp" aria-labelledby="rsvp-heading">
     <video id="rsvp-video" autoplay muted loop playsinline>
       <source src="{{ url_for('static', filename='images/olersvp.mp4') }}" type="video/mp4">
@@ -18,7 +18,7 @@
     </video>
     <div class="video-credit">Video by Bill Klinkatsis</div>
 
-    <!-- ===================== Flash Messages ===================== -->
+    <!-- Flash Message -->
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         <ul class="flashes" role="alert">
@@ -29,7 +29,7 @@
       {% endif %}
     {% endwith %}
 
-    <!-- ===================== RSVP Form ===================== -->
+    <!-- RSVP Form -->
     <form action="/rsvp" method="POST" class="rsvp-form">
       <p class="rsvp-greeting">
         Hello <strong>{{ name | e }}</strong>, you have RSVP’ed 
@@ -51,12 +51,13 @@
 {% endblock %}
 
 {% block after_footer %}
+<!-- Secret Check RSVP Button -->
 <div class="btn-container">
   <a href="/checkstatus" class="btn"></a>
 </div>
 {% endblock %}
 
-<!-- =================== VIDEO PAUSE SCRIPT =================== -->
+<!-- Video Pause Script -->
 <script>
   const video = document.getElementById('rsvp-video');
 

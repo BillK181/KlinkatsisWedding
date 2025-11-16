@@ -1,4 +1,4 @@
-/* ====== RSVP Status Page ====== */
+/* --- RSVP Status Page --- */
 
 .rsvp-title {
   text-align: center;
@@ -6,7 +6,7 @@
 }
 
 .rsvp-table {
-  margin: 2rem auto;       /* center horizontally */
+  margin: 2rem auto;     
   border-collapse: collapse;
   width: 80%;
 }

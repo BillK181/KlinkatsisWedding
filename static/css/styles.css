@@ -1,4 +1,6 @@
-/* ===================== GLOBAL STYLES ===================== */
+/* --- Global --- */
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -9,7 +11,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* ===================== HEADER ===================== */
+/* Header */
 header {
   text-align: center;
   font-size: 5rem;
@@ -17,7 +19,9 @@ header {
   background-color: #f1e7cd;
 }
 
-/* ===================== NAVIGATION ===================== */
+/* --- Navigation --- */
+
+
 nav ul {
   list-style: none;
   display: flex;
@@ -58,25 +62,25 @@ nav ul li a img:hover {
   opacity: 0.85;
 }
 
-/* ===================== NAV SCREEN RESIZE FIX ===================== */
+/* Nav Fix For Resize */
 @media (max-width: 1320px) {
   nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    align-items: stretch; /* make li fill row height */
+    align-items: stretch; /* allows seperator to fill row height */
     gap: 0;
-    padding: 1rem 0;      /* controls vertical spacing */
+    padding: 1rem 0;   
     background-color: #f1e7cd;
     margin: 1px 0;
     font-size: 1.8rem;
   }
 
   nav ul li {
-    display: flex;           /* flex container for the link inside */
-    align-items: center;     /* vertically center content */
-    justify-content: center; /* horizontally center content */
-    padding: 0 1rem;         /* horizontal spacing */
+    display: flex;        
+    align-items: center;    
+    justify-content: center; 
+    padding: 0 1rem;       
     border-right: 1px solid #333;
   }
 
@@ -107,9 +111,6 @@ nav ul li a img:hover {
 
 }
 
-
-
-
 @media (max-width: 1000px) {
   nav ul {
     padding: .5rem;
@@ -124,7 +125,9 @@ nav ul li a img:hover {
   }
 } 
 
-/* ===================== NAV - MOBILE ===================== */
+
+
+/* Nav Mobile */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -158,9 +161,9 @@ nav ul li a img:hover {
   }
 }
 
+/* --- Logout Form --- */
 
 
-/* ===================== LOGOUT FORM ===================== */
 .logout-form {
   position: absolute;
   top: 90px;
@@ -191,7 +194,7 @@ nav ul li a img:hover {
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
 }
 
-/* ===================== LOGOUT FORM - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   .logout-form {
     top: 10px;
@@ -204,12 +207,15 @@ nav ul li a img:hover {
   }
 }
 
-/* ===================== MAIN CONTENT ===================== */
+
+/* Main */
 main {
   padding: 0;
 }
 
-/* ===================== GREETING ===================== */
+/* --- Greeting --- */
+
+
 #shorttext {
   background-color: #52501c;
   text-align: center;
@@ -226,7 +232,7 @@ main {
   margin-bottom: 0.5rem;
 }
 
-/* ===================== GREETING - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   #shorttext {
     padding: 0.5rem 0.75rem;
@@ -243,7 +249,9 @@ main {
   }
 }
 
-/* ===================== THE DETAILS ===================== */
+/* --- The Details --- */
+
+
 #twocol {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -266,7 +274,7 @@ main {
   text-align: center;
 }
 
-/* ===================== THE DETAILS - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   #twocol {
     grid-template-columns: 1fr;
@@ -297,7 +305,9 @@ main {
   }
 }
 
-/* ===================== PLACES ===================== */
+/* --- Places --- */
+
+
 #image-scroll {
   padding: 2rem 1rem;
   background-color: #858f29;
@@ -329,7 +339,7 @@ main {
   transform: scale(1.05);
 }
 
-/* ===================== PLACES - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
 
   .scroll-container img {
@@ -353,7 +363,9 @@ main {
 
 }
 
-/* ===================== THE VENUE ===================== */
+/* --- The Venue --- */
+
+
 .splitcol {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -371,13 +383,12 @@ main {
   width: 85%;
   height: auto;
   border-radius: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth animation */
-  transform: scale(1); /* normal size initially */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .splitcol .left img:hover {
-  transform: scale(1.05); /* enlarge on hover */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* add depth */
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3); 
 }
 
 .splitcol .right {
@@ -394,7 +405,7 @@ main {
   font-size: 20px;
 }
 
-/* ===================== THE VENUE - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   .splitcol {
     grid-template-columns: 1fr;
@@ -426,7 +437,9 @@ main {
   }
 }
 
-/* ===================== FOOTER ===================== */
+/* --- Footer --- */
+
+
 footer {
   text-align: center;
   padding: 1rem;
@@ -446,7 +459,6 @@ footer img:hover {
 }
 
 
-/* =================== FOOTER MOBILE =================== */
 @media (max-width: 768px) {
   footer {
     padding: 0.3rem; /* reduce vertical space */
@@ -455,14 +467,4 @@ footer img:hover {
   footer img {
     width: 100px; /* smaller logo for mobile */
   }
-}
-
-
-
-/* ===================== FORMS ===================== */
-input, textarea, select, button {
-  background-color: #fdfaf6;
-  border: 1px solid #ccc;
-  padding: 0;
-  font-family: 'Georgia', serif;
 }

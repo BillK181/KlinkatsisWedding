@@ -1,4 +1,4 @@
-/* ===================== FLASH MESSAGES ===================== */
+/* --- Flash Messages --- */
 ul.flashes {
   list-style: none;
   padding: 0;
@@ -24,7 +24,7 @@ ul.flashes li {
   margin-bottom: 8px;
 }
 
-/* ================ FLASH MESSAGES - MOBILE =============== */
+/* Mobile */
 @media (max-width: 768px) {
   ul.flashes {
     width: 90%;
@@ -37,13 +37,13 @@ ul.flashes li {
   }
 }
 
-/* ===================== RSVP SECTION ===================== */
+/* --- RSVP --- */
 #rsvp {
-  position: relative; /* make video absolute inside */
+  position: relative;
   width: 100%;
   min-height: 600px;
   overflow: hidden;
-  background: none; /* remove background image since using video */
+  background: none; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,16 +52,14 @@ ul.flashes li {
   box-sizing: border-box;
 }
 
-/* ===================== RSVP VIDEO ===================== */
 #rsvp-video {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100%;
-  height: 100%;
   object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: 0; /* behind everything */
+  z-index: 0; 
 }
 
 #rsvp .video-credit {
@@ -70,16 +68,15 @@ ul.flashes li {
   right: 15px;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
-  z-index: 2; /* above overlay, below text */
+  z-index: 2; 
   font-family: 'Inter', sans-serif;
-  pointer-events: none; /* prevents clicks */
+  pointer-events: none;
   background: rgba(0, 0, 0, 0.3);
   padding: 3px 8px;
   border-radius: 6px;
   color: #f1e7cd;
 }
 
-/* ===================== RSVP CONTENT ===================== */
 #rsvp .rsvp-form,
 #rsvp .rsvp-greeting {
   position: relative;
@@ -93,7 +90,7 @@ ul.flashes li {
   box-sizing: border-box;
 }
 
-/* ===================== RSVP GREETING ===================== */
+
 #rsvp .rsvp-greeting {
   font-size: 1.2em;
   margin-bottom: 0.5em;
@@ -102,7 +99,7 @@ ul.flashes li {
   border-radius: 6px;
 }
 
-/* ===================== SELECT DROPDOWN ===================== */
+/* Drop Down */
 .select-wrapper {
   height: 30px;
   overflow: hidden;
@@ -127,7 +124,7 @@ ul.flashes li {
   cursor: pointer;
 }
 
-/* ===================== SUBMIT BUTTON ===================== */
+/* Submit Button */
 #rsvp input[type="submit"] {
   padding: 10px 20px;
   font-size: 1em;
@@ -142,7 +139,7 @@ ul.flashes li {
   display: block;
 }
 
-/* ===================== AFTER FOOTER BUTTON ===================== */
+/* Secret Check RSVP Button */
 .btn {
   background-color: #52501c;
   color: #fdfaf6;
@@ -159,7 +156,7 @@ ul.flashes li {
   margin: 2rem 0;
 }
 
-/* ===================== MOBILE FIX ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   #rsvp {
     min-height: 250px;
@@ -190,7 +187,7 @@ ul.flashes li {
   }
 }
 
-/* ===================== ULTRA SMALL PHONES ===================== */
+/* RSVP visuals fix */
 @media (max-width: 420px) {
   #rsvp .rsvp-greeting {
     font-size: 0.8em;

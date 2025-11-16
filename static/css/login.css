@@ -1,4 +1,6 @@
-/* ===================== HERO ===================== */
+/*  --- Video Hero --- */
+
+
 #hero {
   position: relative;
   min-height: 100vh;
@@ -9,10 +11,10 @@
   color: white;
   text-align: center;
   overflow: hidden;
-  background: url('../images/load.jpg') center center / cover no-repeat; /* fallback image */
+  background: url('../images/load.jpg') center center / cover no-repeat; 
 }
 
-/* Background Video */
+
 #hero video {
   position: absolute;
   top: 0; left: 0;
@@ -41,16 +43,16 @@
   right: 15px;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
-  z-index: 2; /* above overlay, below text */
+  z-index: 2; 
   font-family: 'Inter', sans-serif;
-  pointer-events: none; /* prevents clicks */
+  pointer-events: none; 
   background: rgba(0, 0, 0, 0.3);
   padding: 3px 8px;
   border-radius: 6px;
   color: #f1e7cd;
 }
 
-/* Hero Content */
+
 #hero h1 {
   margin-top: 50px;
   font-size: 130pt;
@@ -60,7 +62,25 @@
   position: relative;
 }
 
-/* ===================== COUNTDOWN ===================== */
+/* Fade In Animation */
+@keyframes fadeInVideo {
+  to { opacity: 1; }
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  #hero {
+    background: url('../images/load_mobile.jpg') center center / cover no-repeat;
+  }
+
+  #hero h1 {
+    font-size: 60pt;
+  }
+}
+
+/* --- Countdown --- */
+
 
 #countdown-container {
   display: flex;
@@ -92,7 +112,17 @@
   margin-top: 2px;
 }
 
-/* ===================== FORM ===================== */
+/* Mobile */
+@media (max-width: 768px) {
+  #countdown-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* --- Form --- */
+
+
 
 #hero form {
   margin-top: 0.5px;
@@ -135,7 +165,20 @@
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-/* ===================== FLASHED MESSAGE ===================== */
+/* Mobile */
+@media (max-width: 768px) {
+  #hero form input {
+    width: 90%;
+  }
+
+  #hero .video-credit {
+    font-size: 0.5rem;
+  }
+}
+
+/* --- Flash Message --- */
+
+
 #hero ul {
   list-style: none;
   padding: 0;
@@ -152,33 +195,4 @@
   padding: 10px 15px;
   border-radius: 8px;
   margin-bottom: 10px;
-}
-
-/* Fade-in Animation */
-@keyframes fadeInVideo {
-  to { opacity: 1; }
-}
-
-/* ===================== MOBILE ===================== */
-@media (max-width: 768px) {
-  #hero {
-    background: url('../images/load_mobile.jpg') center center / cover no-repeat;
-  }
-
-  #hero h1 {
-    font-size: 60pt;
-  }
-
-  #countdown-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  #hero form input {
-    width: 90%;
-  }
-
-  #hero .video-credit {
-    font-size: 0.5rem;
-  }
 }

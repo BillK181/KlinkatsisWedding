@@ -1,4 +1,4 @@
-/* ===================== Global Reset ===================== */
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -13,23 +13,26 @@ html, body {
   min-height: 100%;
 }
 
+/* --- Top Image --- */
+
+
 .photo {
   position: relative;
-  display: block;          /* was inline-block — this ensures full-width */
+  display: block;         
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .photo img {
-  display: block;           /* removes baseline gap */
+  display: block;         
   width: 100%;
   height: auto;
   border: none;
   border-radius: 0;
   margin: 0;
   padding: 0;
-  vertical-align: middle;   /* optional, safe default */
+  vertical-align: middle;  
 }
 
 .photo .credit {
@@ -52,7 +55,7 @@ html, body {
   text-decoration: underline;
 }
 
-/* ===================== Top City Image - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   .photo img {
     width: 100%;
@@ -66,7 +69,8 @@ html, body {
 
 }
 
-/* ===================== Overview Section ===================== */
+
+/* Overview section */
 .overview {
   background-color: #52501c;
   text-align: center;
@@ -76,7 +80,7 @@ html, body {
   font-size: 1.3rem;
 }
 
-/* ===================== Overview Section - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   .overview {
     padding: 1rem 0.5rem;
@@ -84,7 +88,9 @@ html, body {
   }
 }
 
-/* ===================== Main Sections Container ===================== */
+/* --- Sections --- */
+
+
 .sections-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -94,7 +100,7 @@ html, body {
   gap: 4rem;
 }
 
-/* ===================== Section Titles ===================== */
+/* Titles */
 .section-group h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -102,7 +108,6 @@ html, body {
   color: #333;
 }
 
-/* ===================== Subsections ===================== */
 .subsections {
   display: flex;
   justify-content: space-around;
@@ -137,8 +142,12 @@ html, body {
   margin-bottom: 0.5rem;
 }
 
-/* ===================== Subsections - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
+  .sections-container {
+    padding: 1rem;
+  }
+  
   .subsections {
     flex-direction: column;
     gap: 1.5rem;
@@ -161,7 +170,10 @@ html, body {
 
 }
 
-/* ===================== Google Maps / Directions ===================== */
+/* --- Directions --- */
+
+
+
 .directions {
   margin-top: 30px;
   margin-bottom: 0;
@@ -176,14 +188,17 @@ html, body {
   display: block;
 }
 
-/* ===================== Google Maps / Directions - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   .directions iframe {
     height: 300px;
   }
 }
 
-/* ===================== COASTAL NAVIGATION ===================== */
+/* --- Coastal Nav --- */
+
+
+
 #coastal-nav {
   height: 70px; 
   background-color: #f1e7cd;
@@ -237,7 +252,7 @@ html, body {
   opacity: 0.85;
 }
 
-/* ===================== COASTAL NAVIGATION - MOBILE ===================== */
+/* Mobile */
 @media (max-width: 768px) {
   #coastal-nav {
     height: auto;
