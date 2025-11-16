@@ -1,11 +1,6 @@
 # === Imports ===
 from openai import OpenAI
-from .globals import (
-    get_openai_key, SYSTEM_PROMPT, DRESS_CODE, WEDDING_LOCATION, WEDDING_DATE, PERSONALITY,
-    HOTEL_BLOCK, BUS_TO_WEDDING, BUS_FROM_WEDDING, THINGS_TO_DO, CITIES, KIDS,
-    WEDDING_COLORS, GUEST_ARRIVAL_TIME, RSVP_DEADLINE, FOOD_MENU, OPEN_BAR,
-    GIFT_REGISTRY
-)
+from . import globals
 
 # === Client Setup ===
 client = None  # Will initialize when needed
@@ -31,14 +26,39 @@ def main():
     global client
     client = create_client()  # initialize client
 
-    messages = [{
+messages = [
+    {
         "role": "system",
-        "content": f"{SYSTEM_PROMPT}\n\n{DRESS_CODE}\n\n{WEDDING_LOCATION}\n\n"
-                   f"{WEDDING_DATE}\n\n{PERSONALITY}\n\n{HOTEL_BLOCK}\n\n"
-                   f"{BUS_TO_WEDDING}\n\n{BUS_FROM_WEDDING}\n\n{THINGS_TO_DO}\n\n"
-                   f"{CITIES}\n\n{KIDS}\n\n{WEDDING_COLORS}\n\n{GUEST_ARRIVAL_TIME}\n\n"
-                   f"{RSVP_DEADLINE}\n\n{FOOD_MENU}\n\n{OPEN_BAR}\n\n{GIFT_REGISTRY}"
-    }]
+        "content": f"""
+{globals.SYSTEM_PROMPT}
+
+WEDDING DETAILS
+---------------
+Dress Code: {globals.DRESS_CODE}
+Wedding Location: {globals.WEDDING_LOCATION}
+Wedding Date: {globals.WEDDING_DATE}
+Wedding Colors: {globals.WEDDING_COLORS}
+Guest Arrival Time: {globals.GUEST_ARRIVAL_TIME}
+RSVP Deadline: {globals.RSVP_DEADLINE}
+
+Food Menu: {globals.FOOD_MENU}
+Open Bar: {globals.OPEN_BAR}
+Kids Policy: {globals.KIDS}
+Gift Registry: {globals.GIFT_REGISTRY}
+
+Hotel Block: {globals.HOTEL_BLOCK}
+Bus To Wedding: {globals.BUS_TO_WEDDING}
+Bus From Wedding: {globals.BUS_FROM_WEDDING}
+
+Things To Do Instruction: {globals.THINGS_TO_DO}
+Local cities to visit: {globals.CITIES}
+
+Personality: {globals.PERSONALITY}
+"""
+    }
+]
+
+
 
     print("Weddingbot: Ready to chat! Type 'exit' to quit.")
 
