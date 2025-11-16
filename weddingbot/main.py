@@ -5,16 +5,17 @@ from . import globals
 # === Client Setup ===
 client = None  # Will initialize when needed
 
-def create_client():
+def get_client():
     """Create OpenAI client using environment variable key."""
-    key = get_openai_key()
-    return OpenAI(api_key=key)
+    global client
+    if client is None:
+        key = globals.get_openai_key()
+        client = OpenAI(api_key=key)
+    return client
 
 # === Helper Function to Call GPT ===
 def ask_gpt(messages: list) -> str:
-    global client
-    if client is None:
-        client = create_client()  # lazy initialization
+    client = get_client()
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=messages
@@ -23,13 +24,11 @@ def ask_gpt(messages: list) -> str:
 
 # === Main Program ===
 def main():
-    global client
-    client = create_client()  # initialize client
-
-messages = [
-    {
-        "role": "system",
-        "content": f"""
+    # Initialize messages with system prompt and wedding details
+    messages = [
+        {
+            "role": "system",
+            "content": f"""
 {globals.SYSTEM_PROMPT}
 
 WEDDING DETAILS
@@ -55,10 +54,8 @@ Local cities to visit: {globals.CITIES}
 
 Personality: {globals.PERSONALITY}
 """
-    }
-]
-
-
+        }
+    ]
 
     print("Weddingbot: Ready to chat! Type 'exit' to quit.")
 
@@ -71,17 +68,22 @@ Personality: {globals.PERSONALITY}
             if not user_input:
                 continue
 
+            # Add user message
             messages.append({"role": "user", "content": user_input})
 
             try:
+                # Get GPT reply
                 reply = ask_gpt(messages)
                 print(f"Weddingbot:\n{reply}")
+
+                # Store assistant response
                 messages.append({"role": "assistant", "content": reply})
             except Exception as e:
                 print(f"Oops! Something went wrong: {e}")
 
     except KeyboardInterrupt:
         print("\nWeddingbot: See you next time!")
+
 
 if __name__ == "__main__":
     main()
