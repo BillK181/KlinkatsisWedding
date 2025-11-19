@@ -11,13 +11,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* Header */
-header {
-  text-align: center;
-  font-size: 5rem;
-  padding: 0;
-  background-color: #f1e7cd;
-}
 
 /* --- Navigation --- */
 
@@ -30,7 +23,7 @@ nav ul {
   gap: 0;
   padding: 1rem 0;
   background-color: #f1e7cd;
-  margin: 1px 0;
+  margin: 0;
   font-size: 1.8rem;
 }
 
@@ -44,7 +37,7 @@ nav ul li:last-child {
 }
 
 nav ul li img {
-  height: 70px;
+  height: 90px;
   width: auto;
   object-fit: contain;
   vertical-align: middle;
@@ -166,7 +159,7 @@ nav ul li a img:hover {
 
 .logout-form {
   position: absolute;
-  top: 90px;
+  top: 100px;
   right: 20px;
   z-index: 5;
 }
@@ -206,7 +199,6 @@ nav ul li a img:hover {
     font-size: 0.85rem;
   }
 }
-
 
 /* Main */
 main {
@@ -256,7 +248,7 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  padding: 2rem;
+  padding: 0;
   background-color: #f1e7cd;
   align-items: center;
   box-sizing: border-box;
@@ -264,7 +256,7 @@ main {
 
 .left {
   grid-column: 1;
-  font-size: 45px;
+  font-size: 35px;
   text-align: center;
 }
 
@@ -272,6 +264,30 @@ main {
   grid-column: 2;
   font-size: 20px;
   text-align: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* RSVP Button */
+.venue-button {
+  position: static;     
+  transform: translateX(-50%);
+  background-color: #52501c;
+  color: #f1e7cd;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  z-index: 2;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.venue-button:hover {
+  background-color: #414016;
+  transform: translateX(-50%) translateY(-4px);
 }
 
 /* Mobile */
@@ -285,7 +301,7 @@ main {
   }
 
   main h2 {
-    font-size: 55px;
+    font-size: 45px;
     margin-top: 0px;
     margin-bottom: 0px;
   }
@@ -302,6 +318,7 @@ main {
   .right {
     font-size: 18px;
     margin-top: 0px;
+    margin-bottom: 15px;
   }
 }
 

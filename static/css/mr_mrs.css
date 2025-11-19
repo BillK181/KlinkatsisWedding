@@ -1,6 +1,6 @@
 /* --- Mr&Mrs --- */
 
-
+/* Image and Story Container */
 .our-story {
   display: flex;
   flex-direction: column;
@@ -11,11 +11,13 @@
   padding: 2rem;
 }
 
+/* Image Container */
 .story-image {
   width: 100%;
   overflow: hidden;
 }
 
+/* Image */
 .top-image {
   width: 100%;
   height: auto;
@@ -25,6 +27,94 @@
 
 .story-text h3 {
   font-weight: normal;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  margin-bottom: 0;
 }
+
+/* Seperator */
+.seperator {
+  background-color: #52501c;
+  height: 10px;
+  max-width: 900px;  
+  margin: 40px auto; 
+  border-radius: 5px; 
+  margin-top: 0;
+}
+
+/* --- Wedding Party --- */
+
+/* Wedding Party Container */
+.wedding-party {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Row For Party Members */
+.party-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;  
+  flex-shrink: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+/* Party Member Container */
+.party-member-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  margin: 0;         
+}
+
+/* Party Member Images */
+.party-member-container img.party-member {
+  width: 200px;          
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* Party Member Text */
+.party-member-container h3 {
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.party-member-container p {
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  .party-member-container{
+    align-items: center;
+  }
+
+  .party-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .party-member-container img.party-member {
+    width: 40vw;
+  }
+
+  .party-member-container h3 {
+    font-size: 1.3rem;
+  }
+
+  .party-member-container p {
+    font-size: 1rem;
+  }
+}
+

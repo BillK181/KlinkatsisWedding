@@ -1,35 +1,26 @@
-/**
- * ================== Chatbot JS ==================
- * Handles sending user messages, receiving bot replies,
- * and updating the chat window dynamically.
- */
+//Chatbot JS
 
 async function sendMessage(event) {
-    // ------------------- Step 0 -------------------
-    // Prevent default form submission behavior if this
-    // function is triggered by a form submit or Enter key.
+    // Prevent default form submission behavior if this function is triggered by a form submit or Enter key.
     if (event) event.preventDefault();
 
-    // ------------------- Step 1 -------------------
     // Get the input field and chatbox container
-    const input = document.getElementById('chat-input');          // User text input
-    const chatbox = document.getElementById('chatbot-messages');  // Container for messages
+    const input = document.getElementById('chat-input');         
+    const chatbox = document.getElementById('chatbot-messages'); 
 
     // Trim whitespace from user's message
     const message = input.value.trim();
-    if (!message) return; // If input is empty, do nothing
+    if (!message) return; 
 
-    // ------------------- Step 2 -------------------
     // Add the user's message to the chatbox
     chatbox.innerHTML += `
       <div class="message user">
         <strong>${window.userName}:</strong> ${message}
       </div>
     `;
-    chatbox.scrollTop = chatbox.scrollHeight; // Scroll to bottom
-    input.value = ''; // Clear input field
+    chatbox.scrollTop = chatbox.scrollHeight; 
+    input.value = ''; 
 
-    // ------------------- Step 3 -------------------
     // Send the message to the Flask server using fetch
     try {
         const res = await fetch("/chat", {
@@ -40,7 +31,6 @@ async function sendMessage(event) {
 
         const data = await res.json();
 
-        // ------------------- Step 4 -------------------
         // Add bot's reply to the chatbox
         chatbox.innerHTML += `
           <div class="message bot">
@@ -49,7 +39,6 @@ async function sendMessage(event) {
         `;
         chatbox.scrollTop = chatbox.scrollHeight; // Scroll down again
     } catch (err) {
-        // ------------------- Step 5 -------------------
         // Error handling if fetch fails
         chatbox.innerHTML += `
           <div class="message bot">
@@ -61,16 +50,14 @@ async function sendMessage(event) {
     }
 }
 
-// ------------------- Step 6 -------------------
 // Attach event listeners when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    const input = document.getElementById('chat-input');  // Text input
-    const sendBtn = document.getElementById('chat-send'); // Send button
-    const bubble = document.getElementById('chatbot-bubble');       // Bubble button
-    const container = document.getElementById('chatbot-container'); // Chat container
-    const closeBtn = document.getElementById('chatbot-close');      // Close button
+    const input = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('chat-send'); 
+    const bubble = document.getElementById('chatbot-bubble');
+    const container = document.getElementById('chatbot-container');
+    const closeBtn = document.getElementById('chatbot-close');      
 
-    // ------------------- Step 6a -------------------
     // Pressing Enter in the input field triggers sendMessage
     if (input) {
         input.addEventListener('keydown', function(e) {
@@ -83,28 +70,25 @@ document.addEventListener('DOMContentLoaded', function() {
         sendBtn.addEventListener('click', sendMessage);
     }
 
-    // ------------------- Step 6b -------------------
     // Show chatbot when bubble is clicked
     bubble.addEventListener('click', () => {
-        container.style.display = 'flex';  // show chat
-        bubble.style.display = 'none';      // hide bubble
+        container.style.display = 'flex'; 
+        bubble.style.display = 'none';   
 
-        // ------------------- MOBILE TWEAK -------------------
         // Slightly offset container from top-right corner on mobile
         if (window.innerWidth <= 768) {
-            container.style.bottom = '20px';   // leave space from bottom
-            container.style.right = '10px';    // slightly offset from edge
-            container.style.maxHeight = '80vh'; // taller height when chat is open
+            container.style.bottom = '20px';  
+            container.style.right = '10px';    
+            container.style.maxHeight = '80vh'; 
         }
     });
 
-    // ------------------- Step 6c -------------------
     // Minimize chatbot when close button is clicked
     closeBtn.addEventListener('click', () => {
-        container.style.display = 'none';   // hide chat
-        bubble.style.display = 'flex';      // show bubble
-        container.style.bottom = '';        // reset bottom
-        container.style.right = '';         // reset right
-        container.style.maxHeight = '';     // reset maxHeight
+        container.style.display = 'none';  
+        bubble.style.display = 'flex';     
+        container.style.bottom = '';        
+        container.style.right = '';         
+        container.style.maxHeight = '';  
     });
 });

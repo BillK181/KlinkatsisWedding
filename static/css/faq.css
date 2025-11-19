@@ -5,6 +5,7 @@
   max-width: 600px;
   margin: 40px auto;
   font-family: Arial, sans-serif;
+  padding: 50px;
 }
 
 .faq h2 {
@@ -12,14 +13,14 @@
   margin-bottom: 20px;
   color: #52501c;
   background-color: #f1e7cd;
-  border: 3px solid #52501c;
+  border: 7px solid #52501c;
   border-color: #52501c;
   padding: 20px 10px;
   font-size: 35px;
 }
 
 .faq-item {
-  border: 1px solid #52501c;
+  border: 8px solid #52501c;
   border-radius: 8px;
   margin-bottom: 10px;
   overflow: hidden;
@@ -43,7 +44,7 @@
 }
 
 .faq-question:hover {
-  background-color: rgba(24, 65, 35, 0.867);
+  color: #ffffff;
 }
 
 .faq-answer {
@@ -54,6 +55,7 @@
   padding: 0 20px;
   text-align: center;
   color: #52501c;
+  font-size: 16px;
 }
 
 .faq-answer p {

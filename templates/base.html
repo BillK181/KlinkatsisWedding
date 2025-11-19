@@ -12,7 +12,7 @@
   <title>{% block title %}{% endblock %}</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/faviconv2.png') }}">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/countdown.css') }}" media="all">
@@ -28,15 +28,14 @@
     <ul class="main-nav">
       <li class="logo">
         <a href="/" aria-label="Home">
-          <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo" height="65" width="auto" loading="lazy">
+          <img src="{{ url_for('static', filename='images/navlogo.png') }}" alt="M&B Logo" height="65" width="auto" loading="lazy">
         </a>
       </li>
-
       <li><a href="/mr-mrs">Mr & Mrs</a></li>
       <li><a href="/travel">Travel & Accommodations</a></li>
       <li><a href="/faq">FAQ</a></li>
-      <li class="bottom-link"><a href="/rsvpage">RSVP & Schedule</a></li>
-      <li class="bottom-link"><a href="/registry">Registry</a></li>
+      <li><a href="/rsvpage">RSVP & Schedule</a></li>
+      <li><a href="/registry">Registry</a></li>
     </ul>
   </nav>
 
@@ -71,7 +70,7 @@
   <!-- Footer -->
   <footer>
     <a href="/" aria-label="Home">
-      <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="M&B Logo" width="100" height="auto" loading="lazy">
+      <img src="{{ url_for('static', filename='images/footerlogo.png') }}" alt="M&B Logo" width="100" height="auto" loading="lazy">
     </a>
   </footer>
 

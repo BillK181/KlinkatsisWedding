@@ -1,0 +1,114 @@
+/* --- Accommodations --- */
+
+
+.accommodations-page {
+  text-align: center;
+  justify-content: center;
+}
+
+/* --- Hero Photo --- */
+
+.hero-photo {
+  margin-bottom: 2rem;
+  display: inline-block;
+  width: 75%;
+  position: relative;
+}
+
+.hero-photo img {
+  width: auto;
+  max-height: 400px;
+  border-radius: 17px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-photo img {
+    max-height: 250px;
+  }
+}
+
+/* --- Reserve Button --- */
+
+
+.hotel-reserve {
+  margin: 0;
+}
+
+.reserve-button {
+  display: inline-block;
+  background-color: #52501c;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-button:hover {
+  background-color: #423f15;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .reserve-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* --- Explanation --- */
+
+
+.hotel-explanation {
+  margin: 0 auto 2rem auto;
+  width: 90%;
+  text-align: center;
+}
+
+.hotel-explanation h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hotel-explanation h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* --- Additional Info --- */
+.additional-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.additional-info ul {
+  list-style: disc inside;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.additional-info li {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .additional-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+  }
+
+  .additional-info li {
+    font-size: 1rem;
+  }
+
+}
+
