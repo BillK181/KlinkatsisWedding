@@ -361,7 +361,7 @@ main {
 
   .scroll-container img {
     height: auto;
-    max-height: 120px;         
+    max-height: 90px;         
     scroll-snap-align: start;  
     object-fit: contain;
     overflow-x: auto;   
