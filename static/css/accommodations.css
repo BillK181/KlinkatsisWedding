@@ -23,8 +23,13 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+  .hero-photo {
+    align-items: center;
+  }
+  
   .hero-photo img {
-    max-height: 250px;
+    max-height: 175px;
+    align-items: center;
   }
 }
 
