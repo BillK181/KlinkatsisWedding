@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Klinkatsis Wedding — Accommodations{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/accommodations.css') }}">
+{% endblock %}
+
+{% block content %}
+<main class="accommodations-page">
+
+  <!-- Hero Photo -->
+  <section class="hero-photo">
+    <img src="{{ url_for('static', filename='images/irvinemarriott.jpg') }}" alt="Irvine Marriott">
+  </section>
+
+  <!-- Reserve Button -->
+  <section class="hotel-reserve">
+    <a href="https://book.passkey.com/gt/220960342?gtid=c6987b61e7c49eeb5b9afd67d9a0e70d&mobile=true&dw=375"
+       class="reserve-button" target="_blank" rel="noopener noreferrer">
+      Reserve Your Hotel Room
+    </a>
+  </section>
+
+  <!-- Explanation Section -->
+  <section class="hotel-explanation">
+    <h1>For your convenience, we have reserved a block of rooms at the Marriott Irvine Spectrum. To unlock the specialty rate, select your room, number of guests, and dates (8/28/2026 - 8/29/2026) for an updated price per night.</h1>
+  </section>
+
+  <!-- Additional Info -->
+  <section class="additional-info">
+    <h2>Additional Information</h2>
+    <ul>
+      <li>More details about transportation, parking, or other tips.</li>
+    </ul>
+  </section>
+
+</main>
+{% endblock %}

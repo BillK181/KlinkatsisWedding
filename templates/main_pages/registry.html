@@ -8,14 +8,14 @@
 
 {% block content %}
 
+  <div class="registry-heading">
+    <h2>Your presence means the world to us!</h2>
+    <p>In lieu of physical gifts, please condsider donating to the honeymoon fund below</p>
+  </div>
+
 
  <main class="venmo-main">
-    <div>
-      <!-- Heading -->
-      <h2>
-        Things? Ugh... Things are soooooo lame. GIVE US MONEY!
-      </h2>
-    </div>
+
     <!-- Venmo Image/link -->
     <a href="https://venmo.com/Bill-Klinkatsis" 
       target="_blank" 
@@ -23,6 +23,15 @@
       class="venmo-qr-link">
       <img src="{{ url_for('static', filename='images/qr.jpg') }}" alt="Scan to pay with Venmo">
     </a>
+
+    <!-- Venmo Image/link -->
+    <a href="https://venmo.com/Bill-Klinkatsis" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="venmo-qr-link">
+      <img src="{{ url_for('static', filename='images/qr.jpg') }}" alt="Scan to pay with Venmo">
+    </a>
+
   </main>
 
 {% endblock %}

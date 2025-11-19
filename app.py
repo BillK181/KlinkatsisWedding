@@ -196,6 +196,11 @@ def checkstatus():
     all_guests = Guest.query.order_by(Guest.name).all()
     return render_template('checkstatus.html', name=name, guests=all_guests)
 
+@app.route('/accommodations', methods=['GET'])
+def accommodations():
+    _, name = get_current_guest()
+    return render_template('main_pages/accommodations.html', name=name)
+
 
 # ----------------------- CITY PAGES -----------------------
 city_routes = [

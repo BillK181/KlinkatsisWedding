@@ -12,8 +12,8 @@
   <!-- Map Section -->
   <section id="map-exp">
     <div class="map">
-      <!-- Mobile Only Button -->
-      <a href="https://book.passkey.com/gt/220960342?gtid=c6987b61e7c49eeb5b9afd67d9a0e70d&mobile=true&dw=375" class="hotel-button-mobile" target="_blank">
+      <!-- Mobile Only Hotel Button -->
+      <a href="/accommodations" class="hotel-button-mobile" target="_blank">
         Reserve Your Hotel Room
       </a>
 
@@ -23,7 +23,7 @@
         usemap="#socalmap"
       >
 
-      <map name="socalmap">
+      <map name="socalmap" id="socalmap">
         <area shape="rect" coords="600,191,945,290" href="/los_angeles" alt="Los Angeles">
         <area shape="rect" coords="922,506,1195,598" href="/anaheim" alt="Anaheim">
         <area shape="rect" coords="841,677,1118,780" href="/irvine" alt="Irvine">
@@ -36,8 +36,8 @@
     </div>
 
     <div class="map-text">
-       <!-- Desktop Only Button -->
-      <a href="https://book.passkey.com/gt/220960342?gtid=c6987b61e7c49eeb5b9afd67d9a0e70d&mobile=true&dw=375" class="hotel-button" target="_blank">
+       <!-- Desktop Only Hotel Button -->
+      <a href="accommodations" class="hotel-button" target="_blank">
         Reserve Your Hotel Room
       </a>
 
@@ -75,14 +75,14 @@
   </section>
 </main>
 
-<!-- JS for Image Resizer (https://github.com/davidjbradshaw/image-map-resizer) -->
-<script src="{{ url_for('static', filename='js/mapresize.js') }}" defer></script>
-<script defer>
-  window.addEventListener("load", function() {
-    if (typeof imageMapResize === "function") {
-      imageMapResize();
-    }
+<!-- Image Map Resizer -->
+<script defer src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+
+<script>
+  window.addEventListener("load", () => {
+    imageMapResize();
   });
 </script>
+
 
 {% endblock %}

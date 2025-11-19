@@ -12,7 +12,7 @@
 
     <!-- Top Image -->
     <div class="story-image">
-      <img src="{{ url_for('static', filename='images/marisabill.jpg') }}" alt="Bill and Marisa" class="top-image">
+      <img src="{{ url_for('static', filename='images/marisabill.png') }}" alt="Bill and Marisa" class="top-image">
     </div>
 
     <!-- Text -->
@@ -29,6 +29,36 @@
         On our 9-year anniversary, Bill popped the question at our absolute favorite spot alongside the ocean cliffs of Laguna Beach. Now, ten years later, we’re still exploring, laughing, and supporting each other—and we can’t wait to celebrate this next chapter with our friends and family.
       </h3>
     </div>
-
   </main>
+
+  <div class="seperator"></div>
+
+  <!-- Wedding Party -->
+  <div class="wedding-party">
+    <!-- Steph & Zack -->
+    <div class="party-row">
+      <div class="party-member-container">
+        <img src="{{ url_for('static', filename='images/stephwedding.jpg') }}" alt="Steph" class="party-member">
+        <h3>Maid of Honor,<br>
+          Stephanie Goodman:</h3>
+        <p>Stephanie and Marisa met at Penn State when Stephanie was looking for a place to stay during her last semester. Although the semester was short, they instantly clicked in what was Marisa's favorite semester at college, largely due to Stephanie's presence. From late-night chats to spontaneous adventures, it felt like we were on the same wavelength from day one. Even though distance keeps us apart sometimes, our friendship has only grown stronger over the years. Stephanie is one of my absolute favorite people, and I can’t imagine my wedding day without her by my side.</p>
+      </div>
+
+      <div class="party-member-container">
+        <img src="{{ url_for('static', filename='images/zackwedding.jpg') }}" alt="Zack" class="party-member">
+        <h3>Best Man,<br>
+          Zack Cantril:</h3>
+        <p>Stephanie and Marisa met at Penn State when Stephanie was looking for a place to stay during her last semester. Although the semester was short, they instantly clicked in what was Marisa's favorite semester at college, largely due to Stephanie's presence. From late-night chats to spontaneous adventures, it felt like we were on the same wavelength from day one. Even though distance keeps us apart sometimes, our friendship has only grown stronger over the years. Stephanie is one of my absolute favorite people, and I can’t imagine my wedding day without her by my side.</p>
+      </div>
+
+    <!-- Grace -->
+      <div class="party-member-container">
+        <img src="{{ url_for('static', filename='images/gracewedding.jpg') }}" alt="Grace" class="party-member">
+        <h3>Flower Girl,<br>
+          Grace Chapman:</h3>
+        <p>We are so excited to have Bill's niece and god-daughter as our Flower Girl. Grace is such a blessing to the entire family, and it continues to be a great joy to watch her grow up. On our wedding day, she will be just over 2 years old, taking her second trip to see us out in California!</p>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}

@@ -1,29 +1,68 @@
-/* --- Registr --- */
+/* --- Registry --- */
 
+
+
+/* --- Heading --- */
+
+
+.registry-heading h2,
+.registry-heading p {
+  text-align: center;
+  background-color: #52501c;
+  color: #f1e7cd;
+  padding: 10px 20px;
+  border-radius: 55px;
+  margin: 10px auto;
+  display: block;
+}
+
+.registry-heading h2 {
+  font-size: 2rem;
+  width: 75%;
+  font-weight: bold;
+  font-weight: bold;
+}
+
+.registry-heading p {
+  font-size: 1.5rem;
+  width: 65%;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .registry-heading h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  }
+.registry-heading p {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  }
+
+}
+
+/* --- Venmo QR Code Links --- */
 
 .venmo-main {
   display: flex;
-  flex-direction: column;   /* stack items vertically */
+  flex-direction: row;  
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 0;
-  padding-top: 0;
   margin-bottom: 40px;
-}
-
-.venmo-main h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
 }
 
 .venmo-qr-link img {
   width: 400px;
-  max-width: 90vw;
+  max-width: 22vw;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
 }
 
 .venmo-qr-link img:hover {
@@ -31,11 +70,17 @@
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
+
 /* Mobile */
 @media (max-width: 768px) {
-  .venmo-main h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  }
+  .venmo-main {
+  flex-direction: column;  
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
+.venmo-qr-link img {
+  width: 400px;
+  max-width: 40vw;
+}
+}

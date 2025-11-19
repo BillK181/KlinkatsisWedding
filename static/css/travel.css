@@ -7,11 +7,13 @@
 
 .hotel-button {
   position: absolute;
-  top: -80px;         
+  width: 90%;
+  top: -110px;         
   left: 50%;
   transform: translateX(-50%);
   background-color: #52501c;
   color: #f1e7cd;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
   padding: 0.75rem 1.5rem;
@@ -47,10 +49,12 @@
 
   .hotel-button-mobile {
     display: inline-block;  
+    width: 90%;
     position: relative;
     margin: 0 auto 1rem auto;
     background-color: #52501c;
     color: #f1e7cd;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     padding: 0.75rem 1.5rem;
@@ -105,6 +109,7 @@ area {
 
 
 .map-text {
+  margin-top: 150px;
   margin-right: 100px;
   background-color: #52501c;
   padding: 1rem;
@@ -154,6 +159,9 @@ area {
   #map-exp .map-text h2 {
     font-size: 1.3rem;
   }
+  .hotel-button {
+    top: -125px; 
+  }
 }
 
 @media (max-width: 990px) {
@@ -190,15 +198,16 @@ area {
 
   #map-exp .map-text {
     margin-right: 0;
-    padding: 1rem 0.5rem;
+    padding: auto 0.5rem;
     width: 90%;
-    height: 100%;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    height: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 
   #map-exp h1 {
     font-size: 2rem;
+    margin-top: 0;
   }
 
   #map-exp h2 {

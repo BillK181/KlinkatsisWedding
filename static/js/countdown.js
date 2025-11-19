@@ -4,7 +4,7 @@ const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 
-// Set your wedding date
+// Set wedding date
 const targetDate = new Date("2026-08-29T16:00:00").getTime();
 
 // Update countdown function
