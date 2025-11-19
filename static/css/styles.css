@@ -295,7 +295,7 @@ main {
   #twocol {
     grid-template-columns: 1fr;
     gap: 0;
-    padding: 0.5rem 0.75rem;
+    padding: 0.3rem 0.5rem;
     margin-top: 5px;
     margin-bottom: 5px;
   }
@@ -312,7 +312,7 @@ main {
   }
 
   .left {
-    margin-bottom: 5px;
+    margin-bottom: 0;
   }
 
   .right {
@@ -361,7 +361,7 @@ main {
 
   .scroll-container img {
     height: auto;
-    max-height: 90px;         
+    max-height: 120px;         
     scroll-snap-align: start;  
     object-fit: contain;
     overflow-x: auto;   
@@ -372,7 +372,7 @@ main {
     height: auto;   
     padding: 0.5rem;
     gap: 2rem;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
   }
 
@@ -434,7 +434,7 @@ main {
   }
 
   .splitcol .left img {
-    width: 45%;
+    width: 65%;
     border-radius: 15;
     margin: 15px;
   }
