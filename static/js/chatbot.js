@@ -34,7 +34,7 @@ async function sendMessage(event) {
         // Add bot's reply to the chatbox
         chatbox.innerHTML += `
           <div class="message bot">
-            <strong>Weddingbot:</strong> ${data.response}
+            <strong>Wedding Specialist:</strong> ${data.response}
           </div>
         `;
         chatbox.scrollTop = chatbox.scrollHeight; // Scroll down again
@@ -42,7 +42,7 @@ async function sendMessage(event) {
         // Error handling if fetch fails
         chatbox.innerHTML += `
           <div class="message bot">
-            <strong>Weddingbot:</strong> Error: Could not reach server.
+            <strong>Wedding Specialist:</strong> Error: Could not reach server.
           </div>
         `;
         chatbox.scrollTop = chatbox.scrollHeight;

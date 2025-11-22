@@ -5,7 +5,7 @@
   position: fixed;
   bottom: 20px;         
   right: 20px;                  
-  background: whitesmoke;
+  background: #cbc749;
   color: white;
   padding: 15px;
   border-radius: 50%;       
@@ -40,9 +40,9 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 400px;
+  width: 380px;
   height: 200px;
-  background: white;
+  background: #cbc749;
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
   display: none;                 /* Hidden until bubble clicked */
@@ -58,7 +58,7 @@
   padding: 12px;
   text-align: center;
   font-weight: bold;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid black;
 }
 
 
@@ -72,23 +72,31 @@
 /* Input area */
 #chatbot-input {
   display: flex;
-  border-top: 1px solid whitesmoke;
+  border-top: 1px solid rgb(0, 0, 0);
 }
 
 #chat-input {
   flex: 1;
   padding: 8px;
-  border: none;
+  border: black;
   outline: none;
-  font-size: 15px;
+  font-size: 12px;
+  background: rgb(192, 192, 192);
+}
+
+#chat-input::placeholder {
+  color: #000000;  
+  opacity: 1;     
+  font-style: italic; 
 }
 
 #chatbot-input button {
   padding: 8px;
   background: whitesmoke;
-  color: #52501c;
-  border: none;
+  color: black;
+  border: 2px black;
   cursor: pointer;
+  outline: none;
 }
 
 #chatbot-close {

@@ -52,7 +52,7 @@ def main():
 
 WEDDING DETAILS
 ---------------
-Dress Code: {DRESS_CODE}
+Dress Code/ Attire: {DRESS_CODE}
 Wedding Location: {WEDDING_LOCATION}
 Wedding Date: {WEDDING_DATE}
 Wedding Colors: {WEDDING_COLORS}
@@ -101,7 +101,7 @@ Personality: {PERSONALITY}
                 print(f"Oops! Something went wrong: {e}")
 
     except KeyboardInterrupt:
-        print("\nWeddingbot: See you next time!")
+        print("\nSee you next time!")
 
 
 if __name__ == "__main__":

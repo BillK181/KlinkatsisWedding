@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block title %}Klinkatsis Wedding — Long Beach{% endblock %}
+
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/cities.css') }}">
+{% endblock %}
+
+{% block content %}
+  <main>
+
+<!-- Hero Photo -->
+    <div class="photo">
+      <img src="{{ url_for('static', filename='images/long_beach.jpg') }}" alt="Long Beach">
+      <div class="credit">
+        Photo by <a href="https://unsplash.com/@whynotcoconut" target="_blank" rel="noopener noreferrer">Carla Francisco</a>
+      </div>
+    </div>
+
+ <!-- Overview -->
+    <div class="overview">
+      <h1>
+        Long Beach
+      </h1>
+    </div>
+
+ <!-- Things To Do 3 Sections -->
+   <div class="sections-container">
+    <!-- Things To Do -->
+    <div class="section-group">
+      <h2>Things To Do</h2>
+      <div class="subsections">
+        <!-- Family -->
+        <div class="subsection">
+          <h3>Family</h3>
+          <ul>
+            <li><a href="https://www.aquariumofpacific.org/">Long Beach Aquarium</a></li>
+            <li><a href="https://2seewhales.com/?utm_source=GMB&utm_medium=organic">Whale Watch Boat</a></li>
+          </ul>
+        </div>
+        <!-- Outdoor -->
+        <div class="subsection">
+          <h3>Outdoor</h3>
+          <ul>
+            <li><a href="https://www.cityofsignalhill.org/Facilities/Facility/Details/3">Hilltop Park</a></li>
+            <li><a href="https://shorelinevillage.com">Shoreline Village</a></li>
+          </ul>
+        </div>
+        <!-- Other -->
+        <div class="subsection">
+          <h3>Other</h3>
+          <ul>
+            <li><a href="https://www.queenmary.com/">Queen Mary</a></li>
+            <li><a href="https://thepikeoutlets.com/">The Pike Outlets</a></li>
+            <li><a href="https://gondolagetawayinc.com/">Gondola Rides</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<!-- Food 3 Sections -->
+    <div class="section-group">
+      <h2>Food</h2>
+      <div class="subsections">
+        <!-- Quick/Casual -->
+        <div class="subsection">
+          <h3>Quick/Casual</h3>
+          <ul>
+            <li><a href="https://ballastpoint.com/location/longbeach/">Ballast Point Brewing</a></li>
+            <li><a href="https://www.instagram.com/tacos_uziel01/?hl=en">Tacos Uziel</a></li>
+            <li><a href="https://steelcraftlb.com/">Steelcraft</a></li>
+          </ul>
+        </div>
+        <!-- Sit Down -->
+        <div class="subsection">
+          <h3>Sit Down</h3>
+          <ul>
+            <li><a href="selvalbc.com">Selva</a></li>
+            <li><a href="https://www.georgesgreekcafe.com/">George’s Greek Cafe</a></li>
+          </ul>
+        </div>
+        <!-- Breakfast, Coffee & Sweet Treats -->
+        <div class="subsection">
+          <h3>Fun</h3>
+          <ul>
+            <li><a href="https://www.yelp.com/biz/donut-city-seal-beach">Donut City</a></li>
+            <li><a href="https://www.lauriespiebar.com/">Pizza Bar</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Coastal Nav -->
+  <nav id="coastal-nav">
+    <ul>
+      <li><a href="/los_angeles">Los Angeles</a></li>
+      <li><a href="/anaheim">Anaheim</a></li>
+      <li><a href="/laguna">Laguna Beach</a></li>
+      <li><a href="/san_diego">San Diego</a></li>
+      <li><a href="/newport_beach">Newport Beach</a></li>
+      <li><a href="/san_clemente">San Clemente</a></li>
+      <li><a href="/dana_point">Dana Point</a></li>
+      <li><a href="/long_beach">Long Beach</a></li>
+      <li><a href="/irvine">Irvine</a></li>
+    </ul>
+  </nav>
+  
+ <!-- Directions -->
+    <div class="directions">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d424827.68211997626!2d-118.30637141691234!3d33.70982178480451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x80dcdd57c815c0a9%3A0xbd7436c85d56ff02!2sIrvine%20Spectrum%20Center%2C%20Irvine%2C%20CA%2092618!3m2!1d33.649866599999996!2d-117.74419069999999!4m5!1s0x80c2cae84099d759%3A0xa1003afac42a8faa!2sLong%20Beach%2C%20CA!3m2!1d33.770050399999995!2d-118.19373949999999!5e0!3m2!1sen!2sus!4v1763772001809!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </main>
+{% endblock %}
+
