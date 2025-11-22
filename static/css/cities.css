@@ -75,16 +75,16 @@ html, body {
   background-color: #52501c;
   text-align: center;
   border-radius: 0;
-  padding: 2rem 1rem;
+  padding: 1rem .5rem;
   color: white;
-  font-size: 1.3rem;
+  font-size: .9rem;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .overview {
-    padding: 1rem 0.5rem;
-    font-size: .5rem;
+    padding: .8rem 0.3rem;
+    font-size: .4rem;
   }
 }
 
@@ -123,6 +123,27 @@ html, body {
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
+
+.subsection a {
+  color: #52501c;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.subsection a:hover {
+  background: #f0e6c8;
+  color: #52501c;
+  transform: translateY(-1px);
+}
+
+.subsection a:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
 
 .subsection h3 {
   font-size: 1.6rem;
@@ -213,14 +234,14 @@ html, body {
   padding: 0;
   margin: 0;
   height: 100%;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 #coastal-nav ul li {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 0 .5rem;
   border-right: 1px solid #333;
   height: 100%;
 }
@@ -241,16 +262,6 @@ html, body {
   text-align: center;
 }
 
-#coastal-nav ul li img {
-  height: 65px;
-  width: auto;
-  object-fit: contain;
-  vertical-align: middle;
-}
-
-#coastal-nav ul li a img:hover {
-  opacity: 0.85;
-}
 
 /* Mobile */
 @media (max-width: 768px) {

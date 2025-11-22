@@ -205,7 +205,7 @@ def accommodations():
 # ----------------------- CITY PAGES -----------------------
 city_routes = [
     "laguna", "newport_beach", "dana_point", "san_clemente",
-    "irvine", "san_diego", "los_angeles", "anaheim"
+    "irvine", "san_diego", "los_angeles", "anaheim", "long_beach"
 ]
 
 for city in city_routes:
