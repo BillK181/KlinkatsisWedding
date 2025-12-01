@@ -11,23 +11,23 @@
 .faq h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #52501c;
-  background-color: #f1e7cd;
-  border: 7px solid #52501c;
-  border-color: #52501c;
+  color: var(--wedding-dark-green, #1D271D);
+  background-color: var(--wedding-beige, #D7CFC6);
+  border: 7px solid var(--wedding-dark-green, #1D271D);
+  border-color: var(--wedding-dark-green, #1D271D);
   padding: 20px 10px;
   font-size: 35px;
 }
 
 .faq-item {
-  border: 8px solid #52501c;
+  border: 8px solid var(--wedding-dark-green, #1D271D);
   border-radius: 8px;
   margin-bottom: 10px;
   overflow: hidden;
 }
 
 .faq-question {
-  background-color: #52501c;
+  background-color: var(--wedding-dark-green, #1D271D);
   text-align: center;
   border: none;
   width: 100%;
@@ -40,7 +40,7 @@
 }
 
 .faq-item .faq-question {
-  color: #f1e7cd;
+  color: var(--wedding-beige, #D7CFC6);
 }
 
 .faq-question:hover {
@@ -51,10 +51,10 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background-color: #f1e7cd;
+  background-color: var(--wedding-beige, #D7CFC6);
   padding: 0 20px;
   text-align: center;
-  color: #52501c;
+  color: var(--wedding-dark-green, #1D271D);
   font-size: 16px;
 }
 

@@ -1,13 +1,22 @@
 /* --- Global --- */
 
 
+/* Wedding Colors */
+:root {
+  --wedding-beige: #f1e7cd;
+  --wedding-green-beige: #999577;
+  --wedding-dark-green: #1f3723;
+  --wedding-accent-green: #285409;
+}
+
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Georgia', serif; 
-  background-color: #f1e7cd;
-  color: #333;
+  background-color: var(--wedding-beige, #D7CFC6);
+  color: var(--wedding-dark-green, #1D271D);
   scroll-behavior: smooth;
 }
 
@@ -22,7 +31,7 @@ nav ul {
   align-items: center;
   gap: 0;
   padding: 1rem 0;
-  background-color: #f1e7cd;
+  background-color: var(--wedding-beige, #D7CFC6);
   margin: 0;
   font-size: 1.8rem;
 }
@@ -64,7 +73,7 @@ nav ul li a img:hover {
     align-items: stretch; /* allows seperator to fill row height */
     gap: 0;
     padding: 1rem 0;   
-    background-color: #f1e7cd;
+    background-color: var(--wedding-beige, #D7CFC6);
     margin: 1px 0;
     font-size: 1.8rem;
   }
@@ -170,8 +179,8 @@ nav ul li a img:hover {
 }
 
 .logout-form input[type="submit"] {
-  background-color: #f1e7cd;
-  color: #333;
+  background-color: var(--wedding-beige, #D7CFC6);
+  color: var(--wedding-dark-green, #1D271D);
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
@@ -209,7 +218,7 @@ main {
 
 
 #shorttext {
-  background-color: #52501c;
+  background-color: var(--wedding-dark-green, #1D271D);
   text-align: center;
   padding: 1rem;
 }
@@ -217,7 +226,8 @@ main {
 #shorttext h2, 
 #shorttext p {
   margin: 0;
-  color: #fff;
+  color: var(--wedding-beige, #D7CFC6);
+  -webkit-text-stroke: .3px var(--wedding-green-beige, #999577);
 }
 
 #shorttext h2 {
@@ -249,7 +259,7 @@ main {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 0;
-  background-color: #f1e7cd;
+  background-color: var(--wedding-beige, #D7CFC6);
   align-items: center;
   box-sizing: border-box;
 }
@@ -272,8 +282,8 @@ main {
 .venue-button {
   position: static;     
   transform: translateX(-50%);
-  background-color: #52501c;
-  color: #f1e7cd;
+  background-color: var(--wedding-dark-green, #1D271D);
+  color: var(--wedding-beige, #D7CFC6);
   font-weight: bold;
   text-align: center;
   padding: 0.75rem 1.5rem;
@@ -286,7 +296,7 @@ main {
 }
 
 .venue-button:hover {
-  background-color: #414016;
+  background-color: var(--wedding-green-beige, #999577);
   transform: translateX(-50%) translateY(-4px);
 }
 
@@ -327,7 +337,7 @@ main {
 
 #image-scroll {
   padding: 2rem 1rem;
-  background-color: #858f29;
+  background-color: var(--wedding-green-beige, #999577);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -462,7 +472,7 @@ main {
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: #52501c;
+  background-color: var(--wedding-dark-green, #1D271D);
 }
 
 footer img {

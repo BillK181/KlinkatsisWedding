@@ -8,8 +8,8 @@
 .registry-heading h2,
 .registry-heading p {
   text-align: center;
-  background-color: #52501c;
-  color: #f1e7cd;
+  background-color: var(--wedding-dark-green, #1D271D);
+  color: var(--wedding-beige, #D7CFC6);
   padding: 10px 20px;
   border-radius: 55px;
   margin: 10px auto;
