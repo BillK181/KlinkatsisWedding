@@ -36,25 +36,25 @@
         <span class="rsvp-status">{{ rsvp_status or "—" }}</span>!
       </p>
 
-      <div class="select-wrapper">
-        <select name="rsvp" id="rsvp-select" required>
-          <option value="going" {% if rsvp_status == 'going' %}selected{% endif %}>Going</option>
-          <option value="not_going" {% if rsvp_status == 'not_going' %}selected{% endif %}>Not Going</option>
-        </select>
-      </div>
+      {% for member in group_members %}
+        <p class="rsvp-greeting">
+          {{ member.name | e }}:
+          <div class="select-wrapper">
+            <select name="rsvp_{{ member.name | replace(' ', '_') }}" required>
+              <option value="going" {% if member.rsvp_status == 'going' %}selected{% endif %}>Going</option>
+              <option value="not_going" {% if member.rsvp_status == 'not_going' %}selected{% endif %}>Not Going</option>
+            </select>
+          </div>
+        </p>
+      {% endfor %}
 
       <input type="submit" value="{% if rsvp_status %}Change RSVP{% else %}RSVP{% endif %}" class="rsvp-submit">
     </form>
+
   </section>
 
 </main>
-{% endblock %}
 
-{% block after_footer %}
-<!-- Secret Check RSVP Button -->
-<div class="btn-container">
-  <a href="/checkstatus" class="btn"></a>
-</div>
 {% endblock %}
 
 <!-- Video Pause Script -->

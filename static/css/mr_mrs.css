@@ -33,12 +33,19 @@
 
 /* Seperator */
 .seperator {
-  background-color: #52501c;
+  background-color: var(--wedding-dark-green, #1D271D);
   height: 10px;
   max-width: 900px;  
   margin: 40px auto; 
   border-radius: 5px; 
   margin-top: 0;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  .story-text h3 {
+    font-size: 1.1rem;
+  }
 }
 
 /* --- Wedding Party --- */

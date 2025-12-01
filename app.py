@@ -58,8 +58,7 @@ def logout():
     session.pop('guest_id', None)
     return redirect(url_for('login'))
 
-
-# RSVP submission
+# RSVP
 @app.route('/rsvp', methods=['POST'])
 def rsvp():
     guest, name = get_current_guest()
@@ -67,17 +66,20 @@ def rsvp():
         flash("Error: Guest not found in database.")
         return redirect(url_for('rsvpage'))
 
-    rsvp_status = request.form.get('rsvp')
-    if not rsvp_status:
-        flash('Please select an RSVP option.')
-        return redirect(url_for('rsvpage'))
+    group_number = guest_names.get(name)
+    group_members = Guest.query.filter(
+        Guest.name.in_([g_name for g_name, g_num in guest_names.items() if g_num == group_number])
+    ).all()
 
-    guest.rsvp_status = rsvp_status
+    for member in group_members:
+        form_key = f"rsvp_{member.name.replace(' ', '_')}"
+        rsvp_value = request.form.get(form_key)
+        if rsvp_value:
+            member.rsvp_status = rsvp_value
+
     db.session.commit()
-
-    flash(f"Thanks {name}, you RSVP'd: {rsvp_status.capitalize()}")
+    flash(f"Thanks {name}, your group RSVP has been updated!")
     return redirect(url_for('rsvpage'))
-
 
 # Chatbot
 @app.route("/chat", methods=["POST"])
@@ -160,13 +162,28 @@ def mr_mrs():
 @app.route('/rsvpage', methods=['GET'])
 def rsvpage():
     guest, name = get_current_guest()
-    rsvp_status = guest.rsvp_status if guest else None
+    if not guest:
+        return redirect(url_for('login'))
 
-    if name and name.strip().lower() == "cs50":
-        return render_template('main_pages/rsvp.html', name=name, rsvp_status=rsvp_status)
+    if name and name.strip().lower() == "bkadmin":
+        return render_template('checkstatus.html', name=name, rsvp_status=guest.rsvp_status)
 
-    return render_template('main_pages/rsvpre.html', name=name, rsvp_status=rsvp_status)
+    if name and name.strip().lower() in ["cs50"]:
+        group_number = guest_names.get(name)
+        group_members = [
+            {"name": guest_name,
+             "rsvp_status": Guest.query.filter_by(name=guest_name).first().rsvp_status}
+            for guest_name, group in guest_names.items() if group == group_number
+        ]
+        return render_template('main_pages/rsvp.html', name=name, group_members=group_members)
 
+    group_number = guest_names.get(name)
+    group_members = [
+        {"name": guest_name, 
+         "rsvp_status": Guest.query.filter_by(name=guest_name).first().rsvp_status}
+        for guest_name, group in guest_names.items() if group == group_number
+    ]
+    return render_template('main_pages/rsvpre.html', name=name, group_members=group_members)
 
 
 @app.route('/travel', methods=['GET'])
@@ -190,7 +207,7 @@ def faq():
 @app.route('/checkstatus', methods=['GET'])
 def checkstatus():
     guest, name = get_current_guest()
-    if name != "Bill Klinkatsis":
+    if name != "bkadmin":
         return redirect(url_for('rsvpage'))
 
     all_guests = Guest.query.order_by(Guest.name).all()

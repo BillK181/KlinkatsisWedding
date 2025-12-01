@@ -7,7 +7,7 @@
 
 html, body {
   font-family: 'Georgia', serif;
-  background-color: #f1e7cd;
+  background-color: var(--wedding-beige, #D7CFC6);
   color: #333;
   scroll-behavior: smooth;
   min-height: 100%;
@@ -72,7 +72,7 @@ html, body {
 
 /* Overview section */
 .overview {
-  background-color: #52501c;
+  background-color: var(--wedding-dark-green, #1D271D);
   text-align: center;
   border-radius: 0;
   padding: 1rem .5rem;
@@ -118,14 +118,15 @@ html, body {
 .subsection {
   flex: 1 1 30%;
   min-width: 250px;
-  background-color: #fdfaf6;
+  background-color: var(--wedding-beige, #D7CFC6);
+  border: 2px solid var(--wedding-dark-green, #1D271D);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
 
 .subsection a {
-  color: #52501c;
+  color: var(--wedding-dark-green, #1D271D);
   font-weight: 600;
   padding: 0.35rem 0.65rem;
   border-radius: 8px;
@@ -134,8 +135,8 @@ html, body {
 }
 
 .subsection a:hover {
-  background: #f0e6c8;
-  color: #52501c;
+  background: var(--wedding-dark-green, #1D271D);
+  color: var(--wedding-beige, #D7CFC6);
   transform: translateY(-1px);
 }
 
@@ -148,7 +149,7 @@ html, body {
 .subsection h3 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  color: #52501c;
+  color: var(--wedding-dark-green, #1D271D);
   text-align: center;
 }
 
@@ -181,7 +182,7 @@ html, body {
   }
 
   .subsection h3 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 0.75rem;
   }
 
@@ -222,7 +223,7 @@ html, body {
 
 #coastal-nav {
   height: 70px; 
-  background-color: #f1e7cd;
+  background-color: var(--wedding-beige, #D7CFC6);
   margin-top: 10px;
 }
 

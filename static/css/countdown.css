@@ -8,11 +8,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  color: #fff;
+  color: var(--wedding-accent-green, #285409);
   text-align: center;
   padding-bottom: 30px;
   overflow: hidden; 
-  background: #f1e7cd; 
+  background: var(--wedding-beige, #D7CFC6); 
 }
 
 
@@ -42,7 +42,8 @@
   position: relative;
   z-index: 2;
   margin-bottom: 1px;
-  color: #f1e7cd;
+  color: var(--wedding-beige, #D7CFC6);
+  -webkit-text-stroke: 1px var(--wedding-green-beige, #999577);
   line-height: 0.9;
   font-size: 10rem;
   font-family: 'Playfair Display', serif;
@@ -60,7 +61,7 @@
   background: rgba(0, 0, 0, 0.3);
   padding: 3px 8px;
   border-radius: 6px;
-  color: #f1e7cd;
+  color: var(--wedding-beige, #D7CFC6);
 }
 
 /* Mobile */
@@ -95,7 +96,7 @@
 }
 
 .countdown-box {
-  background: rgba(241, 231, 205, 0.85);
+  background: var(--wedding-beige, #D7CFC6);
   border-radius: 12px;
   padding: 1rem;
   text-align: center;
@@ -112,12 +113,12 @@
 .countdown-number {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #000;
+  color: var(--wedding-dark-green, #1D271D);
 }
 
 .countdown-label {
   font-size: 1rem;
-  color: #444;
+  color: var(--wedding-dark-green, #1D271D);
   margin-top: 2px;
 }
 

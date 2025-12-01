@@ -47,7 +47,7 @@ body, html {
   background: rgba(0, 0, 0, 0.3);
   padding: 3px 8px;
   border-radius: 6px;
-  color: #f1e7cd;
+  color: var(--wedding-beige, #D7CFC6);
 }
 
 @keyframes coming-soon-pulse {

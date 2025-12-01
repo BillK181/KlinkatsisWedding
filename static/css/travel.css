@@ -11,8 +11,8 @@
   top: -110px;         
   left: 50%;
   transform: translateX(-50%);
-  background-color: #52501c;
-  color: #f1e7cd;
+  background-color: var(--wedding-dark-green, #1D271D);
+  color: var(--wedding-beige, #D7CFC6);
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -26,7 +26,7 @@
 }
 
 .hotel-button:hover {
-  background-color: #414016;
+  background-color: var(--wedding-green-beige, #999577);
   transform: translateX(-50%) translateY(-4px);
 }
 
@@ -52,8 +52,8 @@
     width: 90%;
     position: relative;
     margin: 0 auto 1rem auto;
-    background-color: #52501c;
-    color: #f1e7cd;
+    background-color: var(--wedding-dark-green, #1D271D);
+    color: var(--wedding-beige, #D7CFC6);
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
@@ -67,7 +67,7 @@
   }
 
   .hotel-button-mobile:hover {
-    background-color: #414016;
+    background-color: var(--wedding-green-beige, #999577);
     transform: none; 
   }
 }
@@ -82,7 +82,7 @@
   padding: 2rem;
   align-items: center;
   box-sizing: border-box;
-  background-color: #f1e7cd;
+  background-color: var(--wedding-beige, #D7CFC6);
 }
 
 
@@ -111,7 +111,7 @@ area {
 .map-text {
   margin-top: 150px;
   margin-right: 100px;
-  background-color: #52501c;
+  background-color: var(--wedding-dark-green, #1D271D);
   padding: 1rem;
   width: 90%;
   height: 70%;
@@ -120,13 +120,13 @@ area {
   font-size: 4rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #f1e7cd;
+  color: var(--wedding-beige, #D7CFC6);
 }
 
 #map-exp h2 {
   font-size: 1.7rem;
   text-align: center;
-  color: #f1e7cd;
+  color: var(--wedding-beige, #D7CFC6);
   margin-left: 25px;
   margin-right: 25px;
 }
@@ -221,7 +221,7 @@ area {
 /* --- Coastal Nav --- */
 #coastal-nav {
   height: 70px;
-  background-color: #f1e7cd;
+  background-color: var(--wedding-beige, #D7CFC6);
 }
 
 #coastal-nav ul {
