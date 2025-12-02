@@ -240,6 +240,7 @@ ul.flashes li {
 
   #rsvp input[type="submit"] {
     position: absolute;  
+    box-sizing: border-box;
     bottom: 15px;        
     left: 0px;          
     width: auto;        
@@ -249,7 +250,10 @@ ul.flashes li {
     transform: none;     
     z-index: 2;  
     animation: submitpulse 1.5s infinite;
-    transition: transform 0.2s ease;         
+    transition: transform 0.2s ease;  
+    -webkit-appearance: none;
+    -moz-appearance: none;   
+    appearance: none;       
   }
 
   #rsvp .video-credit {

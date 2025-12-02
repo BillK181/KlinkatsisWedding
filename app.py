@@ -259,7 +259,7 @@ def rsvpage():
         )
 
     # Special groups
-    if name and name.strip().lower() in ["cs50", "amanda chapman"]:
+    if name and name.strip().lower() in ["cs50"]:
         group_number = guest_names.get(name)
         group_members = [
             {"name": guest_name,
