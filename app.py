@@ -258,8 +258,8 @@ def rsvpage():
             song_requests=sorted_song_requests
         )
 
-    # Special groups (example: cs50, amanda chapman)
-    if name and name.strip().lower() in ["cs50","amanda chapman"]:
+    # Special groups
+    if name and name.strip().lower() in ["cs50"]:
         group_number = guest_names.get(name)
         group_members = [
             {"name": guest_name,
