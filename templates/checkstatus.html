@@ -9,31 +9,53 @@
 
 {% block content %}
 
-<!-- Heading -->
 <main>
   <h2 class="rsvp-title">RSVP Statuses</h2>
-  <!-- RSVP Statuses -->
+
   <table class="rsvp-table">
     <thead>
       <tr>
         <th>Guest Name</th>
         <th>RSVP Status</th>
+        <th>Dinner Choice</th>
+        <th>Song Request</th>
       </tr>
     </thead>
     <tbody>
       {% for guest in guests %}
       <tr>
         <td>{{ guest.name }}</td>
-        <td>
-          {% if guest.rsvp_status %}
-            {{ guest.rsvp_status|capitalize }}
-          {% else %}
-            —
-          {% endif %}
-        </td>
+        <td>{{ guest.rsvp_status|capitalize if guest.rsvp_status else '—' }}</td>
+        <td>{{ guest.dinner_option if guest.dinner_option else '—' }}</td>
+        <td>{{ guest.song_request if guest.song_request else '—' }}</td>
       </tr>
       {% endfor %}
     </tbody>
+    <tfoot>
+      <tr>
+        <th>Totals</th>
+        <th>
+          Going: {{ rsvp_totals.going }}<br>
+          Not Going: {{ rsvp_totals.not_going }}
+        </th>
+        <th>
+          Chicken: {{ dinner_totals.Chicken }}<br>
+          Beef: {{ dinner_totals.Beef }}<br>
+          Vegetarian: {{ dinner_totals.Vegetarian }}<br>
+          Vegan: {{ dinner_totals.Vegan }}
+        </th>
+        <th>
+          <h3>Song Requests:</h3>
+        <ul>
+          {% for song, count in song_requests %}
+            <li>{{ song }} — {{ count }}</li>
+          {% endfor %}
+        </ul>
+
+        </th>
+      </tr>
+    </tfoot>
   </table>
 </main>
+
 {% endblock %}
