@@ -1,5 +1,6 @@
 from flask import Flask, session, request, jsonify, render_template, redirect, flash, url_for
 from flask_sqlalchemy import SQLAlchemy
+from collections import Counter
 from weddingbot.main import (
     ask_gpt, SYSTEM_PROMPT, DRESS_CODE, WEDDING_LOCATION, WEDDING_DATE,
     PERSONALITY, HOTEL_BLOCK, BUS_TO_WEDDING, BUS_FROM_WEDDING, THINGS_TO_DO,
@@ -22,6 +23,8 @@ class Guest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True, nullable=False)
     rsvp_status = db.Column(db.String(20), nullable=True)
+    dinner_option = db.Column(db.String(50), nullable=True)
+    song_request = db.Column(db.String(200), nullable=True)
 
 
 # Populate database from guest list (only once!)
@@ -80,6 +83,65 @@ def rsvp():
     db.session.commit()
     flash(f"Thanks {name}, your group RSVP has been updated!")
     return redirect(url_for('rsvpage'))
+
+
+# RSVP Status
+@app.route("/rsvp-status")
+def rsvp_status():
+    guests = Guest.query.all()  # or however you fetch your guests
+
+    # RSVP totals
+    rsvp_totals = {
+        "going": sum(1 for g in guests if g.rsvp_status == "going"),
+        "not_going": sum(1 for g in guests if g.rsvp_status == "not_going")
+    }
+
+    # Dinner totals
+    dinner_totals = {
+        "Chicken": sum(1 for g in guests if g.dinner_option == "Chicken"),
+        "Beef": sum(1 for g in guests if g.dinner_option == "Beef"),
+        "Vegetarian": sum(1 for g in guests if g.dinner_option == "Vegetarian"),
+        "Vegan": sum(1 for g in guests if g.dinner_option == "Vegan")
+    }
+
+    # Song request counts
+    song_requests = Counter(g.song_request for g in guests if g.song_request)
+
+    return render_template(
+        "check_status.html",
+        guests=guests,
+        rsvp_totals=rsvp_totals,
+        dinner_totals=dinner_totals,
+        song_requests=song_requests
+    )
+
+
+# Song Request
+@app.route('/song_request', methods=['POST'])
+def song_request():
+    guest, name = get_current_guest()
+    if not guest:
+        flash("Error: Guest not found in database.")
+        return redirect(url_for('rsvpage'))
+
+    group_number = guest_names.get(name)
+    group_members = Guest.query.filter(
+        Guest.name.in_([g_name for g_name, g_num in guest_names.items() if g_num == group_number])
+    ).all()
+
+    for member in group_members:
+        safe_name = member.name.replace(" ", "_")
+        form_key = f"song_request_{safe_name}"
+        song_value = request.form.get(form_key)
+
+        if song_value is not None:
+            member.song_request = song_value
+
+    db.session.commit()
+    flash("Song requests updated!")
+    return redirect(url_for('rsvpage'))
+
+
 
 # Chatbot
 @app.route("/chat", methods=["POST"])
@@ -165,10 +227,39 @@ def rsvpage():
     if not guest:
         return redirect(url_for('login'))
 
+    # Admin view
     if name and name.strip().lower() == "bkadmin":
-        return render_template('checkstatus.html', name=name, rsvp_status=guest.rsvp_status)
+        all_guests = Guest.query.order_by(Guest.name).all()
 
-    if name and name.strip().lower() in ["cs50"]:
+        # RSVP totals
+        rsvp_totals = {
+            "going": sum(1 for g in all_guests if g.rsvp_status == "going"),
+            "not_going": sum(1 for g in all_guests if g.rsvp_status == "not_going")
+        }
+
+        # Dinner totals
+        dinner_totals = {
+            "Chicken": sum(1 for g in all_guests if g.dinner_option == "Chicken"),
+            "Beef": sum(1 for g in all_guests if g.dinner_option == "Beef"),
+            "Vegetarian": sum(1 for g in all_guests if g.dinner_option == "Vegetarian"),
+            "Vegan": sum(1 for g in all_guests if g.dinner_option == "Vegan")
+        }
+
+        # Song request counts, sorted most to least
+        song_requests = Counter(g.song_request for g in all_guests if g.song_request)
+        sorted_song_requests = song_requests.most_common()  # list of (song, count) tuples
+
+        return render_template(
+            'checkstatus.html',
+            name=name,
+            guests=all_guests,
+            rsvp_totals=rsvp_totals,
+            dinner_totals=dinner_totals,
+            song_requests=sorted_song_requests
+        )
+
+    # Special groups (example: cs50, amanda chapman)
+    if name and name.strip().lower() in ["cs50","amanda chapman"]:
         group_number = guest_names.get(name)
         group_members = [
             {"name": guest_name,
@@ -177,6 +268,7 @@ def rsvpage():
         ]
         return render_template('main_pages/rsvp.html', name=name, group_members=group_members)
 
+    # Regular guest view
     group_number = guest_names.get(name)
     group_members = [
         {"name": guest_name, 
@@ -184,7 +276,6 @@ def rsvpage():
         for guest_name, group in guest_names.items() if group == group_number
     ]
     return render_template('main_pages/rsvpre.html', name=name, group_members=group_members)
-
 
 @app.route('/travel', methods=['GET'])
 def travel():

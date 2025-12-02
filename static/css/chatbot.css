@@ -157,4 +157,7 @@
     padding: 12px;
     font-size: 18px;
   }
+  #chatbot-close {
+    color: var(--wedding-beige, #D7CFC6);
+  }
 }

@@ -37,31 +37,53 @@
       </p>
 
       {% for member in group_members %}
-        <p class="rsvp-greeting">
-          {{ member.name | e }}:
+      <div class="guest-row">
+        <strong>{{ member.name | e }}</strong>
+
+        <div class="guest-row-inputs">
+          <!-- RSVP DROPDOWN -->
           <div class="select-wrapper">
             <select name="rsvp_{{ member.name | replace(' ', '_') }}" required>
               <option value="going" {% if member.rsvp_status == 'going' %}selected{% endif %}>Going</option>
               <option value="not_going" {% if member.rsvp_status == 'not_going' %}selected{% endif %}>Not Going</option>
             </select>
           </div>
-        </p>
+
+          <!-- DINNER OPTION DROPDOWN -->
+          <div class="select-wrapper">
+            <select name="dinner_option_{{ member.name | replace(' ', '_') }}">
+              <option value="" {% if not member.dinner_option %}selected{% endif %}>— Dinner —</option>
+              <option value="Chicken" {% if member.dinner_option == 'Chicken' %}selected{% endif %}>Chicken</option>
+              <option value="Beef" {% if member.dinner_option == 'Beef' %}selected{% endif %}>Beef</option>
+              <option value="Vegetarian" {% if member.dinner_option == 'Vegetarian' %}selected{% endif %}>Vegetarian</option>
+              <option value="Vegan" {% if member.dinner_option == 'Vegan' %}selected{% endif %}>Vegan</option>
+            </select>
+          </div>
+
+          <!-- SONG REQUEST -->
+          <input 
+            type="text" 
+            name="song_request_{{ member.name | replace(' ', '_') }}"
+            placeholder="Song request"
+            value="{{ member.song_request or '' }}"
+            class="song-input"
+          >
+        </div>
+      </div>
       {% endfor %}
 
-      <input type="submit" value="{% if rsvp_status %}Change RSVP{% else %}RSVP{% endif %}" class="rsvp-submit">
+      <input type="submit" value="{% if rsvp_status %}Update Info{% else %}Submit RSVP{% endif %}" class="rsvp-submit">
     </form>
 
   </section>
 
 </main>
-
 {% endblock %}
 
 <!-- Video Pause Script -->
 <script>
   const video = document.getElementById('rsvp-video');
 
-  // Pause video when tab is inactive
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       video.pause();

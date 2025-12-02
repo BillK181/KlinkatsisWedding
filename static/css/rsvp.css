@@ -77,6 +77,8 @@ ul.flashes li {
   color: var(--wedding-beige, #D7CFC6);
 }
 
+
+
 #rsvp .rsvp-form,
 #rsvp .rsvp-greeting {
   position: relative;
@@ -107,6 +109,7 @@ ul.flashes li {
   border: 1px solid var(--wedding-dark-green, #1D271D);
   margin: 0 auto 10px auto;
   width: fit-content;
+
 }
 
 .select-wrapper select {
@@ -122,6 +125,38 @@ ul.flashes li {
   background-color: #fdfaf6;
   color: #000;
   cursor: pointer;
+}
+
+.guest-row {
+  display: block; 
+  margin-top: 20px; 
+  width: 100%;
+}
+
+.guest-row > strong {
+  font-size: 2em;
+  color: var(--wedding-beige, #D7CFC6);
+  background-color: #1d271d6a;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.guest-row-inputs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/*  --- Song --- */
+.song-input {
+  height: 30px;
+  padding: 0 10px;
+  font-size: 1em;
+  line-height: 1.2;
+  border: 1px solid var(--wedding-dark-green, #1D271D);
+  border-radius: 8px;
+  background-color: #fdfaf6;
 }
 
 /* Submit Button */
