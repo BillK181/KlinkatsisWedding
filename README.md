@@ -92,6 +92,7 @@ ww/
 │       ├── san_clemente.jpg
 │       ├── san_diego.jpg
 │       ├── southerncaliforniamap.jpg
+│       ├── stephweddinng.jpg
 │       ├── waves_horizontal.mp4
 │       ├── waves_vertical.mp4
 │       ├── wedding-bg.jpg
