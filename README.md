@@ -1,6 +1,6 @@
 # BillandMarisa.com
 
-A sophisticated Flask web application designed to celebrate and streamline the **Klinkatsis wedding**, featuring intuitive RSVP management, immersive travel pages, and custom-designed sections tailored for guests.  
+BillandMarisa.com is a sophisticated Flask web application designed to celebrate and streamline the our wedding, featuring intuitive RSVP management, immersive travel pages, and custom-designed sections tailored for guests.  
 
 Built with love and attention to detail, this project combines interactivity, style, and seamless navigation to make wedding planning both elegant and effortless.
 
@@ -12,7 +12,7 @@ Built with love and attention to detail, this project combines interactivity, st
 
 - 🏙️ **City Pages** — Travel pages for nearby cities are generated dynamically from a list of templates, making it easy to add new cities. Each page includes images, descriptions, and links for trip planning, styled consistently with cities.css.
 
-- 💬 **Interactive Chatbot** — A friendly, keyword-based chatbot that recognizes logged-in guests and addresses them by name. It answers questions about the wedding, travel, and registry in real time. Its modular design allows for easy expansion with additional responses.
+- 🤖 **AI-Powered Chatbot** — A conversational assistant built with the OpenAI API (`gpt-4o`). The AI-Powered Chatbot on **BillandMarisa.com** recognizes logged-in guests, addresses them by name, and answers questions about travel, the registry, schedules, and wedding logistics. The chatbot’s logic lives in `weddingbot/`, where a lightweight wrapper function (`ask_gpt`) manages API calls and maintains chat history for personalized, natural responses.
 
 - 🔐 **Login System** — Simple name-based authentication with secure logout functionality, enabling personalized experiences for each guest and allowing the chatbot to tailor responses accordingly. 
 
@@ -75,7 +75,7 @@ ww/
 │       ├── favicon2.png
 │       ├── footerlogo.png
 │       ├── gracewedding.jpg
-│       ├── honeymoon.jpg
+│       ├── honeymoon.png
 │       ├── irvine.jpg
 │       ├── irvinemarriottt.jpg
 │       ├── laguna.jpg
@@ -132,6 +132,15 @@ ww/
 
 ## 🚀 Getting Started
 
+### Option 1: Visit the Live Website
+The site is always available at **[BillandMarisa.com](https://BillandMarisa.com)**.  
+Guests can access the RSVP form, city pages, countdown timer, and AI-powered chatbot directly from their browser.  
+
+Sign in as `"cs50"` to use personalized features, including confirming your RSVP, selecting a dinner option, submitting a song request, and chatting with the AI assistant.
+
+### Option 2: Run Locally
+If you want to run the site on your own machine for testing or development:  
+
 1. Set Up Your Environment
 
 Create and activate a virtual environment (recommended):
@@ -173,12 +182,12 @@ Sign in as "cs50"
 
 ### Database (SQLite)
 - Guest RSVP data is stored in `wedding.db`.  
-- Log in as cs50 to view the RSVP page (will go live for all when invitations are sent)
 - The RSVP form validates input and updates the database in real time, allowing guests to confirm or change their attendance, choose or update their dinner option, and submit a song request.
 - Admins can view all RSVP data through the admin accout, using Python-based permissions in app.py. Additional routes—rsvp, dinner_option, and song—handle storing information and displaying totals such as attendance counts, dinner selections, and the most-requested songs.
 
 ### Chatbot
 - A conversational chatbot lives in `weddingbot/` and handles guest inquiries interactively.  
+- It uses the OpenAI API (via ask_gpt()) to generate natural-language responses using the gpt-4o model.
 - It recognizes the logged-in guest and addresses them by name, creating a personalized experience.  
 - The chatbot answers questions about travel, registry, or the wedding schedule using a keyword-based system powered by `globals.py` and `main.py`.  
 - Chat history is stored in the session, and its modular design allows future expansion without altering core app functionality.
@@ -197,5 +206,5 @@ Sign in as "cs50"
 ## 👰🤵 About
 
 Developed by: Bill Klinkatsis
-Purpose: To celebrate Bill and Marisa's wedding with a creative, interactive website for guests.
-Company: ThrillBill Fullstack
+Purpose: **BillandMarisa.com** celebrates Bill and Marisa's wedding with a creative, interactive website for guests.
+Company: ThrillBill FullStack

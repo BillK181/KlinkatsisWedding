@@ -1,178 +1,209 @@
 guest_names = {
-    "Mike Szwed": 1,
-    "Arlene Szwed": 1,
-    "Melissa Szwed": 1,
-    "Eddie Szwed": 2,
-    "Ginny Szwed": 2,
-    "Rachel Klinkatsis": 3,
-    # Fix
-    "Rachel Klinkatsis Guest": 3,
-    "Amanda Chapman": 4,
-    "Kurt Chapman": 4,
-    "Grace Chapman": 4,
-    "Kate Chapman": 4,
-    "Bob Hrinuk": 5,
-    "Karen Hrinuk": 5,
-    "Jeff Doros": 6,
-    # Fix
-    "Jeff Doros Family (3)": 6,
-    "Mary Ann Szwed": 7,
-    "Johnna Wooton": 7,
-    "John Bieniek": 8,
-    "Mary Bieniek": 8,
-    "Joe Bieniek": 8,
-    "Renee Torre": 9,
-    "Mike Torre": 9,
-    "Samantha Torre": 9,
-    "Missy Torre": 9,
-    # Fix
-    "Boyfriends": 9,
-    "Irene Szwed": 10,
-    "Zoi Klinkatsis": 11,
-    "Bill Klinkatsis": 11,
-    "Helen Elias": 12,
-    "Phil Elias": 12,
-    "Anne Elias": 12,
-    "Letta Elias": 12,
-    "George Klinkatsis": 13,
-    "Ann Marie Klinkatsis": 13,
-    "Jack Klinkatsis": 13,
-    "Samantha Klinkatsis": 13,
-    "Eileen Klinkatsis": 14,
-    # Fix
-    "Eileen Klinkatsis Guest": 14,
-    "Bob Morrison": 15,
-    "Marry Morrison": 15,
-    "James Morrison": 15,
-    "Linda Ogee": 16,
-    "Rodger Ogee": 16,
-    "June Ogee": 17,
-    # Fix
-    "Mikayla": 17,
-    "Drew Bayne": 18,
-    "Drew Bayne Guest": 18,
-    "Lisa DeGennaro": 19,
-    "Michael DeGennaro": 19,
-    "Michael DeGennaro": 20,
-    "Daniel Gomez": 20,
-    "Angie Daniels": 21,
-    "Liz Smarz": 22,
-    "Alan Smarz": 22,
-    "Christian Smarz": 22,
-    "Chloe Smarz": 22,
-    "Correy Mezzina": 23,
-    "Jill Mezzina": 23,
-    "Mike Mezzina": 24,
-    "Josephine Mezzina": 24,
-    "Allie Mezzina": 24,
-    "Rose Ann Ratto": 25,
-    "John Ratto": 25,
-    "Angelo Ratto": 26,
-    "Vinny Ratto": 27,
-    "Cynthia Ratto": 27,
-    "Mike Agosta": 28,
-    "Alexia Agosta": 28,
-    "Vinny DeGennaro": 29,
-    "Tahira DeGennaro": 29,
-    "Becky Daniels": 30,
-    "Adrian Daniels": 31,
-    "Anthony Daniels": 32,
-    "Caitlin Daniels": 32,
-    "Adrienne Daniels": 33,
-    "Mike Luger": 34,
-    "James Dayton": 35,
-    "Danielle Dayton": 35,
-    "Sam Ogee": 36,
-    "Alex Ogee": 36,
-    "Jacob Dayton": 37,
-    "Claire Dayton": 37,
-    "Carlos Ventura": 38,
-    "Corbin Cofer": 39,
-    # Fix
-    "Lindsey Corbin's Girlfriend": 39,
-    "Alex Kawaharra": 40,
-    # Fix
-    "Alex's Girlfiend Paige": 40,
-    "Jon Ross Presta": 41,
-    "Skylar Presta": 41,
-    "Clayton Frieders": 42,
-    "Claire Hyde": 42,
-    "Zack Cantril": 43,
-    # Fix
-    "Zack's Girlfriend Amanda": 43,
-    "Brian Coddington": 44,
-    "Sam Strong": 44,
-    "Danny Baerman": 45,
-    "Miguel Silva": 46,
-    # Fix
-    "Miguel's Girlfriend Melissa": 46,
-    "Stephanie Goodman": 47,
-    "Jeff Goodman": 47,
-    "Emily Bondura": 48,
-    "Robbie Bondura": 48,
-    "Gabby Taddessee": 49,
-    "Elizabeth Leonard": 50,
-    "Elizabaeth Leonard Guest": 50,
-    "Ryan Gorel": 51,
-    "Annie Gorel": 51,
-    # Fix
-    "Ciarán": 52,
-    # Fix
-    "Dan": 52,
-    "Bryson Ericke": 53,
-    "JT Briscoe": 54,
-    "Blake Sweet": 55,
-    # Fix
-    "Blake's Fiance Bailey": 55,
-    # Fix
-    "Connor": 56,
-    # Fix
-    "Connor's Fiance": 56,
-    "Scott Viglianti": 57,
-    "Sonia Viglianti": 57,
-    "Shannon Boczon": 58,
-    "Bryan Boczon": 58,
-    "Nancy Walsh": 59,
-    "Joe Walsh": 59,
-    "Delma Rose": 60,
-    "Bryan Rose": 60,
-    "Diane Furnari": 61,
-    "Steve Furnari": 61,
-    "Mr Torres": 62,
-    "Mrs Torres": 62,
-    "Mr Dreossi": 63,
-    "Mrs Dreossi": 63,
-    "Mr Czarnecki": 64,
-    "Mrs Czarnecki": 64,
-    "Jennifer Cullen": 65,
-    "Jennifer Cullen Guest": 65,
-    "Patricia Carson": 66,
-    "Tom Norton": 66,
-    "Mr Burnett": 67,
-    "Mrs Burnett": 67,
-    "Mr Bill Zacks": 68,
-    "Mrs Bill Zacks": 68,
-    "Kim Basciano": 69,
-    "Mr Tom Cervone": 70,
-    "Mrs Tom Cervone": 70,
-    "Lori Brancato": 71,
-    "Tom Brancato": 71,
-    "Mr Ray Fahmy": 72,
-    "Mrs Ray Fahmy": 72,
-    "Adrienne Cortazzo": 73,
-    "Mark Cortazzo": 73,
-    "Lucy Studer": 74,
-    "Carl Studer": 74,
-    "Diane Hunsinger": 75,
-    "Doyle Hunsinger": 75,
-    "Vic Pepe": 76,
-    "Kris Pepe": 76,
-    "Mr John Blasch": 77,
-    "Mrs John Blasch": 77,
-    "Wendy Nolte": 78,
-    "Wendy Nolte Guest": 78,
-    "Marisa DeGennaro": 0,
-    "Groom - Bill Klinkatsis": 0,
-    "cs50": 79,
-    "bkadmin": 80,
+"Mike Szwed": 1,
+"Arlene Szwed": 1,
+"Melissa Szwed": 1,
+
+"Eddie Szwed": 2,
+"Ginny Szwed": 2,
+
+"Rachel Klinkatsis": 3,
+
+"Amanda Chapman": 4,
+"Kurt Chapman": 4,
+
+"Bob Hrinuk": 5,
+"Karen Hrinuk": 5,
+
+"Jeff Doros": 6,
+"Susan Doros": 6,
+"Annaleise Doros": 6,
+
+"Mary Ann Szwed": 7,
+"Johnna Wooton": 7,
+
+"John Bieniek": 8,
+
+"Mary Bieneick": 9,
+"Joe Bieneick": 9,
+
+"Renee Torre": 10,
+"Mike Torre": 10,
+"Samantha Torre": 10,
+
+"Missy Torre": 11,
+
+"Irene Szwed": 12,
+
+"Zoi Klinkatsis": 13,
+"Bill Klinkatsis": 13,
+
+"Helen Elias": 14,
+"Phil Elias": 14,
+"Anne Elias": 14,
+"Letta Elias": 14,
+
+"George Klinkatsis": 15,
+"Ann Marie Klinkatsis": 15,
+"Jack Klinkatsis": 15,
+"Samantha Klinkatsis": 15,
+
+"Eileen Klinkatsis": 16,
+
+"Bob Morrison": 17,
+"Mary Morrison": 17,
+"James Morrison": 17,
+
+"June Ogee": 18,
+"Mikayla Staples": 18,
+
+"Lisa DeGennaro": 19,
+"Michael DeGennaro": 19,
+
+"Michael DeGennaro": 20,
+"Daniel Gomez": 20,
+
+"Angie Daniels": 21,
+
+"Liz Smarz": 22,
+"Alan Smarz": 22,
+"Christian Smarz": 22,
+"Chloe Smarz": 22,
+
+"Correy Mezzina": 23,
+"Jill Mezzina": 23,
+
+"Mike Mezzina": 24,
+"Josephine Mezzina": 24,
+"Allie Mezzina": 24,
+
+"Rose Ann Ratto": 25,
+
+"Angelo Ratto": 26,
+
+"Vinny Ratto": 27,
+"Cynthia Ratto": 27,
+
+"Mike Agosta": 28,
+"Alexia Agosta": 28,
+
+"Vinny DeGennaro": 29,
+"Tahira DeGennaro": 29,
+
+"Becky Daniels": 30,
+
+"Mike Luger": 31,
+
+"James Dayton": 32,
+"Danielle Dayton": 32,
+
+"Sam Ogee": 33,
+"Alex Ogee": 33,
+
+"Carlos Ventura": 34,
+
+"Corbin Cofer": 35,
+
+"Alex Kawahara": 36,
+
+"Jon Ross": 37,
+"Skylar Presta": 37,
+
+"Clayton Frieders": 38,
+"Claire Frieders": 38,
+
+"Zack Cantril": 39,
+
+"Brian Coddington": 40,
+
+"Danny Baerman": 41,
+
+"Miguel Silva": 42,
+"Melissa Guerrero": 42,
+
+"Stephanie Goodman": 43,
+"Jeff Goodman": 43,
+
+"Emily Bondura": 44,
+"Rob Bondura": 44,
+
+"Gabby Taddessee": 45,
+
+"Elizabeth Leonard": 46,
+
+"Ryan Gorel": 47,
+"Annie Gorel": 47,
+
+"Ciarán McGoldrick": 48,
+"Dan Gettler": 48,
+
+"Bryson Ericke": 49,
+
+"JT Brisco": 50,
+
+"Blake Sweet": 51,
+"Bailey Sweet": 51,
+
+"Scott Viglianti": 52,
+"Sonia Viglianti": 52,
+
+"Shannon Boczon": 53,
+"Bryan Boczon": 53,
+
+"Nancy Walsh": 54,
+"Joe Walsh": 54,
+
+"Delma Rose": 55,
+"Bryan Rose": 55,
+
+"Diane Furnari": 56,
+"Steve Furnari": 56,
+
+"Gene Torres": 57,
+"Jackie Torres": 57,
+
+"Bert Dreossi": 58,
+"Mrs. Bert Dreossi": 58,
+
+"Jeff Czarnecki": 59,
+"Carol Czarnecki": 59,
+
+"Jennifer Cullen": 60,
+
+"Patricia Carson": 61,
+"Tom Norton": 61,
+
+"Scott Burnett": 62,
+"Mrs. Scott Burnett": 62,
+
+"Bill Zacks": 63,
+"Mrs. Bill Zacks": 63,
+
+"Kim Basciano": 64,
+
+"Tom Cervone": 65,
+"Mrs. Tom Cervone": 65,
+
+"Tom Brancato": 66,
+"Laurie Brancato": 66,
+
+"Ray Fahmy": 67,
+"Jill Fahmy": 67,
+
+"Adrienne Cortazzo": 68,
+"Mark Cortazzo": 68,
+
+"Vic Pepe": 69,
+"Kris Pepe": 69,
+
+"John Blasch": 70,
+"Mrs. John Blasch": 70,
+
+"Wendy Nolte": 71,
+
+"Marisa DeGennaro": 0,
+"Groom - Bill Klinkatsis": 0,
+
+"cs50": 79,
+
+"bkadmin": 80,
 }
