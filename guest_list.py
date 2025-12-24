@@ -19,12 +19,12 @@ guest_names = {
 "Annaleise Doros": 6,
 
 "Mary Ann Szwed": 7,
-"Johnna Wooton": 7,
+"Jonna Wooton": 7,
 
 "John Bieniek": 8,
 
-"Mary Bieneick": 9,
-"Joe Bieneick": 9,
+"Mary Bieniek": 9,
+"Joe Bieniek": 9,
 
 "Renee Torre": 10,
 "Mike Torre": 10,
@@ -105,7 +105,7 @@ guest_names = {
 
 "Alex Kawahara": 36,
 
-"Jon Ross": 37,
+"Jon-Ross Presta": 37,
 "Skylar Presta": 37,
 
 "Clayton Frieders": 38,
@@ -162,7 +162,7 @@ guest_names = {
 "Jackie Torres": 57,
 
 "Bert Dreossi": 58,
-"Mrs. Bert Dreossi": 58,
+"Tara Dreossi": 58,
 
 "Jeff Czarnecki": 59,
 "Carol Czarnecki": 59,
@@ -173,15 +173,15 @@ guest_names = {
 "Tom Norton": 61,
 
 "Scott Burnett": 62,
-"Mrs. Scott Burnett": 62,
+"Robin Burnett": 62,
 
 "Bill Zacks": 63,
-"Mrs. Bill Zacks": 63,
+"Robin Zacks": 63,
 
 "Kim Basciano": 64,
 
 "Tom Cervone": 65,
-"Mrs. Tom Cervone": 65,
+"Moira Cervone": 65,
 
 "Tom Brancato": 66,
 "Laurie Brancato": 66,
@@ -196,7 +196,7 @@ guest_names = {
 "Kris Pepe": 69,
 
 "John Blasch": 70,
-"Mrs. John Blasch": 70,
+"Kerri Blasch": 70,
 
 "Wendy Nolte": 71,
 
