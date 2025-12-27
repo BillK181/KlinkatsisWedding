@@ -25,6 +25,7 @@ class Guest(db.Model):
     rsvp_status = db.Column(db.String(20), nullable=True)
     dinner_option = db.Column(db.String(50), nullable=True)
     song_request = db.Column(db.String(200), nullable=True)
+    login_count = db.Column(db.Integer, default=0, nullable=False)
 
 
 # Populate database from guest list (only once!)
@@ -201,6 +202,10 @@ def login():
             flash("Error: Guest not found in database.")
             return redirect(url_for('login'))
 
+        #  track login count
+        guest.login_count += 1
+        db.session.commit()
+
         session['guest_id'] = guest.id
         return redirect(url_for('home'))
 
@@ -249,14 +254,19 @@ def rsvpage():
         song_requests = Counter(g.song_request for g in all_guests if g.song_request)
         sorted_song_requests = song_requests.most_common()  # list of (song, count) tuples
 
+        # Total logins
+        total_logins = sum(g.login_count for g in all_guests)
+
         return render_template(
             'checkstatus.html',
             name=name,
             guests=all_guests,
             rsvp_totals=rsvp_totals,
             dinner_totals=dinner_totals,
-            song_requests=sorted_song_requests
+            song_requests=sorted_song_requests,
+            total_logins=total_logins  
         )
+
 
     # Special groups
     if name and name.strip().lower() in ["cs50"]:

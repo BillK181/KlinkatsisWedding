@@ -19,6 +19,7 @@
         <th>RSVP Status</th>
         <th>Dinner Choice</th>
         <th>Song Request</th>
+        <th>Logins</th>
       </tr>
     </thead>
     <tbody>
@@ -28,6 +29,7 @@
         <td>{{ guest.rsvp_status|capitalize if guest.rsvp_status else '—' }}</td>
         <td>{{ guest.dinner_option if guest.dinner_option else '—' }}</td>
         <td>{{ guest.song_request if guest.song_request else '—' }}</td>
+        <td>{{ guest.login_count }}</td>
       </tr>
       {% endfor %}
     </tbody>
@@ -36,22 +38,27 @@
         <th>Totals</th>
         <th>
           Going: {{ rsvp_totals.going }}<br>
-          Not Going: {{ rsvp_totals.not_going }}
+          Not Going: {{ rsvp_totals.not_going }}<br>
+          <strong>Total: {{ rsvp_totals.total }}</strong>
         </th>
         <th>
           Chicken: {{ dinner_totals.Chicken }}<br>
           Beef: {{ dinner_totals.Beef }}<br>
           Vegetarian: {{ dinner_totals.Vegetarian }}<br>
-          Vegan: {{ dinner_totals.Vegan }}
+          Vegan: {{ dinner_totals.Vegan }}<br>
+          <strong>Total: {{ dinner_totals.total }}</strong>
         </th>
         <th>
           <h3>Song Requests:</h3>
-        <ul>
-          {% for song, count in song_requests %}
-            <li>{{ song }} — {{ count }}</li>
-          {% endfor %}
-        </ul>
-
+          <ul>
+            {% for song, count in song_requests %}
+              <li>{{ song }} — {{ count }}</li>
+            {% endfor %}
+          </ul>
+          <strong>Total Requests: {{ total_song_requests }}</strong>
+        </th>
+        <th>
+          <strong>Total Logins:</strong><br>{{ total_logins }}
         </th>
       </tr>
     </tfoot>
