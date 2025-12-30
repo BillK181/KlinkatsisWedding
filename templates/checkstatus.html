@@ -28,7 +28,7 @@
         <td>{{ guest.name }}</td>
         <td>{{ guest.rsvp_status|capitalize if guest.rsvp_status else '—' }}</td>
         <td>{{ guest.dinner_option if guest.dinner_option else '—' }}</td>
-        <td>{{ guest.song_requests if guest.song_request else '—' }}</td>
+        <td>{{ guest.song_request if guest.song_request else '—' }}</td>
         <td>{{ guest.login_count }}</td>
       </tr>
       {% endfor %}
@@ -48,14 +48,7 @@
           Vegan: {{ dinner_totals.Vegan }}<br>
           <strong>Total: {{ dinner_totals.total }}</strong>
         </th>
-        <th>
-          <h3>Song Requests:</h3>
-          <ul>
-            {% for song in song_request %}
-              <li>{{ song }}</li>
-            {% endfor %}
-          </ul>
-        </th>
+        <th>—</th>
         <th>
           <strong>Total Logins:</strong><br>{{ total_logins }}
         </th>

@@ -256,12 +256,6 @@ def rsvpage():
             "Vegan": sum(1 for g in all_guests if g.dinner_option == "Vegan")
         }
 
-        # Song request counts, sorted most to least
-        song_requests = [
-            g.song_request.strip()
-            for g in all_guests
-            if g.song_request
-        ]
 
         # Total logins
         total_logins = sum(g.login_count for g in all_guests)
@@ -272,7 +266,6 @@ def rsvpage():
             guests=all_guests,
             rsvp_totals=rsvp_totals,
             dinner_totals=dinner_totals,
-            song_requests=song_requests,
             total_logins=total_logins  
         )
 
