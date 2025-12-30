@@ -102,11 +102,23 @@ def rsvp_status():
         "Chicken": sum(1 for g in guests if g.dinner_option == "Chicken"),
         "Beef": sum(1 for g in guests if g.dinner_option == "Beef"),
         "Vegetarian": sum(1 for g in guests if g.dinner_option == "Vegetarian"),
-        "Vegan": sum(1 for g in guests if g.dinner_option == "Vegan")
+        "Vegan": sum(1 for g in guests if g.dinner_option == "Vegan"),
+        "total": sum(1 for g in guests if g.dinner_option)
     }
 
     # Song request counts
-    song_requests = Counter(g.song_request for g in guests if g.song_request)
+    songs = [
+        g.song_request.strip()
+        for g in guests
+        if g.song_request
+    ]
+
+    song_counter = Counter(songs)
+
+    song_requests = song_counter.items()
+    total_song_requests = sum(song_counter.values())
+
+    total_logins = sum(g.login_count for g in guests)
 
     return render_template(
         "check_status.html",
