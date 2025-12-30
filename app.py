@@ -107,13 +107,7 @@ def rsvp_status():
     }
 
     # Song request counts
-    songs = [
-        g.song_request.strip()
-        for g in guests
-        if g.song_request
-    ]
-
-    song_counter = Counter(songs)
+    song_requests = [g.song_request.strip() for g in all_guests if g.song_request]
 
     song_request = song_counter.items()
     total_song_request = sum(song_counter.values())
@@ -129,7 +123,6 @@ def rsvp_status():
     )
 
 
-# Song Request
 @app.route('/song_request', methods=['POST'])
 def song_request():
     guest, name = get_current_guest()
@@ -147,12 +140,13 @@ def song_request():
         form_key = f"song_request_{safe_name}"
         song_value = request.form.get(form_key)
 
-        if song_value is not None:
-            member.song_request = song_value
+        if song_value and song_value.strip():  # make sure it's not empty
+            member.song_request = song_value.strip()
 
     db.session.commit()
     flash("Song requests updated!")
     return redirect(url_for('rsvpage'))
+
 
 
 
