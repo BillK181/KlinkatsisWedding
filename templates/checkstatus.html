@@ -52,10 +52,10 @@
           <h3>Song Requests:</h3>
           <ul>
             {% for song, count in song_requests %}
-              <li>{{ song }} — {{ count }}</li>
+              <li>{{ song_request }}</li>
             {% endfor %}
           </ul>
-          <strong>Total Requests: {{ total_song_requests }}</strong>
+          <strong>Top Song Requests: {{ sorted_song_requests }}</strong>
         </th>
         <th>
           <strong>Total Logins:</strong><br>{{ total_logins }}
