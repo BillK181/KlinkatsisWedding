@@ -50,11 +50,12 @@
         </th>
         <th>
           <h3>Song Requests:</h3>
-            <ul>
-              {% for song in song_request %}
-                <li>{{ song }}</li>
-              {% endfor %}
-            </ul>
+          <ul>
+            {% for song in song_request %}
+              <li>{{ song }}</li>
+            {% endfor %}
+          </ul>
+          <strong>Total Requests: {{ song_request|length }}</strong>
         </th>
         <th>
           <strong>Total Logins:</strong><br>{{ total_logins }}
