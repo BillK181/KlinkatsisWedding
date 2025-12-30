@@ -276,7 +276,6 @@ def rsvpage():
             rsvp_totals=rsvp_totals,
             dinner_totals=dinner_totals,
             song_requests=song_requests,
-            sorted_song_requests = sorted_song_requests
             total_logins=total_logins  
         )
 
