@@ -1,6 +1,6 @@
 # BillandMarisa.com
 
-BillandMarisa.com is a sophisticated Flask web application designed to celebrate and streamline the our wedding, featuring intuitive RSVP management, immersive travel pages, and custom-designed sections tailored for guests.  
+BillandMarisa.com is a sophisticated Flask web application designed to celebrate and streamline our wedding, featuring intuitive RSVP management, immersive travel pages, and custom-designed sections tailored for guests.  
 
 Built with love and attention to detail, this project combines interactivity, style, and seamless navigation to make wedding planning both elegant and effortless.
 
