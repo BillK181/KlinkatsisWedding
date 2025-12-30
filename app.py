@@ -24,7 +24,7 @@ class Guest(db.Model):
     name = db.Column(db.String(100), unique=True, nullable=False)
     rsvp_status = db.Column(db.String(20), nullable=True)
     dinner_option = db.Column(db.String(50), nullable=True)
-    song_request = db.Column(db.String(200), nullable=True)
+    song_requests = db.Column(db.String(200), nullable=True)
     login_count = db.Column(db.Integer, default=0, nullable=False)
 
 
