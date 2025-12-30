@@ -24,7 +24,7 @@ class Guest(db.Model):
     name = db.Column(db.String(100), unique=True, nullable=False)
     rsvp_status = db.Column(db.String(20), nullable=True)
     dinner_option = db.Column(db.String(50), nullable=True)
-    song_requests = db.Column(db.String(200), nullable=True)
+    song_request = db.Column(db.String(200), nullable=True)
     login_count = db.Column(db.Integer, default=0, nullable=False)
 
 
@@ -115,8 +115,8 @@ def rsvp_status():
 
     song_counter = Counter(songs)
 
-    song_requests = song_counter.items()
-    total_song_requests = sum(song_counter.values())
+    song_request = song_counter.items()
+    total_song_request = sum(song_counter.values())
 
     total_logins = sum(g.login_count for g in guests)
 
@@ -125,7 +125,7 @@ def rsvp_status():
         guests=guests,
         rsvp_totals=rsvp_totals,
         dinner_totals=dinner_totals,
-        song_requests=song_requests
+        song_request=song_request
     )
 
 
@@ -263,7 +263,7 @@ def rsvpage():
         }
 
         # Song request counts, sorted most to least
-        song_requests = [
+        song_request = [
             g.song_request.strip()
             for g in all_guests
             if g.song_request
@@ -278,7 +278,7 @@ def rsvpage():
             guests=all_guests,
             rsvp_totals=rsvp_totals,
             dinner_totals=dinner_totals,
-            song_requests=song_requests,
+            song_request=song_request,
             total_logins=total_logins  
         )
 
