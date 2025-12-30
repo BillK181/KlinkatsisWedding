@@ -257,7 +257,7 @@ def rsvpage():
         }
 
         # Song request counts, sorted most to least
-        song_request = [
+        song_requests = [
             g.song_request.strip()
             for g in all_guests
             if g.song_request
@@ -272,7 +272,7 @@ def rsvpage():
             guests=all_guests,
             rsvp_totals=rsvp_totals,
             dinner_totals=dinner_totals,
-            song_request=song_request,
+            song_requests=song_requests,
             total_logins=total_logins  
         )
 
