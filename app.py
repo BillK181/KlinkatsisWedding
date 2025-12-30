@@ -263,8 +263,11 @@ def rsvpage():
         }
 
         # Song request counts, sorted most to least
-        song_requests = Counter(g.song_request for g in all_guests if g.song_request)
-        sorted_song_requests = song_requests.most_common()  # list of (song, count) tuples
+        song_requests = [
+            g.song_request.strip()
+            for g in all_guests
+            if g.song_request
+        ]
 
         # Total logins
         total_logins = sum(g.login_count for g in all_guests)
