@@ -76,14 +76,25 @@ def rsvp():
     ).all()
 
     for member in group_members:
-        form_key = f"rsvp_{member.name.replace(' ', '_')}"
-        rsvp_value = request.form.get(form_key)
+        # RSVP
+        rsvp_value = request.form.get(f"rsvp_{member.name.replace(' ', '_')}")
         if rsvp_value:
             member.rsvp_status = rsvp_value
+
+        # Dinner option
+        dinner_value = request.form.get(f"dinner_option_{member.name.replace(' ', '_')}")
+        if dinner_value:
+            member.dinner_option = dinner_value
+
+        # Song request
+        song_value = request.form.get(f"song_request_{member.name.replace(' ', '_')}")
+        if song_value is not None:
+            member.song_request = song_value.strip()  # allow empty string to clear previous request
 
     db.session.commit()
     flash(f"Thanks {name}, your group RSVP has been updated!")
     return redirect(url_for('rsvpage'))
+
 
 
 # RSVP Status
@@ -121,34 +132,6 @@ def rsvp_status():
         dinner_totals=dinner_totals,
         song_request=song_request
     )
-
-
-@app.route('/song_request', methods=['POST'])
-def song_request():
-    guest, name = get_current_guest()
-    if not guest:
-        flash("Error: Guest not found in database.")
-        return redirect(url_for('rsvpage'))
-
-    group_number = guest_names.get(name)
-    group_members = Guest.query.filter(
-        Guest.name.in_([g_name for g_name, g_num in guest_names.items() if g_num == group_number])
-    ).all()
-
-    for member in group_members:
-        safe_name = member.name.replace(" ", "_")
-        form_key = f"song_request_{safe_name}"
-        song_value = request.form.get(form_key)
-
-        if song_value and song_value.strip():  # make sure it's not empty
-            member.song_request = song_value.strip()
-
-    db.session.commit()
-    flash("Song requests updated!")
-    return redirect(url_for('rsvpage'))
-
-
-
 
 # Chatbot
 @app.route("/chat", methods=["POST"])
