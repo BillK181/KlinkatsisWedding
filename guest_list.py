@@ -113,7 +113,7 @@ guest_names = {
 
 "Zack Cantril": 39,
 
-"Brian Coddington": 40,
+"Brian Codington": 40,
 
 "Danny Baerman": 41,
 
