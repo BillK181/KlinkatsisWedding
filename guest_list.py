@@ -205,6 +205,22 @@ guest_names = {
 
 "Drew Bayne": 73,
 
+"Taylor Nuñez": 81, 
+"Andres Nuñez": 81,
+
+"Alex Pepe": 82,
+
+"Mia Pepe": 83,
+
+"Conor Mcmanamon": 84, 
+"Anna Bowman": 84, 
+
+"Lucy Studer": 85, 
+"Carl Studer": 85,
+
+"Diane Hunsinger": 86, 
+"Doyle Hunsinger": 86,
+
 "cs50": 79,
 
 "bkadmin": 80,
