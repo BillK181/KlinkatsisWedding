@@ -22,3 +22,5 @@ Thumbs.db
 *.log
 instance/
 *.db
+instance/
+*.db
