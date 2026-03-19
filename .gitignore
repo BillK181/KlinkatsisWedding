@@ -24,3 +24,5 @@ instance/
 *.db
 instance/
 *.db
+instance/
+*.db
