@@ -1,12 +1,14 @@
-/* --- Flash Messages --- */
+/* =========================
+   FLASH MESSAGES
+========================= */
+
 ul.flashes {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 90%;
-  max-width: 600px;
+  width: min(600px, 90%);
   position: fixed;
-  top: 10px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -16,302 +18,256 @@ ul.flashes {
 ul.flashes li {
   background: #e8f9ed;
   border: 1px solid #bde0c1;
-  border-radius: 8px;
+  border-radius: 10px;
   color: #22543d;
-  font-size: 1.1em;
-  padding: 12px 16px;
-  text-align: center;
+  font-size: 1rem;
+  padding: 10px 14px;
   margin-bottom: 8px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  ul.flashes {
-    width: 90%;
-  }
+/* =========================
+   INTRO
+========================= */
 
-  ul.flashes li {
-    font-size: .7em;
-    padding: 10px 10px;
-  }
+#rsvp-intro {
+  background: var(--wedding-beige, #f5f1ea);
+  text-align: center;
+  padding: 20px 12px 0px;
 }
 
-/* --- RSVP --- */
+#rsvp-intro .intro-box {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-divider {
+  height: 3px;
+  background: var(--wedding-dark-green, #1D271D);
+  border-radius: 999px;
+  margin: 10px auto;
+  width: 95%;
+}
+
+.small-divider {
+  height: 3px;
+  background: var(--wedding-dark-green, #1D271D);
+  border-radius: 999px;
+  margin: 10px auto;
+  margin-top: 20px;
+  width: 35%;
+}
+
+#rsvp-intro h1 {
+  font-size: 1.8rem;
+  color: var(--wedding-dark-green, #1D271D);
+  margin-bottom: 20px;
+}
+
+#rsvp-intro h2 {
+  font-size: 1.2rem;
+  margin: 10px 0 10px;
+  color: var(--wedding-dark-green, #1D271D);
+  margin-top: 25px;
+}
+
+#rsvp-intro p {
+  font-size: 1rem;
+  margin: 0 0 10px;
+  opacity: 0.8;
+}
+
+.rsvp-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  margin-bottom: 25px;
+}
+
+.rsvp-list li {
+  margin: 0.5rem 0;
+}
+
+/* =========================
+   RSVP CONTAINER
+   (KEY FIX: let it breathe)
+========================= */
+
 #rsvp {
-  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
   align-items: center;
-  overflow: visible;    
-  padding: 40px 0 50px 0;  
-  background-color: rgba(0,0,0,0.3);
-  min-height: auto;    
+
+  padding: 30px 0 60px;
+  background: var(--wedding-beige, #f5f1ea);
+
+  /* IMPORTANT: removes “dead space issues” */
+  min-height: auto;
 }
 
-
-#rsvp-video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.extra-details {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
 }
 
-#rsvp .video-credit {
-  position: absolute;
-  bottom: 10px;
-  right: 15px;
-  font-size: 0.85rem;
-  color: var(--wedding-beige, #D7CFC6);
-  z-index: 2; 
-  font-family: 'Inter', sans-serif;
-  pointer-events: none;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 3px 8px;
-  border-radius: 6px;
-}
+/* =========================
+   FORM WRAPPER
+========================= */
 
-#rsvp .rsvp-form,
-#rsvp .rsvp-greeting {
-  position: relative;
-  z-index: 1;
+.rsvp-form {
+  width: min(500px, 92%);
   padding: 16px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: center;
-  width: 90%;
-  max-width: 500px;
-  margin: 20px auto;
-  box-sizing: border-box;
+  position: relative;
 }
 
-#rsvp .rsvp-greeting {
-  font-size: 1.2em;
-  margin-bottom: 0.5em;
-  background-color: #f9e7d2;
-  padding: 12px 16px;
-  border-radius: 6px;
+/* =========================
+   GUEST LIST (FIX FLEX GROWTH)
+========================= */
+
+#guest-list-wrapper {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  align-items: stretch; /* IMPORTANT */
 }
 
-/* Drop Down */
-.select-wrapper {
-  height: 30px;
-  overflow: hidden;
-  border-radius: 8px;
-  border: 1px solid var(--wedding-dark-green, #1D271D);
-  margin: 20px auto 10px auto;
-  width: fit-content;
-}
-
-.select-wrapper select {
-  height: 35px;
-  padding: 0 12px;
-  font-size: 1em;
-  line-height: 1.2;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border: none;
-  border-radius: 0;
-  background-color: #fdfaf6;
-  color: #000;
-  cursor: pointer;
-}
+/* =========================
+   GUEST ROW
+========================= */
 
 .guest-row {
-  display: block; 
-  margin-top: 20px; 
   width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
 }
 
 .guest-row > strong {
-  font-size: 2em;
-  color: var(--wedding-beige, #D7CFC6);
-  background-color: #1d271d6a;
-  padding: 5px 10px;
-  border-radius: 6px;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+
+  margin: 0 auto 16px;
+
+  font-size: 1.4rem;
+  color: #f5f1ea;
+  background: #1D271D;
+
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  white-space: nowrap; /* keeps it tight */
 }
 
+/* inputs row */
 .guest-row-inputs {
   display: flex;
-  gap: 10px;
-  align-items: center;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  width: 100%;
 }
 
-.guest-row-inputs select,
-.guest-row-inputs input {
-  flex: 1 1 auto;
-  padding: 8px 12px;
-  font-size: 1em;
-  border-radius: 6px;
-  border: 1px solid var(--wedding-dark-green, #1D271D);
-}
+/* =========================
+   INPUTS / SELECTS
+========================= */
 
-/*  --- Song --- */
-.song-input {
-  height: 15px;
-  padding: 0 10px;
-  font-size: .9rem;
-  line-height: 1.2;
-  border: 1px solid var(--wedding-dark-green, #1D271D);
+.select-wrapper {
+  flex: 1;
+  min-width: 180px;
+  border: 1px solid #1D271D;
   border-radius: 8px;
-  background-color: #fdfaf6;
-  margin-top: 10px;
-  width: 50%;
+  overflow: hidden;
 }
 
-/* Submit Button */
-#rsvp input[type="submit"] {
-  padding: 12px 24px;
-  font-size: 1em;
-  background-color: var(--wedding-dark-green, #1D271D);
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
+
+.select-wrapper select {
+  width: 100%;
+  height: 40px;
   border: none;
-  cursor: pointer;
-  margin: 20px auto 0 auto;
-  display: block;
-  transition: transform 0.2s ease;
-  position: static;
-  width: 90%;    
-  max-width: 300px; 
+  background: #fdfaf6;
+  text-align: center;
+  text-align-last: center;
 
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.extra-details .select-wrapper {
+  margin-bottom: 15px;
+}
+
+.song-input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #1D271D;
+  background: #fdfaf6;
+  font-size: 1rem;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+#rsvp input[type="submit"] {
+  margin-top: 20px;
+  width: min(300px, 90%);
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #1D271D;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-size: 1rem;
 }
 
 #rsvp input[type="submit"]:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-/* Secret Check RSVP Button */
-.btn {
-  background-color: var(--wedding-dark-green, #1D271D);
-  color: #fdfaf6;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background 0.2s ease;
-}
+/* =========================
+   MOBILE (SIMPLIFIED)
+========================= */
 
-.btn-container {
-  text-align: right;
-  margin: 2rem 0;
-}
-
-/* Scrollable Overflow */
-#guest-list-wrapper {
-  width: 90%;
-  max-width: 600px;
-  max-height: 60vh; 
-  overflow-y: auto;
-  margin: 0 auto;
-  padding-right: 8px; 
-  box-sizing: border-box;
-}
-
-.rsvp-submit {
-  margin: 20px auto;
-}
-
-/* Mobile */
 @media (max-width: 768px) {
+
   #rsvp {
-    min-height: 250px;
-    max-height: 350px;
-    padding: 0;
-    margin-bottom: 0;
-    padding-bottom: 70px;
+    padding: 20px 0 40px;
   }
 
-  #rsvp .rsvp-greeting {
-    width: 90%;
-    font-size: 0.9em;
-    margin-left: 10px;
-    margin-right: 20px;
-  }
-
-  #rsvp .rsvp-form {
-    width: 95%;
-    padding: 12px;
-    margin: 0 auto;
+  .guest-row-inputs {
+    flex-direction: column;
   }
 
   .select-wrapper {
-    margin-top: 15px;
-    margin-bottom: -10px;
+    min-width: 100%;
   }
-
-  #rsvp input[type="submit"] {
-    position: static;
-    width: 100%;
-    max-width: none;
-    margin: 10px auto 0 auto;
-  }
-
-  #rsvp .video-credit {
-    font-size: .5rem;
-  }
-
-  #rsvp .guest-row-inputs {
-    flex-direction: column;
-    align-items: stretch; 
-    gap: 8px; 
-    width: 100%;
-  }
-
-  #rsvp .guest-row-inputs select {
-    width: 100%;
-  }
-
-  .select-wrapper select,
-  .song-input {
-    height: 36px;
-    font-size: 0.9em;
-  }
-
 
   .song-input {
-    width: 60%;
-    height: 15px;
     text-align: center;
-    margin: 0 auto;
-    margin-top: 10px;
-  }
-
-  #guest-list-wrapper {
-    max-height: 250px;
-  }
-
-  #guest-list-wrapper::-webkit-scrollbar {
-    width: 6px;
-  }
-  #guest-list-wrapper::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.3);
-    border-radius: 3px;
-  }
-  #guest-list-wrapper::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .rsvp-submit {
-    margin: 0;
-  }
-}
-
-
-/* RSVP visuals fix */
-@media (max-width: 420px) {
-  #rsvp .rsvp-greeting {
-    font-size: 0.8em;
-  }
-
-  #rsvp input[type="submit"] {
-    width: 70%;
   }
 }

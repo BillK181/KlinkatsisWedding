@@ -16,3 +16,30 @@
   border: 1px solid #ccc;
   padding: 8px;
 }
+
+.song-cell {
+    padding: 12px;
+    vertical-align: top;
+}
+
+.song-row {
+    padding: 4px 0;
+    font-size: 14px;
+    border-bottom: 2px solid var(--wedding-dark-green, #1D271D);
+}
+
+.song-row:last-child {
+    border-bottom: none;
+}
+
+.no-songs {
+    font-style: italic;
+    opacity: 1;
+}
+
+.song-total {
+    margin-top: 10px;
+    font-weight: bold;
+    border-top: 1px solid rgba(0,0,0,0.2);
+    padding-top: 8px;
+}

@@ -38,7 +38,15 @@
 
     <!-- Login Form -->
     <form method="POST" action="/login">
-      <input name="name" type="text" placeholder="Your Name (As Written On Invitation)" required />
+      {% if next_page %}
+        <input type="hidden" name="next" value="{{ next_page }}">
+      {% endif %}
+      <input
+        name="name"
+        type="text"
+        placeholder="Your Name (As Written On Invitation)"
+        required
+      >
       <button type="submit">Enter</button>
     </form>
 

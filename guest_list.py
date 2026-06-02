@@ -7,9 +7,12 @@ guest_names = {
 "Ginny Szwed": 2,
 
 "Rachel Klinkatsis": 3,
+"Robert Loggans": 3,
 
 "Amanda Chapman": 4,
 "Kurt Chapman": 4,
+"Grace Chapman": [4, 999],
+"Kate Chapman": [4, 999],
 
 "Bob Hrinuk": 5,
 "Karen Hrinuk": 5,
@@ -29,8 +32,10 @@ guest_names = {
 "Renee Torre": 10,
 "Mike Torre": 10,
 "Samantha Torre": 10,
+"Chase Roberts": 10,
 
 "Missy Torre": 11,
+"Robbie Wiatrowski": 11,
 
 "Irene Szwed": 12,
 
@@ -75,8 +80,10 @@ guest_names = {
 "Mike Mezzina": 24,
 "Josephine Mezzina": 24,
 "Allie Mezzina": 24,
+"Nick": 24,
 
 "Rose Ann Ratto": 25,
+"John Ratto": 25,
 
 "Angelo Ratto": 26,
 
@@ -85,25 +92,36 @@ guest_names = {
 
 "Mike Agosta": 28,
 "Alexia Agosta": 28,
+"Luca Agosta": [28, 999],
+"Giovanna Agosta": [28, 999],
+"Giancarlo Agosta": [28, 999],
 
 "Vinny DeGennaro": 29,
 "Tahira DeGennaro": 29,
+"Aaliya DeGennaro": [29, 999],
 
 "Becky Daniels": 30,
+"Adrian Daniels": 30,
+"Julian Daniels": 30,
 
 "Mike Luger": 31,
 
 "James Dayton": 32,
 "Danielle Dayton": 32,
+"Addison Dayton": [32, 999],
+"Josie Dayton": [32, 999],
 
 "Sam Ogee": 33,
 "Alex Ogee": 33,
 
 "Carlos Ventura": 34,
+"Yasmeen Sekander": 34,
 
 "Corbin Cofer": 35,
+"Courtney Kurt": 35,
 
 "Alex Kawahara": 36,
+"Paige Hernandez": 36,
 
 "Jon-Ross Presta": 37,
 "Skylar Presta": 37,
@@ -112,8 +130,10 @@ guest_names = {
 "Claire Frieders": 38,
 
 "Zack Cantril": 39,
+"Amanda Neidlinger": 39,
 
 "Brian Codington": 40,
+"Sam Strong": 40,
 
 "Danny Baerman": 41,
 
@@ -129,9 +149,11 @@ guest_names = {
 "Gabby Taddessee": 45,
 
 "Elizabeth Leonard": 46,
+"Elizabeth Leonard - Guest": 46,
 
 "Ryan Gorel": 47,
 "Annie Gorel": 47,
+"Ian Gorel": [47, 999],
 
 "Ciarán McGoldrick": 48,
 "Dan Gettler": 48,
@@ -157,6 +179,7 @@ guest_names = {
 
 "Diane Furnari": 56,
 "Steve Furnari": 56,
+"Diana Furnari": 56,
 
 "Gene Torres": 57,
 "Jackie Torres": 57,
@@ -168,6 +191,7 @@ guest_names = {
 "Carol Czarnecki": 59,
 
 "Jennifer Cullen": 60,
+"Terry": 60,
 
 "Patricia Carson": 61,
 "Tom Norton": 61,
@@ -204,6 +228,7 @@ guest_names = {
 "Groom - Bill Klinkatsis": 0,
 
 "Drew Bayne": 73,
+"Drew Bayne - Guest": 73,
 
 "Taylor Nuñez": 81, 
 "Andres Nuñez": 81,
@@ -220,6 +245,8 @@ guest_names = {
 
 "Diane Hunsinger": 86, 
 "Doyle Hunsinger": 86,
+
+"Roman McDaniel": 87,
 
 "cs50": 79,
 

@@ -10,15 +10,54 @@
 {% block content %}
 <main>
 
-  <!-- RSVP Background Video -->
-  <section id="rsvp" aria-labelledby="rsvp-heading">
-    <video id="rsvp-video" autoplay muted loop playsinline>
-      <source src="{{ url_for('static', filename='images/olersvp.mp4') }}" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="video-credit">Video by Bill Klinkatsis</div>
+  <section id="rsvp-intro">
+    <div class="section-divider"></div>
 
-    <!-- Flash Message -->
+    <div class="intro-box">
+
+      <h1 class="wedding-header">We’re excited to celebrate with you!</h1>
+
+      <div class="small-divider"></div>
+
+      <div class="event-block">
+        <h2>The Night Before, Cocktails & Desserts</h2>
+        <p>Friday, August 28th, Eight to Eleven in the evening</p>
+        <p>Marriott Irvine Spectrum, Lobby Bar</p>
+      </div>
+
+      <div class="event-block">
+        <h2>Wedding Ceremony</h2>
+        <p>Saturday, August 29th at Four in the afternoon</p>
+        <p>Ole Hanson Beach Club, San Clemente, CA</p>
+        <p>Shuttle service at 3:15 pm</p>
+      </div>
+
+      <div class="event-block">
+        <h2>Wedding Cocktail Hour & Reception</h2>
+        <p>Immediately Following the Ceremony</p>
+        <p>Shuttle Service at 10:15pm</p>
+      </div>
+
+      <div class="small-divider"></div>
+
+      <div class="event-block">
+        <h1>Please RSVP by Completing the Selections Below:</h1>
+
+        <ul class="rsvp-list">
+          <li>Wedding RSVP</li>
+          <li>Dinner Selection</li>
+          <li>Friday Night Cocktails RSVP</li>
+          <li>Optional: Share a Song Request!</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="section-divider"></div>
+  </section>
+
+  <section id="rsvp">
+
     {% with messages = get_flashed_messages(with_categories=true) %}
       {% if messages %}
         <ul class="flashes" role="alert">
@@ -29,70 +68,138 @@
       {% endif %}
     {% endwith %}
 
-    <!-- RSVP Form -->
     <form action="/rsvp" method="POST" class="rsvp-form">
-      <p class="rsvp-greeting">
-        Hello <strong>{{ name | e }}</strong>, you have RSVP’ed 
-        <span class="rsvp-status">{{ rsvp_status or "—" }}</span>!
-      </p>
 
-      <!-- Guest List Wrapper -->
       <div id="guest-list-wrapper">
+
         {% for member in group_members %}
         <div class="guest-row">
+
           <strong>{{ member.name | e }}</strong>
 
           <div class="guest-row-inputs">
-            <!-- RSVP DROPDOWN -->
+
+            <!-- WEDDING RSVP -->
             <div class="select-wrapper">
-              <select name="rsvp_{{ member.name | replace(' ', '_') }}" required>
-                <option value="" {% if not member.rsvp_status %}selected{% endif %}>— RSVP —</option>
-                <option value="going" {% if member.rsvp_status == 'going' %}selected{% endif %}>Going</option>
-                <option value="not_going" {% if member.rsvp_status == 'not_going' %}selected{% endif %}>Not Going</option>
+              <select class="wedding-rsvp"
+                      name="wedding_rsvp_{{ member.name | replace(' ', '_') }}"
+                      required>
+                <option value="" {% if not member.wedding_rsvp %}selected{% endif %}>
+                  — Wedding RSVP —
+                </option>
+                <option value="going" {% if member.wedding_rsvp == 'going' %}selected{% endif %}>
+                  Wedding - Going
+                </option>
+                <option value="not_going" {% if member.wedding_rsvp == 'not_going' %}selected{% endif %}>
+                  Wedding - Not Going
+                </option>
               </select>
             </div>
 
-            <!-- DINNER OPTION DROPDOWN -->
+            <!-- EVERYTHING THAT HIDES -->
+            <div class="extra-details">
+
+            {% if not member.has_multiple_groups %}
             <div class="select-wrapper">
-              <select name="dinner_option_{{ member.name | replace(' ', '_') }}">
-                <option value="" {% if not member.dinner_option %}selected{% endif %}>— Dinner —</option>
-                <option value="Chicken" {% if member.dinner_option == 'Chicken' %}selected{% endif %}>Chicken</option>
-                <option value="Beef" {% if member.dinner_option == 'Beef' %}selected{% endif %}>Beef</option>
-                <option value="Vegetarian" {% if member.dinner_option == 'Vegetarian' %}selected{% endif %}>Vegetarian</option>
-                <option value="Vegan" {% if member.dinner_option == 'Vegan' %}selected{% endif %}>Vegan</option>
+              <select name="dinner_option_{{ member.name | replace(' ', '_') }}" required>
+
+                <option value=""
+                  {% if not member.dinner_option or member.dinner_option == 'Not Attending' %}selected{% endif %}>
+                  — Dinner Selection —
+                </option>
+
+                <option value="Beef"
+                  {% if member.dinner_option == 'Beef' %}selected{% endif %}>
+                  Dinner Selection - Grilled Filet Mignon, Demi Jus, Whipped Potatoes, Asparagus
+                </option>
+
+                <option value="Fish"
+                  {% if member.dinner_option == 'Fish' %}selected{% endif %}>
+                  Dinner Selection - Seared Chillean Sea Bass, Lemon Beurre Blanc, Blistered Tomatoes, Potato Pave, Asparagus
+                </option>
+
+                <option value="Vegetarian"
+                  {% if member.dinner_option == 'Vegetarian' %}selected{% endif %}>
+                  Dinner Selection - Butternut Squash Ravioli, Brown Butter Sage Cream Sauce
+                </option>
+
+              </select>
+            </div>
+            {% endif %}
+
+            <div class="select-wrapper">
+              <select name="cocktail_rsvp_{{ member.name | replace(' ', '_') }}" required>
+
+                <option value=""
+                  {% if not member.cocktail_rsvp or member.cocktail_rsvp == 'Not Attending' %}selected{% endif %}>
+                  — Friday Night Cocktails RSVP —
+                </option>
+
+                <option value="going"
+                  {% if member.cocktail_rsvp == 'going' %}selected{% endif %}>
+                  Friday Night Cocktails - Going
+                </option>
+
+                <option value="not_going"
+                  {% if member.cocktail_rsvp == 'not_going' %}selected{% endif %}>
+                  Friday Night Cocktails - Not Going
+                </option>
+
               </select>
             </div>
 
-            <!-- SONG REQUEST -->
-            <input 
-              type="text" 
-              name="song_request_{{ member.name | replace(' ', '_') }}"
-              placeholder="Song request"
-              value="{{ member.song_request or '' }}"
-              class="song-input"
-            >
+              <input
+                type="text"
+                name="song_request_{{ member.name | replace(' ', '_') }}"
+                placeholder="Song request"
+                value="{{ member.song_request or '' }}"
+                class="song-input"
+              >
+
+            </div>
+
           </div>
         </div>
         {% endfor %}
+
       </div>
 
-      <input type="submit" value="{% if rsvp_status %}Update Info{% else %}Submit RSVP{% endif %}" class="rsvp-submit">
+      <input type="submit"
+             value="{% if wedding_rsvp %}Update Info{% else %}Submit RSVP{% endif %}"
+             class="rsvp-submit">
+
     </form>
 
   </section>
 
 </main>
-{% endblock %}
 
-<!-- Video Pause Script -->
 <script>
-  const video = document.getElementById('rsvp-video');
+document.addEventListener("DOMContentLoaded", () => {
 
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      video.pause();
-    } else {
-      video.play();
+  document.querySelectorAll(".guest-row").forEach(row => {
+
+    const rsvp = row.querySelector(".wedding-rsvp");
+    const extra = row.querySelector(".extra-details");
+
+    if (!rsvp || !extra) return;
+
+    function toggle() {
+      const notGoing = rsvp.value === "not_going";
+
+      // hide ONLY when not going
+      extra.style.display = notGoing ? "none" : "block";
+
+      // disable inputs only when hidden
+      extra.querySelectorAll("select, input").forEach(el => {
+        el.disabled = notGoing;
+      });
     }
+
+    rsvp.addEventListener("change", toggle);
+    toggle(); // run on page load
   });
+
+});
 </script>
+{% endblock %}

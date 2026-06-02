@@ -8,16 +8,13 @@
 .registry-heading h2,
 .registry-heading p {
   text-align: center;
-  background-color: var(--wedding-dark-green, #1D271D);
-  color: var(--wedding-beige, #D7CFC6);
-  padding: 10px 20px;
-  border-radius: 55px;
+  color: var(--wedding-dark-green, #D7CFC6);
   margin: 10px auto;
   display: block;
 }
 
 .registry-heading h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   width: 75%;
   font-weight: bold;
   font-weight: bold;
@@ -26,6 +23,25 @@
 .registry-heading p {
   font-size: 1.5rem;
   width: 65%;
+  text-transform: capitalize;;
+}
+
+.section-divider {
+  height: 3px;
+  background: var(--wedding-dark-green, #1D271D);
+  border-radius: 999px;
+  margin: 10px auto;
+  width: 65%;
+  margin-bottom: 15px;
+}
+
+.small-divider {
+  height: 3px;
+  background: var(--wedding-dark-green, #1D271D);
+  border-radius: 999px;
+  margin: 10px auto;
+  width: 35%;
+  margin-top: 15px;
 }
 
 

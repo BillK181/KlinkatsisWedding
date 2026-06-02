@@ -1,5 +1,6 @@
 from flask import Flask, session, request, jsonify, render_template, redirect, flash, url_for
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from collections import Counter
 from weddingbot.main import (
     ask_gpt, SYSTEM_PROMPT, DRESS_CODE, WEDDING_LOCATION, WEDDING_DATE,
@@ -17,24 +18,36 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///wedding.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+migrate = Migrate(app, db)
+
 
 # ----------------------- MODELS -----------------------
 class Guest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True, nullable=False)
-    rsvp_status = db.Column(db.String(20), nullable=True)
-    dinner_option = db.Column(db.String(50), nullable=True)
+    wedding_rsvp = db.Column(db.String(20), nullable=False, server_default="pending")
+    dinner_option = db.Column(db.String(50), nullable=False, server_default="pending")
+    cocktail_rsvp = db.Column(db.String(20), nullable=False, server_default="pending")
     song_request = db.Column(db.String(200), nullable=True)
     login_count = db.Column(db.Integer, default=0, nullable=False)
 
 
-# Populate database from guest list (only once!)
-with app.app_context():
-    db.create_all()
-    for name in guest_names:
-        if not Guest.query.filter_by(name=name).first():
-            db.session.add(Guest(name=name))
-    db.session.commit()
+# Populate database from guest list
+def seed_database():
+    with app.app_context():
+        for name in guest_names:
+            if not Guest.query.filter_by(name=name).first():
+                db.session.add(
+                    Guest(
+                        name=name,
+                        wedding_rsvp="pending",
+                        dinner_option="pending",
+                        cocktail_rsvp="pending",
+                        song_request=""
+                    )
+                )
+
+        db.session.commit()
 
 
 # ----------------------- HELPERS -----------------------
@@ -66,72 +79,63 @@ def logout():
 @app.route('/rsvp', methods=['POST'])
 def rsvp():
     guest, name = get_current_guest()
-    if not guest:
-        flash("Error: Guest not found in database.")
-        return redirect(url_for('rsvpage'))
 
-    group_number = guest_names.get(name)
+    if not guest:
+        return redirect(url_for('login', next='/rsvpage'))
+
+    raw_group = guest_names.get(name)
+
+    if isinstance(raw_group, list):
+        group_numbers = raw_group
+        is_multi_group = True
+    else:
+        group_numbers = [raw_group]
+        is_multi_group = False
+
     group_members = Guest.query.filter(
-        Guest.name.in_([g_name for g_name, g_num in guest_names.items() if g_num == group_number])
+        Guest.name.in_(
+            [
+                g_name
+                for g_name, g_num in guest_names.items()
+                if (
+                    g_num in group_numbers
+                    if isinstance(g_num, int)
+                    else any(x in group_numbers for x in g_num)
+                )
+            ]
+        )
     ).all()
 
     for member in group_members:
-        # RSVP
-        rsvp_value = request.form.get(f"rsvp_{member.name.replace(' ', '_')}")
-        if rsvp_value:
-            member.rsvp_status = rsvp_value
+        suffix = member.name.replace(' ', '_')
 
-        # Dinner option
-        dinner_value = request.form.get(f"dinner_option_{member.name.replace(' ', '_')}")
-        if dinner_value:
-            member.dinner_option = dinner_value
+        wedding_rsvp = request.form.get(f"wedding_rsvp_{suffix}")
+        cocktail_rsvp = request.form.get(f"cocktail_rsvp_{suffix}")
+        song_request = request.form.get(f"song_request_{suffix}", "").strip().title()
+        dinner_option = request.form.get(f"dinner_option_{suffix}")
 
-        # Song request
-        song_value = request.form.get(f"song_request_{member.name.replace(' ', '_')}")
-        if song_value is not None:
-            member.song_request = song_value.strip()  # allow empty string to clear previous request
+        if wedding_rsvp:
+            member.wedding_rsvp = wedding_rsvp
+
+        if member.wedding_rsvp == "not_going":
+            member.cocktail_rsvp = "Not Attending"
+            member.song_request = None
+            member.dinner_option = "Not Attending"
+
+        else:
+            if cocktail_rsvp:
+                member.cocktail_rsvp = cocktail_rsvp
+
+            if song_request:
+                member.song_request = song_request
+
+            if not is_multi_group and dinner_option:
+                member.dinner_option = dinner_option
 
     db.session.commit()
-    flash(f"Thanks {name}, your group RSVP has been updated!")
+
+    flash(f"Thanks {name}, your RSVP was updated!")
     return redirect(url_for('rsvpage'))
-
-
-
-# RSVP Status
-@app.route("/rsvp-status")
-def rsvp_status():
-    guests = Guest.query.all()  # or however you fetch your guests
-
-    # RSVP totals
-    rsvp_totals = {
-        "going": sum(1 for g in guests if g.rsvp_status == "going"),
-        "not_going": sum(1 for g in guests if g.rsvp_status == "not_going")
-    }
-
-    # Dinner totals
-    dinner_totals = {
-        "Chicken": sum(1 for g in guests if g.dinner_option == "Chicken"),
-        "Beef": sum(1 for g in guests if g.dinner_option == "Beef"),
-        "Vegetarian": sum(1 for g in guests if g.dinner_option == "Vegetarian"),
-        "Vegan": sum(1 for g in guests if g.dinner_option == "Vegan"),
-        "total": sum(1 for g in guests if g.dinner_option)
-    }
-
-    # Song request counts
-    song_requests = [g.song_request.strip() for g in all_guests if g.song_request]
-
-    song_request = song_counter.items()
-    total_song_request = sum(song_counter.values())
-
-    total_logins = sum(g.login_count for g in guests)
-
-    return render_template(
-        "check_status.html",
-        guests=guests,
-        rsvp_totals=rsvp_totals,
-        dinner_totals=dinner_totals,
-        song_request=song_request
-    )
 
 # Chatbot
 @app.route("/chat", methods=["POST"])
@@ -175,31 +179,57 @@ def chat():
 # ----------------------- MAIN PAGES -----------------------
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == 'POST':
-        name = request.form.get('name', '').strip()
-        if not name:
-            flash("Please enter your name.")
-            return redirect(url_for('login'))
 
-        name_lower = name.lower()
-        if not any(name_lower == guest_name.lower().strip() for guest_name in guest_names):
-            flash("Sorry, you're not on the guest list. Please ensure your name matches the invitation.")
-            return redirect(url_for('login'))
+    # -----------------------
+    # GET
+    # -----------------------
+    if request.method == 'GET':
+        next_page = request.args.get('next')
 
-        guest = Guest.query.filter(db.func.lower(Guest.name) == name_lower).first()
-        if not guest:
-            flash("Error: Guest not found in database.")
-            return redirect(url_for('login'))
+        if next_page:
+            session['next'] = next_page  # 🔥 STORE IT
 
-        #  track login count
-        guest.login_count += 1
-        db.session.commit()
+        return render_template('main_pages/login.html')
 
-        session['guest_id'] = guest.id
-        return redirect(url_for('home'))
+    # -----------------------
+    # POST
+    # -----------------------
+    name = request.form.get('name', '').strip()
 
-    return render_template('main_pages/login.html')
+    if not name:
+        flash("Please enter your name.")
+        return redirect(url_for('login'))
 
+    name_lower = name.lower()
+
+    # validate guest list
+    if not any(name_lower == g.lower().strip() for g in guest_names):
+        flash("Sorry, you're not on the guest list.")
+        return redirect(url_for('login'))
+
+    guest = Guest.query.filter(
+        db.func.lower(Guest.name) == name_lower
+    ).first()
+
+    if not guest:
+        flash("Guest not found in database.")
+        return redirect(url_for('login'))
+
+    # -----------------------
+    # LOGIN SUCCESS
+    # -----------------------
+    guest.login_count += 1
+    db.session.commit()
+
+    session['guest_id'] = guest.id
+
+    # 🔥 THE IMPORTANT PART
+    next_page = session.pop('next', None)
+
+    if not next_page or not next_page.startswith('/'):
+        next_page = url_for('home')
+
+    return redirect(next_page)
 
 @app.route('/')
 def home():
@@ -219,58 +249,53 @@ def mr_mrs():
 def rsvpage():
     guest, name = get_current_guest()
     if not guest:
-        return redirect(url_for('login'))
+        return redirect(url_for('login', next=request.path))
 
-    # Admin view
-    if name and name.strip().lower() == "bkadmin":
-        all_guests = Guest.query.order_by(Guest.name).all()
+    name_clean = name.strip().lower()
 
-        # RSVP totals
-        rsvp_totals = {
-            "going": sum(1 for g in all_guests if g.rsvp_status == "going"),
-            "not_going": sum(1 for g in all_guests if g.rsvp_status == "not_going")
-        }
+    # admin redirect
+    if name_clean == "bkadmin":
+        return redirect(url_for('checkstatus'))
 
-        # Dinner totals
-        dinner_totals = {
-            "Chicken": sum(1 for g in all_guests if g.dinner_option == "Chicken"),
-            "Beef": sum(1 for g in all_guests if g.dinner_option == "Beef"),
-            "Vegetarian": sum(1 for g in all_guests if g.dinner_option == "Vegetarian"),
-            "Vegan": sum(1 for g in all_guests if g.dinner_option == "Vegan")
-        }
+    raw_group = guest_names.get(name)
 
+    # normalize current user's group(s)
+    if isinstance(raw_group, list):
+        group_numbers = raw_group
+    else:
+        group_numbers = [raw_group]
 
-        # Total logins
-        total_logins = sum(g.login_count for g in all_guests)
+    # build group members
+    group_members = []
 
-        return render_template(
-            'checkstatus.html',
-            name=name,
-            guests=all_guests,
-            rsvp_totals=rsvp_totals,
-            dinner_totals=dinner_totals,
-            total_logins=total_logins  
-        )
+    for guest_name, group in guest_names.items():
 
+        # normalize each guest's group(s)
+        guest_groups = group if isinstance(group, list) else [group]
 
-    # Special groups
-    if name and name.strip().lower() in ["cs50"]:
-        group_number = guest_names.get(name)
-        group_members = [
-            {"name": guest_name,
-             "rsvp_status": Guest.query.filter_by(name=guest_name).first().rsvp_status}
-            for guest_name, group in guest_names.items() if group == group_number
-        ]
-        return render_template('main_pages/rsvp.html', name=name, group_members=group_members)
+        # check overlap between user's groups and this guest's groups
+        if any(g in group_numbers for g in guest_groups):
 
-    # Regular guest view
-    group_number = guest_names.get(name)
-    group_members = [
-        {"name": guest_name, 
-         "rsvp_status": Guest.query.filter_by(name=guest_name).first().rsvp_status}
-        for guest_name, group in guest_names.items() if group == group_number
-    ]
-    return render_template('main_pages/rsvpre.html', name=name, group_members=group_members)
+            g = Guest.query.filter_by(name=guest_name).first()
+            if not g:
+                continue
+
+            group_members.append({
+                "name": g.name,
+                "wedding_rsvp": g.wedding_rsvp,
+                "dinner_option": g.dinner_option,
+                "cocktail_rsvp": g.cocktail_rsvp,
+                "song_request": g.song_request,
+
+                # 🔥 important fix: per-member flag
+                "has_multiple_groups": isinstance(group, list)
+            })
+
+    return render_template(
+        'main_pages/rsvp.html',
+        name=name,
+        group_members=group_members
+    )
 
 @app.route('/travel', methods=['GET'])
 def travel():
@@ -293,11 +318,72 @@ def faq():
 @app.route('/checkstatus', methods=['GET'])
 def checkstatus():
     guest, name = get_current_guest()
-    if name != "bkadmin":
-        return redirect(url_for('rsvpage'))
 
-    all_guests = Guest.query.order_by(Guest.name).all()
-    return render_template('checkstatus.html', name=name, guests=all_guests)
+    if not guest:
+        return redirect(url_for('login', next=request.path))
+
+    all_guests = sorted(
+        Guest.query.all(),
+        key=lambda g: g.name.split()[-1].lower()
+    )
+
+    # ONLY ADMIN SEES THIS
+    if name and name.strip().lower() == "bkadmin":
+
+        wedding_totals = {
+            "going": sum(1 for g in all_guests if g.wedding_rsvp == "going"),
+            "not_going": sum(1 for g in all_guests if g.wedding_rsvp == "not_going")
+        }
+
+        kids_meal_total = sum(
+            1 for g in all_guests
+            if g.wedding_rsvp == "going"
+            and g.dinner_option in [None, "", "pending"]
+        )
+
+        dinner_totals = {
+            "Beef": sum(1 for g in all_guests if g.dinner_option == "Beef"),
+            "Fish": sum(1 for g in all_guests if g.dinner_option == "Fish"),
+            "Vegetarian": sum(1 for g in all_guests if g.dinner_option == "Vegetarian"),
+
+            "Kids": kids_meal_total,
+
+            "total": (
+                sum(1 for g in all_guests if g.dinner_option in ["Beef", "Fish", "Vegetarian"])
+                + kids_meal_total
+            )
+        }
+
+        cocktail_totals = {
+            "going": sum(1 for g in all_guests if g.cocktail_rsvp == "going"),
+            "not_going": sum(1 for g in all_guests if g.cocktail_rsvp == "not_going")
+        }
+
+        song_counter = Counter(
+            g.song_request.strip()
+            for g in all_guests
+            if g.song_request and g.song_request.strip() not in ["—", ""]
+        )
+
+        sorted_songs = song_counter.most_common()
+        total_song_request = sum(song_counter.values())
+
+        total_logins = sum(g.login_count for g in all_guests)
+
+        return render_template(
+            "checkstatus.html",
+            guests=all_guests,
+            wedding_totals=wedding_totals,
+            dinner_totals=dinner_totals,
+            cocktail_totals=cocktail_totals,
+            sorted_songs=sorted_songs,
+            total_song_request=total_song_request,
+            total_logins=total_logins,
+            kids_meal_total=kids_meal_total
+        )
+
+    # NON-ADMIN VIEW (optional simple page)
+    return render_template("main_pages/rsvpre.html", name=name)
 
 @app.route('/accommodations', methods=['GET'])
 def accommodations():
@@ -326,4 +412,7 @@ for city in city_routes:
 
 # ----------------------- RUN -----------------------
 if __name__ == "__main__":
-    app.run(debug=True)
+    with app.app_context():
+        db.create_all()   # ensures table exists
+        seed_database()
+    app.run(debug=False)

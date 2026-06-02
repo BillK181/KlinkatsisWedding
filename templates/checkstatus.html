@@ -19,41 +19,69 @@
         <th>RSVP Status</th>
         <th>Dinner Choice</th>
         <th>Song Request</th>
+        <th>Song Titles</th>
         <th>Logins</th>
       </tr>
     </thead>
+
     <tbody>
       {% for guest in guests %}
       <tr>
         <td>{{ guest.name }}</td>
-        <td>{{ guest.rsvp_status|capitalize if guest.rsvp_status else '—' }}</td>
+        <td>{{ guest.wedding_rsvp|capitalize if guest.wedding_rsvp else '—' }}</td>
         <td>{{ guest.dinner_option if guest.dinner_option else '—' }}</td>
+        <td>{{ guest.cocktail_rsvp|capitalize if guest.cocktail_rsvp else '—' }}</td>
         <td>{{ guest.song_request if guest.song_request else '—' }}</td>
         <td>{{ guest.login_count }}</td>
       </tr>
       {% endfor %}
     </tbody>
+
     <tfoot>
       <tr>
         <th>Totals</th>
-        <th>
-          Going: {{ rsvp_totals.going }}<br>
-          Not Going: {{ rsvp_totals.not_going }}<br>
-          <strong>Total: {{ rsvp_totals.total }}</strong>
-        </th>
-        <th>
-          Chicken: {{ dinner_totals.Chicken }}<br>
+
+        <td>
+          Going: {{ wedding_totals.going }}<br>
+          Not Going: {{ wedding_totals.not_going }}<br>
+          <strong>Total: {{ wedding_totals.total }}</strong>
+        </td>
+
+        <td>
           Beef: {{ dinner_totals.Beef }}<br>
+          Fish: {{ dinner_totals.Fish }}<br>
           Vegetarian: {{ dinner_totals.Vegetarian }}<br>
-          Vegan: {{ dinner_totals.Vegan }}<br>
+          Kids Meal: {{ dinner_totals.Kids }}<br>
           <strong>Total: {{ dinner_totals.total }}</strong>
-        </th>
-        <th>—</th>
-        <th>
-          <strong>Total Logins:</strong><br>{{ total_logins }}
-        </th>
+        </td>
+
+        <td>
+          Going: {{ cocktail_totals.going }}<br>
+          Not Going: {{ cocktail_totals.not_going }}<br>
+          <strong>Total: {{ cocktail_totals.total }}</strong>
+        </td>
+
+        <td class="song-cell">
+          {% if sorted_songs %}
+            {% for song, count in sorted_songs %}
+              <div class="song-row">{{ song }} — {{ count }}</div>
+            {% endfor %}
+          {% else %}
+            <div class="no-songs">No song requests yet.</div>
+          {% endif %}
+
+          <div class="song-total">
+            <strong>Total:</strong> {{ total_song_request }}
+          </div>
+        </td>
+
+        <td>
+          <strong>Total Logins:</strong><br>
+          {{ total_logins }}
+        </td>
       </tr>
     </tfoot>
+
   </table>
 </main>
 
