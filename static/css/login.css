@@ -132,7 +132,7 @@
   width: 320px;
   border: 2px solid var(--wedding-dark-green, #1D271D);
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px #0000001a;
   outline: none;
   background-color: #1d271d62;
   color: var(--wedding-beige, #D7CFC6);
@@ -140,6 +140,7 @@
 
 input::placeholder {
   color: var(--wedding-beige, #D7CFC6);
+  font-size: .88rem;
 }
 
 #hero form button {

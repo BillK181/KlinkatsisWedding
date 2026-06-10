@@ -62,9 +62,9 @@ guest_names = {
 "Mikayla Staples": 18,
 
 "Lisa DeGennaro": 19,
-"Michael DeGennaro": 19,
+"Michael Father DeGennaro": 19,
 
-"Michael DeGennaro": 20,
+"Michael Son DeGennaro": 20,
 "Daniel Gomez": 20,
 
 "Angie Daniels": 21,
