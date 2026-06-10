@@ -140,7 +140,7 @@
 
 input::placeholder {
   color: var(--wedding-beige, #D7CFC6);
-  font-size: .88rem;
+  font-size: 1.2rem;
 }
 
 #hero form button {
@@ -171,6 +171,11 @@ input::placeholder {
   #hero .video-credit {
     font-size: 0.5rem;
   }
+
+  input::placeholder {
+  color: var(--wedding-beige, #D7CFC6);
+  font-size: .88rem;
+}
 }
 
 /* --- Flash Message --- */
