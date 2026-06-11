@@ -35,6 +35,8 @@ class Guest(db.Model):
 # Populate database from guest list
 def seed_database():
     with app.app_context():
+
+        # Add new guests
         for name in guest_names:
             if not Guest.query.filter_by(name=name).first():
                 db.session.add(
@@ -46,6 +48,11 @@ def seed_database():
                         song_request=""
                     )
                 )
+
+        # Remove guests no longer in guest_names
+        for guest in Guest.query.all():
+            if guest.name not in guest_names:
+                db.session.delete(guest)
 
         db.session.commit()
 

@@ -46,6 +46,7 @@ guest_names = {
 "Phil Elias": 14,
 "Anne Elias": 14,
 "Letta Elias": 14,
+"Thomas": 14,
 
 "George Klinkatsis": 15,
 "Ann Marie Klinkatsis": 15,
@@ -62,9 +63,9 @@ guest_names = {
 "Mikayla Staples": 18,
 
 "Lisa DeGennaro": 19,
-"Michael Father DeGennaro": 19,
+"Michael DeGennaro": 19,
 
-"Michael Son DeGennaro": 20,
+"Michael DeGennaro - Son": 20,
 "Daniel Gomez": 20,
 
 "Angie Daniels": 21,
@@ -98,7 +99,7 @@ guest_names = {
 
 "Vinny DeGennaro": 29,
 "Tahira DeGennaro": 29,
-"Aaliya DeGennaro": [29, 999],
+"Aliya DeGennaro": [29, 999],
 
 "Becky Daniels": 30,
 "Adrian Daniels": 30,
@@ -177,9 +178,8 @@ guest_names = {
 "Delma Rose": 55,
 "Bryan Rose": 55,
 
-"Diane Furnari": 56,
+"Dianna Furnari": 56,
 "Steve Furnari": 56,
-"Diana Furnari": 56,
 
 "Gene Torres": 57,
 "Jackie Torres": 57,
@@ -218,6 +218,8 @@ guest_names = {
 
 "Vic Pepe": 69,
 "Kris Pepe": 69,
+"Alex Pepe": 69,
+"Mia Pepe": 69,
 
 "John Blasch": 70,
 "Kerri Blasch": 70,
@@ -232,10 +234,6 @@ guest_names = {
 
 "Taylor Nuñez": 81, 
 "Andres Nuñez": 81,
-
-"Alex Pepe": 82,
-
-"Mia Pepe": 83,
 
 "Conor Mcmanamon": 84, 
 "Anna Bowman": 84, 
